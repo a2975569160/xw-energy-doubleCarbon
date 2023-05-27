@@ -1,0 +1,144 @@
+<!-- 符号 -->
+<jbdsymbolAttribute>
+  <div ref="content" class="CgsTool__content toolPanel">
+    <div class="symbolEdit">
+      <div class="splitRoot">
+        <div class="splitItem">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>符号属性</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title" style="width: 85px;background-color: transparent">符号标识</div>
+                <div class="td">
+                  <input type="text" disabled ref="symbolName" value="" class="full" />
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title" style="width: 85px;background-color: transparent">符号代码</div>
+                <div class="td">
+                  <input type="text" disabled ref="symbolId" value="" class="full" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="splitItem">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>符号控制</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title">可见性</div>
+                <div class="td">
+                  <input ref="visibility" name="visibilitying" id="visibilitying" onchange={onSelectValChange}
+                    type="checkbox" dtype="check" />
+                  <label for="visibilitying"></label>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">可选择性</div>
+                <div class="td">
+                  <input ref="detectable" name="selectivity" id="selectivity" onchange={onSelectValChange}
+                    type="checkbox" dtype="check" />
+                  <label for="selectivity"></label>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">可编辑性</div>
+                <div class="td">
+                  <input ref="editable" name="editability" id="editability" onchange={onSelectValChange} type="checkbox"
+                    dtype="check" />
+                  <label for="editability"></label>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">可移动性</div>
+                <div class="td">
+                  <input ref="moveable" name="mobility" id="mobility" onchange={onSelectValChange} type="checkbox"
+                    dtype="check" />
+                  <label for="mobility"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let tag = this
+    let map = this.opts.map
+    tag.updateAttributes = node => {
+      let refs = tag.refs;
+      if (node) {
+        let drawingAttr = node.drawingAttrib;
+        let attrs = map.jmpApi.getNodeAttrs(node);
+        // 名称
+        refs.symbolName.value = node.symbolAttrib.GetName();
+        // 符号代码
+        refs.symbolId.value = attrs.symbolId;
+        // 可见性
+        refs.visibility.checked = attrs.visibility;
+        // 可检测性
+        refs.detectable.checked = attrs.detectable;
+        // 可编辑性
+        refs.editable.checked = attrs.editable;
+        // 可移动性
+        refs.moveable.checked = attrs.moveable;
+      } else {
+        // 名称
+        refs.symbolName.value = "";
+        // 符号代码
+        refs.symbolId.value = "";
+        // 可见性
+        refs.visibility.checked = false;
+        // 可检测性
+        refs.detectable.checked = false;
+        // 可编辑性
+        refs.editable.checked = false;
+        // 可移动性
+        refs.moveable.checked = false;
+      }
+    }
+
+    tag.onSelectValChange = e => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      let ref = e.target;
+      let refName = $$(ref).attr('ref');
+      let dtype = $$(ref).attr('dtype');
+      let val = $$(ref).val();
+      if (dtype === 'check') {
+        val = ref.checked;
+      }
+      let attrs = {
+        [refName]: val
+      };
+      tag.setSymbolAttrs(attrs);
+      let changeP = [{
+        type: ref,
+        val: val
+      }];
+      CgsSubPub.publish(CgsEvent.eSymbolValChange, [changeP, node.name]);
+    }
+
+    tag.setSymbolAttrs = attrs => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      map.jmpApi.setNodeAttrs(node, attrs);
+    }
+  </script>
+</jbdsymbolAttribute>

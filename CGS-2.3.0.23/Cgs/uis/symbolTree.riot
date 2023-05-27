@@ -1,0 +1,256 @@
+<!-- 军标图层树面板 -->
+<jbsymboltree>
+  <div class="CgsSymbolTool__symbolTree">
+    <ul ref="layertree"></ul>
+  </div>
+
+  <script>
+    var tag = this
+    tag.activeLayerName = "暂无激活图层"
+    var map = this.opts.map
+    map.layertree = tag
+    tag.selectNode = {}
+
+    // 点击按钮新增图层
+    tag.handleAddLayer = function () {
+      map.jmpManage.createJmpLayer()
+    }
+    // 删除军标图层
+    tag.handleDeleteLayer = function () {
+      var currentNode = tag.treeUI.tree('getSelected');
+      if (!currentNode) return;
+      if (currentNode.type == "layer") { // 是图层节点
+        var layerId = currentNode.id
+        map.jmpManage.deleteLayerById(layerId)
+      } else if (currentNode.type == "node") {
+        var symbolId = currentNode.id
+        var symbol = map.jmpManage.getSymbolByUid(symbolId)
+        map.jmpManage.removeSymbol(symbol)
+      }
+    }
+    // 清空图层
+    tag.handleClearLayer = function () {
+      var currentNode = tag.treeUI.tree('getSelected');
+      if (!currentNode) return;
+      if (currentNode.type == "layer") { // 是图层节点
+        var symbols = []
+        currentNode.children.map(node => {
+          var symbolId = node.id
+          var symbol = map.jmpManage.getSymbolByUid(symbolId)
+          symbols.push(symbol)
+        })
+        symbols.map(symbol => {
+          map.jmpManage.removeSymbol(symbol)
+        })
+      }
+    }
+    // 导出图层
+    tag.handleExportLayer = function () {
+      var currentNode = tag.treeUI.tree('getSelected');
+      if (!currentNode) return;
+      if (currentNode.type == "layer") { // 是图层节点
+        var layerId = currentNode.id
+        var msg = map.jmpApi.exportAsString(layerId);
+        var scenef = new File([msg], 'layer.sml', {
+          type: "text/xml;charset=utf-8"
+        });
+        //使用FileSaver.js提供的saveAs函数，通过浏览器的默认下载工具将字符串保存为本地文件
+        saveAs(scenef);
+      }
+    }
+    // 导入图层
+    tag.handleInportLayer = function () {
+      var fr = new FileReader();
+      fr.onload = function () {
+        var layerid = map.plotting.activeLayer.id;
+        var sceneData = this.result;
+        map.plotting._tool_manager.switch_creating();
+        map.jmpApi.importByString(sceneData, layerid);
+        map.plotting._tool_manager.switch_editing();
+      };
+      inputF = $$("<input type='file'>");
+      inputF.change(function () {
+        var f = this.files[0];
+        fr.readAsText(f);
+      });
+      inputF.click();
+    }
+
+    tag.on('mount', function () {
+      var $$ = ((!window.$$.fn.draggable) || (window.$$.fn.draggable.length === 1)) ? (window.$) : (window
+        .$$); //easy ui 的痛
+      tag.treeUI = $$(tag.refs.layertree);
+      // 获取当前的军标数据
+      var map = tag.opts.map
+      var initSymbolLayerData = []
+      // 如果面板初始化时已经通过接口绘制了军标，则需要进行已经上图军标的初始化处理
+      if (map.jmpApi) {
+        var jmpManage = new CgsJmpManage(map);
+        var layerIds = jmpManage.getAllLayerIds();
+        var activeLayerId = jmpManage.getActiveLayerId();
+        var activeLayerName = jmpManage.getLayerNameById(activeLayerId)
+        tag.activeLayerName = activeLayerName
+        for (var i = 0; i < layerIds.length; i++) {
+          var layerId = layerIds[i]
+          if (layerId) {
+            var layerName = jmpManage.getLayerNameById(layerId)
+            var item = {
+              id: layerId,
+              type: "layer",
+              checked: true,
+              text: layerName,
+              iconCls: "icon-blank",
+              children: []
+            }
+            initSymbolLayerData.push(item);
+            var symbols = jmpManage.getSymbolsByLayerId(layerId)
+            for (var j = 0; j < symbols.length; j++) {
+              if (symbols[j]) {
+                var nodeAttr = symbols[j].getNodeAttrs();
+                var child = {
+                  id: nodeAttr.uid,
+                  type: "node",
+                  text: nodeAttr.name,
+                  checked: true,
+                  iconCls: "icon-blank"
+                }
+                item.children.push(child)
+              }
+
+            }
+          }
+
+        }
+        tag.update();
+      }
+
+      // 根据id添加图层
+      function addLayerById(id) {
+        if (!map.jmpManage) {
+          new CgsJmpManage(map)
+        }
+        var layerName = map.jmpManage.getLayerNameById(id)
+        var item = {
+          id: id,
+          type: "layer",
+          checked: true,
+          text: layerName,
+          iconCls: "icon-blank",
+          children: []
+        }
+        tag.treeUI.tree('append', {
+          data: [item]
+        })
+        tag.activeLayerName = layerName
+        tag.update()
+      }
+
+      // 根据id移除军标图层,设置激活图层为
+      function deleteLayerById(layerId) {
+        var node = tag.treeUI.tree('find', layerId);
+        if (node) {
+          tag.treeUI.tree('remove', node.target);
+          var ids = map.jmpManage.getAllLayerIds();
+          var firstId = ids[0];
+          tag.treeUI.tree('select', tag.treeUI.tree('find', firstId).target)
+          tag.treeUI.tree('check', tag.treeUI.tree('find', firstId).target)
+        }
+      }
+
+      // 监听军标新增的上图方法
+      function addSymbol(symbol) {
+        var nodeAttr = symbol.getNodeAttrs();
+        var layerId = symbol.layerId || symbol.node.layer.id;
+        var child = {
+          id: nodeAttr.uid,
+          type: "node",
+          text: nodeAttr.name,
+          checked: true,
+          iconCls: "icon-blank"
+        }
+        var treeNode = tag.treeUI.tree('find', layerId);
+        treeNode && tag.treeUI.tree('append', {
+          parent: treeNode.target,
+          data: [child]
+        })
+      }
+
+      // 监听军标移除
+      function deleteSymbol(symbolId) {
+        var node = tag.treeUI.tree('find', symbolId);
+        if (node) {
+          tag.treeUI.tree('remove', node.target);
+        }
+
+      }
+
+      // 根据军标id设置军标显隐
+      function setSymbolVisibleById(id, checked) {
+        var symbol = map.getSymbolByUid(id);
+        symbol && symbol.setVisible(checked)
+      }
+      var laytreeInit = setInterval(function () {
+        // 根据数据初始化图层树
+        tag.treeUI.tree({
+          data: initSymbolLayerData,
+          animate: true,
+          checkbox: true,
+          // check框切换触发事件
+          onCheck: function (node, checked) {
+            if (node.type == "layer") { // 军标图层组
+              for (var i = 0; i < node.children.length; i++) {
+                setSymbolVisibleById(node.children[i].id, checked)
+              }
+            } else if (node.type == "node") { // 军标
+              setSymbolVisibleById(node.id, checked)
+            }
+          },
+          // 右键点击事件
+          onContextMenu: function (e, node) {
+            tag.node = node
+            e.preventDefault()
+            $$('#nodeMenu').menu('show', {
+              left: e.pageX,
+              top: e.pageY
+            });
+          },
+          // 选中一个节点时的点击事件
+          onSelect: function (node) {
+            if (node && node.type == "layer") { // 选中图层节点
+              if (node.text !== tag.activeLayerName) {
+                map.jmpManage.setActiveLayerById(node.id)
+                tag.activeLayerName = node.text
+                tag.update()
+              }
+            } else if (node && node.type == "node") { // 选中军标
+              var nodeId = node.id;
+              var editingNode = map.jmpManage.getSymbolByUid(node.id).node
+              map.plotting.editingNode = editingNode
+              map.map2D.render();
+            }
+          },
+          // 当数据加载成功时
+          onLoadSuccess: function () {
+            // 军标图层新增监听
+            CgsSubPub.subscribe(CgsEvent.eSymbolLayerAdd, function (e, layerId) {
+              addLayerById(layerId)
+            })
+            // 军标图层删除监听
+            CgsSubPub.subscribe(CgsEvent.eSymbolLayerDeleted, function (e, layerId) {
+              deleteLayerById(layerId)
+            })
+            // 军标新增监听
+            CgsSubPub.subscribe(CgsEvent.eSymbolAdd, function (e, symbol) {
+              addSymbol(symbol)
+            })
+            // 军标删除监听
+            CgsSubPub.subscribe(CgsEvent.eSymbolDelete, function (e, id) {
+              deleteSymbol(id)
+            })
+          }
+        })
+        clearInterval(laytreeInit)
+      }, 100)
+    })
+  </script>
+</jbsymboltree>

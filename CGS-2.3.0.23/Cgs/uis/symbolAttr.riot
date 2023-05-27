@@ -1,0 +1,127 @@
+<jbsymbolattr>
+  <div class="CgsTool__title">
+    <span class='CgsSymbolTool__titleText'>军标属性管理</span>
+  </div>
+  <div ref="content" class="CgsTool__content" style="height:calc(100% - 2px)">
+    <div class="CgsSymbolTool__content">
+      <div ref="drawingAttributeDiv" show={ currentPanel===0 } style="width: 100%;">
+        <jbdrawingAttribute ref="jbdrawingAttributeCon" map={map}></jbdrawingAttribute>
+      </div>
+      <div ref="geometryAttributeDiv" show={ currentPanel===1 } style="width: 100%;">
+        <jbgeometryAttribute ref="jbgeometryAttributeCon" map={map}></jbgeometryAttribute>
+      </div>
+      <div ref="annotationAttributeDiv" show={ currentPanel===2 } style="width: 100%;">
+        <jbannotationAttribute ref="jbannotationAttributeCon" map={map}></jbannotationAttribute>
+      </div>
+      <div ref="symbolAttributeDiv" show={ currentPanel===3 } style="width: 100%;">
+        <jbdsymbolAttribute ref="jbsymbolAttributeCon" map={map}></jbdsymbolAttribute>
+      </div>
+    </div>
+    <div class='CgsSymbolTool__bottom'>
+      <div ref="drawingAttribute" class="CgsSymbolTool__bottomTab CgsSymbolTool__bottomTab_active"
+        onclick={showDrawingAttr}>
+        <span>样式</span></div>
+      <div ref="annotationAttribute" class="CgsSymbolTool__bottomTab" onclick={showAnnotationAttr}><span>注记</span></div>
+      <div ref="symbolAttribute" class="CgsSymbolTool__bottomTab" onclick={showSymbolAttr}><span>控制</span></div>
+      <div ref="geometryAttribute" class="CgsSymbolTool__bottomTab" onclick={showGeometryAttr}><span>位置</span></div>
+    </div>
+  </div>
+  <script>
+    let tag = this
+    let map = this.opts.map
+    tag.currentPanel = 0; //当前面板 (样式0 ，位置1，注记2，符号3)
+
+    //更新编辑框，选中军标时触发，更新面板上属性内容
+    tag.updateAttributes = node => {
+      tag.refs.jbdrawingAttributeCon.updateAttributes(node);
+      tag.refs.jbgeometryAttributeCon.updateAttributes(node);
+      tag.refs.jbannotationAttributeCon.updateAttributes(node);
+      tag.refs.jbsymbolAttributeCon.updateAttributes(node);
+    }
+
+    tag.updateSizeAndGeo = node => {
+      tag.refs.jbdrawingAttributeCon.updateSize(node);
+      tag.refs.jbgeometryAttributeCon.updateGeoAndScale(node);
+      tag.refs.jbannotationAttributeCon.updateAnnoOffset(node);
+    }
+
+    tag.showDrawingAttr = () => {
+      tag.currentPanel = 0;
+      tag.showAttrTab();
+    }
+
+    tag.showGeometryAttr = () => {
+      tag.currentPanel = 1;
+      tag.showAttrTab();
+    }
+
+    tag.showAnnotationAttr = () => {
+      tag.currentPanel = 2;
+      tag.showAttrTab();
+    }
+
+    tag.showSymbolAttr = () => {
+      tag.currentPanel = 3;
+      tag.showAttrTab();
+    }
+
+    tag.showAttrTab = () => {
+      let drawingAttribute = $$(tag.refs.drawingAttribute);
+      let geometryAttribute = $$(tag.refs.geometryAttribute);
+      let annotationAttribute = $$(tag.refs.annotationAttribute);
+      let symbolAttribute = $$(tag.refs.symbolAttribute);
+
+      drawingAttribute.removeClass('CgsSymbolTool__bottomTab_active');
+      geometryAttribute.removeClass('CgsSymbolTool__bottomTab_active');
+      annotationAttribute.removeClass('CgsSymbolTool__bottomTab_active');
+      symbolAttribute.removeClass('CgsSymbolTool__bottomTab_active');
+      switch (tag.currentPanel) {
+        case 0:
+          drawingAttribute.addClass('CgsSymbolTool__bottomTab_active');
+          break;
+        case 1:
+          geometryAttribute.addClass('CgsSymbolTool__bottomTab_active');
+          break;
+        case 2:
+          annotationAttribute.addClass('CgsSymbolTool__bottomTab_active');
+          break;
+        case 3:
+          symbolAttribute.addClass('CgsSymbolTool__bottomTab_active');
+          break;
+      }
+    }
+
+    tag.on('mount', () => {
+      // 折叠效果
+      tag.itemClose($$(tag.refs.jbdrawingAttributeCon.refs.content), 11);
+      tag.itemClose($$(tag.refs.jbgeometryAttributeCon.refs.content), 12);
+      tag.itemClose($$(tag.refs.jbannotationAttributeCon.refs.content), 13);
+      tag.itemClose($$(tag.refs.jbsymbolAttributeCon.refs.content), 14);
+    });
+
+    tag.itemClose = (dom, n) => {
+      let pRoot = dom.find('.splitRoot').eq(0);
+      let items = pRoot.find('.splitItem');
+      items.each((i, item) => {
+        let val = $$(item);
+        let btn = val.find('.splitBtn').eq(0);
+        let btn1 = val.find('.splitBtn').eq(1);
+        btn.addClass('active');
+        btn1.addClass('active');
+
+        let content = val.find('.splitContent').eq(0);
+        btn.click(() => {
+          if (btn.hasClass('active')) {
+            btn.removeClass('active');
+            btn1.removeClass('active');
+            content.slideToggle()
+          } else {
+            btn.addClass('active');
+            btn1.addClass('active');
+            content.slideDown();
+          }
+        });
+      });
+    }
+  </script>
+</jbsymbolattr>

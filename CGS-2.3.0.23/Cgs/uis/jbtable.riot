@@ -1,0 +1,140 @@
+<!--军标标绘面板-->
+<jbtable>
+    <div ref="content" class="CgsTool__content CgsSymbolTool">
+        <div class='CgsSymbolTool__top'>
+          <div class='CgsMaSymbolToolsearchBar'>
+              <input ref="searchInput" class='CgsSymbolTool__searchInput'/>
+              <div class='CgsSymbolTool__searchButton' onclick={jbFind}></div>
+          </div>
+          <!--
+            <div class="jmpsequenceDraw_warp">
+                <img src={imgUrl} onclick={toggleSequenceDraw}/>
+                <span>连续标绘</span>
+            </div>
+          -->
+        </div>
+        <div class='CgsSymbolTool__container'>
+          <div each={ jbs } class="CgsSymbolTool__tool" data-lib={libId} data-id={id} title={"名称:"+ name + '&#10;'
+              + "库号:" + libId + '&#10;' + "ID号:" + id}>
+              <img src={icon}>
+              <p>{name}</p>
+          </div>
+        </div>
+    </div>
+
+    <script>
+      var tag = this;
+      tag.index = opts.start || 0;
+      tag.imgUrl=CGS_SDK_PATH + '/assets/image/tool/symboltool/unchecked.png';
+      tag.jmpSequenceDrawChecked=false;
+      tag.map = opts.map;
+      tag.map.jmpSequenceDraw = false; // 连续绘制标识
+      this.jbs = [
+          // {
+          //     id:'2001',name:'名字',icon:'aaaa'
+          // }
+      ];//军标
+
+      tag.on('jbsUpdate', function (jbs) {
+        // tag.lastJbs = jbs;//把最后一次缓存起来(用于搜索框为空时)
+        this.update({ jbs: jbs });
+      });
+
+      //军标图标通过军标名称或ID进行搜索过滤
+      //后续考虑加入首字母搜索与全拼搜索
+      tag.jbFind = function () {
+        var searchText = tag.refs.searchInput.value;
+        if (_.trim(searchText) === '') {
+          var selected = tag.panel.refs.jbclazz.treeUl.tree('getChecked');
+          var jbs = [];
+          for (var i = 0; i < selected.length; i++) {
+              var obj = selected[i];
+              if(!obj.children){
+                jbs = jbs.concat(obj._jbs);
+              }
+          }
+          tag.trigger('jbsUpdate',jbs);
+        }else {
+          var jbs = tag.map.jmpApi.findJbsByString(searchText);
+
+             // 未通过名称搜索到结果，使用库号代号模糊搜索
+             if(jbs.length === 0){
+            var i = searchText.indexOf('_');
+            var j = searchText.indexOf('lib');
+            var libId,id;
+
+            if(i >= 0){
+              libId = searchText.slice(0, i);
+              id = searchText.slice(i+1);
+            }else{
+              libId = (j >=0) ? searchText : '';
+              id = (j < 0 ) ? searchText : '';
+            }
+
+            var jbs = tag.map.jmpApi.findJbsByLibAndId(libId, id);
+          }
+
+          tag.trigger('jbsUpdate', jbs);
+        }
+      };
+
+      tag.on('mount', function () {
+        tag.panel = tag.parent;
+        //搜索框回车响应
+        $$(tag.refs.searchInput).bind('keydown', function (ev) {
+          if (ev.keyCode === 13) {
+              tag.jbFind();
+          }
+        });
+
+        var content = $$(tag.refs.content);
+        //点击军标图标的事件，改变图标样式并触发对应的军标绘制
+        content.delegate(".CgsSymbolTool__tool", "click", function (event) {
+
+            var lib = $$(this).attr("data-lib");
+            var id = $$(this).attr("data-id");
+            tag.map.gJMP.lastDrawSymbolLib = lib;
+            tag.map.gJMP.lastDrawSymbolId = Number(id);
+            var jb = tag.map.jmpApi.jbsByLibAndId[lib + '_' + id];
+
+            var $mapContainer = tag.map.container.children;
+            if (jb.symbol.getSymbolType() === 0) { //点军标开启盖章样式
+              var symbolPicUrl = event.currentTarget.getElementsByTagName('img')[0].src;
+              var url = CGS_SDK_PATH + '/assets/image/mouseIcon/add_normal.png';
+              $$($mapContainer[0]).css('cursor', `url(${url}) 8 8,auto`);
+              $$($mapContainer[1]).css('cursor', `url(${url}) 8 8,auto`);
+            } else {
+              $$($mapContainer[0]).css('cursor', '');
+              $$($mapContainer[1]).css('cursor', '');
+            }
+
+            if ($$(event.currentTarget).hasClass('CgsSymbolTool__tool_active')) {
+              $$(event.currentTarget).removeClass("CgsSymbolTool__tool_active");
+              tag.map.jmpApi.jmpState.isDrawingByMouse = false;
+              tag.map.jmpApi.symbolManager.selectNothing();
+              $$($mapContainer[0]).css('cursor', '');
+              $$($mapContainer[1]).css('cursor', '');
+              return;
+            }
+
+            content.find(".CgsSymbolTool__tool_active").removeClass("CgsSymbolTool__tool_active");
+            $$(this).addClass("CgsSymbolTool__tool_active");
+
+            tag.map.jmpApi.jmpState.createType = 1; //手绘产生;
+            tag.map.jmpApi.jmpState.isDrawingByMouse = true;//手绘开始
+            tag.map.gJMP.getSymbolManager().selectSymbol(jb.symbol);
+            tag.map.plotting._tool_manager.switch_creating();
+        });
+        //tag.trigger('jbsUpdate',tag.map.jmpApi.defaultJbClazz._jbs); //默认展示的
+      });
+
+
+      // tag.backout = function () {
+      //   this.map.plotting.doUngroupSelected();
+      // }
+
+      // tag.combin = function () {
+      //   this.map.plotting.doGroupSelected();
+      // }
+    </script>
+</jbtable>

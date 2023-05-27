@@ -1,0 +1,675 @@
+<!--军标属性编辑面板-->
+<jbproperty>
+    <div class="CgsTool__title" show={opts.showHeader}>
+        <!--<img class='CgsSymbolTool__titleImg' src={CGS_SDK_PATH + "assets/image/tool/marktool/marktooltitle.png"} />-->
+        <span class='CgsSymbolTool__titleText'>军标属性编辑面板</span>
+        <button onclick={updateAttributes}>刷新</button>
+    </div>
+    <div ref="content" class="CgsTool__content toolPanel">
+
+        <!--无法用 riot 正确渲染 table 里面的循环 所以改用 div 模式 -->
+        <div class="symbolEdit">
+
+            <div class="splitRoot">
+                <div class="splitItem">
+                    <div class="splitBtn no-user-select">
+                        <div class="mark"></div>
+                        <span>显示属性</span>
+                    </div>
+
+                    <div class="splitContent">
+                        <div class="divTable">
+                            <div class="tr">
+                                <div class="td" style="width: 85px;background-color: transparent">标号名称</div>
+                                <div class="td"><input type="text" disabled value={jbatts.name} class="full" /> </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td title">标号颜色</div>
+                                <div class="td">
+                                    <colorpicker ref="color" onclick={colorChange} on_val_change={ onValChange }></colorpicker>
+                                </div>
+                            </div>
+
+                            <!-- 衬线相关接口在三维下不完善，暂时屏蔽-->
+                            <!--
+                             <div class="tr">
+                                <div class="td">线型</div>
+                                    <div class="td">
+                                        <select ref="lineType" onchange={onSelectValChange} dtype="number" class="full">
+                                            <option value="0">实线</option>
+                                            <option value="1">虚线</option>
+                                        </select>
+                                </div>
+                            </div>
+
+                            <div class="tr">
+                                <div class="td">是否显示衬线</div>
+                                <div class="td"><input ref="foilLine" onchange={onSelectValChange} type="checkbox" dtype="check" /></div>
+                            </div>
+
+                            <div class="tr">
+                                <div class="td">衬线宽度</div>
+                                <div class="td" data-is="cgs_validator_input" ref="outLineWidth" on_val_change={ onValChange } type="number"></div>
+                            </div>
+
+                            <div class="tr">
+                                <div class="td">衬线颜色</div>
+                                    <div class="td">
+                                        <colorpicker ref="outLineColor" on_val_change={ onValChange } default_colors={mConfigs && mConfigs.symbol.default_colors}></colorpicker>
+                                    </div>
+                            </div>
+                            -->
+
+
+                            <virtual if={jbatts.type === 0}>
+                                <div class="tr">
+                                    <div class="td">大小</div>
+                                    <div class="td">
+                                        <div style="width: 100%;text-align: left">
+                                            <div onclick={onSelectValChange} aref="size" dtype="number" val="1" class="sizeBox">小</div>
+                                            <div onclick={onSelectValChange} aref="size" dtype="number" val="1.5" class="sizeBox">中</div>
+                                            <div onclick={onSelectValChange} aref="size" dtype="number" val="2.0" class="sizeBox">大</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td title">宽度</div>
+                                    <div class="td" data-is="cgs_validator_input" ref="width" on_val_change={ onValChange } type="number"></div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td title">高度</div>
+                                    <div class="td" data-is="cgs_validator_input" ref="height" on_val_change={ onValChange } type="number"></div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td title">镜像</div>
+                                    <div class="td">
+                                        <select ref="mirror" onchange={onSelectValChange} dtype="number" class="full">
+                                            <option value="0">无</option>
+                                            <option value="1">水平</option>
+                                            <option value="2">垂直</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </virtual>
+                            <div class="tr">
+                                <div class="td title">是否填充</div>
+                                <div class="td"><input ref="fill" onchange={onSelectValChange} type="checkbox" dtype="check" /></div>
+                            </div>
+                            <div class="tr">
+                                <div class="td title">填充颜色</div>
+                                    <div class="td">
+                                        <colorpicker ref="fillColor" on_val_change={ onValChange } default_colors={mConfigs && mConfigs.symbol.default_colors}></colorpicker>
+                                </div>
+                            </div>
+
+                            <virtual if={jbatts.type === 1}>
+                                <div class="tr">
+                                    <div class="td title">渐变色</div>
+                                    <div class="td"><input ref="changeColor" onchange={onSelectValChange} type="checkbox" dtype="check"/></div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td title">渐变色1</div>
+                                    <div class="td">
+                                        <colorpicker ref="changeColor1" on_val_change={onColorChange} default_colors={mConfigs && mConfigs.symbol.default_colors}></colorpicker>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td title">渐变色2</div>
+                                    <div class="td">
+                                        <colorpicker ref="changeColor2" on_val_change={ onColorChange } default_colors={mConfigs && mConfigs.symbol.default_colors}></colorpicker>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td title">渐变角度</div>
+                                    <div class="td" data-is="cgs_validator_input" ref="changeColorDir" on_val_change={ onValChange } type="number" placeholder="0-360"></div>
+                                </div>
+                            </virtual>
+                        </div>
+                    </div>
+                </div>
+                <div class="splitItem">
+                    <div class="splitBtn no-user-select">
+                        <div class="mark"></div>
+                        <span>位置属性</span>
+                    </div>
+                    <div class="splitContent">
+                        <div class="divTable">
+                            <virtual each={geo,index in jbatts.geoData }>
+                                <div class="tr">
+                                    <div class="td title" style="width: 85px;">经度:{index}&nbsp;&nbsp;&nbsp;</div>
+                                    <div class="td"><input ref={'geoPosLon_'+index} type="number" oninput={onGeoInput} dtype="number"  class="full" /></div>
+                                </div>
+
+                                <div class="tr">
+                                    <div class="td title">纬度:{index}</div>
+                                    <div class="td"><input ref={'geoPosLat_'+index} type="number" oninput={onGeoInput} dtype="number" class="full" /></div>
+                                </div>
+                            </virtual>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="splitItem">
+                    <div class="splitBtn">
+                        <div class="mark"></div>
+                        <span>标注属性</span>
+                    </div>
+                    <div class="splitContent">
+                        <div class="divTable">
+                            <div class="tr">
+                                <div class="td" style="width: 85px;">标注内容</div>
+                                <div class="td" data-is="cgs_validator_input" ref="annoText" on_val_change={ onValChange } type="text">
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td title">是否显示</div>
+                                <div class="td"><input ref="annoVisibility" onchange={onSelectValChange} type="checkbox" dtype="check" /></div>
+                            </div>
+                            <div class="tr" id = "neilianwenben">
+                                <div class="td title" style="width: 85px;">内联文本</div>
+                                <div class="td" data-is="cgs_validator_input" ref="inwardText" on_val_change={ onValChange } type="text">
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td title">是否显示</div>
+                                <div class="td"><input ref="inwardVisibility" onchange={onSelectValChange} type="checkbox" dtype="check" /></div>
+                            </div>
+                            <div class="tr">
+                                <div class="td title">字体大小</div>
+                                <div class="td">
+                                    <div ref="annoTextSize" on_val_change={onValChange}   data-is="cgs_font_size_picker"></div >
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td title">字体颜色</div>
+                                <div class="td" style="text-align: center"><colorpicker ref="annoTextColor" on_val_change={ onValChange } default_colors={mConfigs && mConfigs.symbol.default_colors}></colorpicker></div>
+                            </div>
+                            <div class="tr">
+                                <div class="td title">牵引线颜色</div>
+                                <div class="td" style="text-align: center"><colorpicker ref="annoLineColor" on_val_change={ onValChange } default_colors={mConfigs && mConfigs.symbol.default_colors}></colorpicker></div>
+                            </div>
+
+                            <div class="tr">
+                                <div class="td title">显示牵引线</div>
+                                <div class="td"><input ref="annotLineVisibility" onchange={onSelectValChange} type="checkbox" dtype="check" /></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="splitItem" hide={customEdits.length===0}>
+                    <div class="splitBtn">
+                        <div class="mark"></div>
+                        <span>业务属性</span>
+                    </div>
+                    <div class="splitContent">
+
+                        <div class="divTable">
+                            <div class="tr" each={cedit,index in customEdits }>
+                                <div class="td" style="width: 85px;" title={cedit.desc}>{ cedit.label }</div>
+                                <div class="td" data-is="cgs_validator_input" ref={cedit.key} dref={cedit.key} on_val_change={ onCustomEditValChanged } validator={ cedit.validator } stype={ cedit.type } >
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+        var tag = this;
+		//start接口绘制军标 20180830jb
+		window.jmpFunctionTag = tag;
+		//end
+        tag.map = tag.opts.map || {};
+		var gJMP = null;
+		var timer = setInterval(function () {
+			if(tag.map.jmpApi && tag.map.jmpApi.gJMP){
+				gJMP = tag.map.jmpApi.gJMP;
+				window.clearInterval(timer);
+			}
+		},1);
+        tag.mConfigs = tag.map.jmpPropertiesConfigs;
+        var colorArr = [{r: 0, g: 255, b: 0, a: 1},1,{r: 0, g: 0, b: 255, a: 1}, 1];
+        // 底层无法获取该属性，暂时存储绘制的军标的属性，用于点击时回填，nodeId为key
+        var changeColor = {}//判断是否采用渐变色
+        var changeColor1 = {}
+        var changeColor2 = {}
+        var changeColorDir = {}
+        var dirColor = {r: 255, g: 0, b: 0, a: 1};
+        tag.changeColor1 = changeColor1
+        tag.changeColor2 = changeColor2
+        tag.changeColorDir = changeColorDir
+
+
+        tag.currentNode = null;//正在编辑的军标
+
+
+        //军标属性
+        tag.jbatts = {
+            type:0,
+            geoData:[[0,0]],
+        };
+
+        tag.customEdits = []; //自定义属性编辑
+
+
+        tag.defaultJbjbatts = _.cloneDeep(tag.jbatts);
+
+        tag.onValChange = function (target,val) {
+            if( !tag.currentNode ) {
+                return;
+            }
+            var node = tag.currentNode;
+            var nodeId = node.getID();
+            var nodeDrawAttr = tag.map.gJMP.getNodeDrawAttrib(node);
+            if(target.opts.ref == "inwardText"){
+                var attrib = tag.map.gJMP.getNodeDrawAttrib(tag.map.gJMP.LastNode);
+                if(attrib.GetInlineTextNum() > 0)
+                {
+                    var box = document.getElementById('neilianwenben');
+                    box.style.display = '';
+                    stringBuf= GBK.New(val);
+                    attrib.SetInlineText(0,stringBuf.ptr);
+                    stringBuf.free();
+					var tempSym = tag.map.getSymbolByUid(tag.map.gJMP.LastNode.getID());
+                    node.customAttrs.inward = val;
+					tempSym.inward = val;
+                }
+                return;
+            }
+            var ref = target.opts.ref;
+            if(ref === 'color'){
+                dirColor = val;
+            }
+            if( ref === 'outLineWidth') {
+                nodeDrawAttr.SetOutLineWidth(val);
+                return;
+            }
+            if( ref === 'outLineColor') {
+                nodeDrawAttr.SetOutLineColor(val);
+                return;
+            }
+            if( ref === 'changeColorDir') {
+                val = Number(val) < 0 ? 0 : Number(val) > 360 ? 360 : Number(val);
+                if( typeof val !== 'number' || isNaN(val)) {
+                    tag.refs.changeColorDir.setContent();
+                    changeColorDir[nodeId] = null;
+                    return;
+                }
+                tag.refs.changeColorDir.setContent(val, true);
+                changeColorDir[nodeId] = val;
+            }
+            var attrs = {
+                [ref]:val
+            };
+
+            if(ref === 'fillColor'){
+                attrs.fillColorAlpha = val.a;
+            }
+            tag.setSymbolAttrs(attrs)
+            //发布jb属性修改时间，用于在线协同标绘功能
+            if(target.opts.ref == "width" || target.opts.ref == "height"){
+                let size = tag.map.getSymbolByUid(node.getID()).getSize();
+                if(target.opts.ref == "width"){
+                    size[0] = val;
+                }else{
+                    size[1] = val;
+                }
+                let changeP = [{type:"size",val:size}];
+                CgsSubPub.publish(CgsEvent.eSymbolValChange,[changeP,node.getName()]);
+            }else{
+                let changeP = [{type:target.opts.ref,val:val}];
+                CgsSubPub.publish(CgsEvent.eSymbolValChange,[changeP,node.getName()]);
+            }
+        };
+
+        tag.colorChange = function () {
+
+                var attrs = {
+                    "color":dirColor
+                };
+            tag.setSymbolAttrs(attrs)
+        };
+        tag.onColorChange = function (target,val) {
+
+             if( !tag.currentNode ) {
+                return;
+            }
+            var node = tag.currentNode;
+            var nodeId = node.getID();
+            var contentColor = {
+                // 三维RGB  二维BGR
+                a:val.a,
+                b:val.b,
+                g:val.g,
+                r:val.r
+            }
+            var ref = target.opts.ref;
+            if(tag.map.is3d()) {
+                contentColor = {
+                    a:val.a,
+                    b:val.r,
+                    g:val.g,
+                    r:val.b
+                }
+                var temp = val.b;
+                val.b = val.r;
+                val.r = temp;
+            }
+            if(ref === 'changeColor1'){
+                colorArr[0] = val;
+                changeColor1[nodeId] = contentColor;
+
+            }else if(ref === 'changeColor2'){
+                colorArr[2] = val;
+                changeColor2[nodeId] = contentColor;
+            }
+            tag.onValChange(target,colorArr);
+        };
+
+        tag.onSelectValChange = function (e) {
+            if(!tag.currentNode){
+                return 0;
+            }
+            var node = tag.currentNode;
+            var nodeDrawAttr = tag.map.gJMP.getNodeDrawAttrib(node);
+            var nodeId = node.getID();
+
+            var ref = e.target;
+            var refName = $$(ref).attr('ref');
+            var dtype = $$(ref).attr('dtype');
+            var val = $$(ref).val();
+
+            if(!refName){
+                refName = $$(ref).attr('aref');
+                val = $$(ref).attr('val');
+            }
+            if(dtype === 'number'){
+                val = Number(val);
+            }
+            else if(dtype === 'check') {
+                val = ref.checked;
+            }
+            else if(dtype === 'color'){
+                var c = tag.refs.color.cIns; //临时用
+                var old= c.spectrum("get");
+                c.spectrum("set",val);
+                val = c.spectrum("get").toRgb();
+                c.spectrum("set",old); //还回去
+            }
+
+            if(refName === 'size'){
+                var w = node.defaultAttrs.width*val;
+                var h = node.defaultAttrs.height*val;
+                tag.refs.width.setContent(w);
+                tag.refs.height.setContent(h);
+                tag.setSymbolAttrs({
+                    width:w,
+                    height:h,
+                })
+            }
+            else if( refName === 'changeColor' ){
+                changeColor[nodeId] = ref.checked;
+                tag.setSymbolAttrs(refName,val);
+            }
+            else if( refName === 'lineType'){
+                nodeDrawAttr.SetLineType(val)
+            } else if(refName === 'foilLine'){
+                nodeDrawAttr.SetFoilLine(val)
+            } else {
+                if (refName.indexOf('geoPosLat') >= 0) {
+                    val = val < -90 ? -90 : val > 90 ? 90 : val;
+                } else if (refName.indexOf('geoPosLon') >= 0) {
+                    val = val < -180 ? -180 : val > 180 ? 180 : val;
+                }
+                tag.setSymbolAttrs(refName,val)
+                //发布jb属性修改时间，用于在线协同标绘功能
+                 if(refName.indexOf("geoPos")!=-1){
+                    let position = tag.map.getSymbolByUid(tag.map.gJMP.LastNode.getID()).getPosition();
+                     let changeP = [{type:"position",val:position}]
+                    CgsSubPub.publish(CgsEvent.eSymbolValChange,[changeP,node.getName()]);
+                 }else{
+                    let changeP = [{type:refName,val:val}]
+                    CgsSubPub.publish(CgsEvent.eSymbolValChange,[changeP,node.getName()]);
+                }
+            }
+        };
+
+
+        tag.setSymbolAttrs = function (attr,val) {
+            if(!tag.currentNode){
+                return 0;
+            }
+            var attrs = {};
+            if(typeof attr ==='object'){
+                attrs = attr;
+            }
+            else {
+                attrs[attr] = val;
+            }
+            tag.map.jmpApi.setNodeAttrs(tag.currentNode,attrs);
+        };
+
+
+
+        tag.onGeoInput =_.debounce(function (e) {
+            tag.onSelectValChange(e);
+        }, 500);
+
+        //确定完成某一项的编辑时会出现
+        tag.onInputsDone = function(e){
+            console.log('onInputsDone,不该出现',e)
+        };
+
+
+        tag.updateSizeAndGeo = function(node){
+            var refs = tag.refs;
+            if(node){
+                tag.currentNode = node;
+                var attrs = tag.map.jmpApi.getNodeAttrs(tag.currentNode,{
+                    width:0,
+                    height:0,
+                    geoData:[],
+                });
+                tag.jbatts.geoData = attrs.geoData;
+                try {
+                    tag.update();//更新渲染一次;
+                }catch (err){
+
+                }
+                if(tag.jbatts.type === 0){
+                    refs.width.value = attrs.width;
+                    refs.height.value = attrs.height;
+                }
+                for (var i = 0; i <attrs.geoData.length ; i++) {
+                    var geo = attrs.geoData[i];
+                    refs['geoPosLon_'+i].value = geo[0];
+                    refs['geoPosLat_'+i].value = geo[1];
+                }
+            }
+        };
+        tag.updateAttributes = function(node){
+            var refs = tag.refs;
+            var map = tag.map;
+            if(node){
+                tag.currentNode = node;
+                var nodeId = node.getID();
+                var attrs = tag.map.jmpApi.getNodeAttrs(tag.currentNode);
+                var nodeDrawAttrib = tag.map.gJMP.getNodeDrawAttrib(tag.currentNode);
+
+                //attrs.foilLine = nodeDrawAttrib.GetFoilLine() ? true : false;
+                //attrs.outLineWidth = nodeDrawAttrib.GetOutLineWidth();
+                //attrs.lineType = nodeDrawAttrib.GetLineType();
+
+                tag.jbatts = attrs;
+
+                try {
+                    tag.update(); //更新渲染一次
+                }catch (err){
+//                    console.log(err);
+                }
+                refs.color.setColor(attrs.color.c16);
+
+                if(attrs.type === 0){
+                    refs.width.setContent(attrs.width,true);
+                    refs.height.setContent(attrs.height,true);
+                    refs.mirror.value = attrs.mirror;
+                }
+
+                //军标文件导入时军标面板处理
+                let symbol_0 = map.allSymbols[0];
+                let gjmp = map.gJMP;
+                let fadeMode = gjmp.GetIsFade(node);//判断导入军标文件是否采用渐变色
+                changeColor[nodeId] = (fadeMode === 1 ? true : false);
+
+                if(fadeMode){
+                    //将文件导入的军标渐变色信息置于changecolor1&2中
+                    if(!changeColor1.hasOwnProperty(nodeId) && symbol_0 != undefined) {//表示为军标文件导入的军标对象
+                        let fadeColor1 = symbol_0._jmpColorToRGBA(gjmp.GetFadeColor1(node),gjmp.GetFadeTran1(node));
+                        changeColor1[nodeId] = fadeColor1;
+                    }
+                    if(!changeColor2.hasOwnProperty(nodeId) && symbol_0 != undefined) {
+                        let fadeColor2 = symbol_0._jmpColorToRGBA(gjmp.GetFadeColor2(node),gjmp.GetFadeTran2(node));
+                        changeColor2[nodeId] = fadeColor2;
+                    }
+                }
+
+                //填充色不勾选=>渐变色必不勾选
+                if(!attrs.fill){
+                    changeColor[nodeId] = false;
+                }
+
+                refs.fill.checked = attrs.fill;
+                attrs.fillColor &&　refs.fillColor.setColor(attrs.fillColor.c16);
+                if(refs.changeColor && changeColor[nodeId] != undefined) {
+                    refs.changeColor.checked = changeColor[nodeId];
+                }
+
+                refs.changeColor1 && changeColor1[nodeId] && refs.changeColor1.setColor(changeColor1[nodeId])
+                refs.changeColor2 && changeColor2[nodeId] && refs.changeColor2.setColor(changeColor2[nodeId])
+                refs.changeColorDir && refs.changeColorDir.setContent(changeColorDir[nodeId])
+
+                for (var i = 0; i <attrs.geoData.length ; i++) {
+                    var geo = attrs.geoData[i];
+                    refs['geoPosLon_'+i].value = geo[0];
+                    refs['geoPosLat_'+i].value = geo[1];
+                }
+
+                //注记属性
+                var attrib = tag.map.gJMP.getNodeDrawAttrib(tag.map.gJMP.LastNode);
+				var box = document.getElementById('neilianwenben');
+                if(box) {
+                    attrib.GetInlineTextNum() > 0 ? box.style.display = '' : box.style.display = 'none';
+                    attrib.GetInlineTextNum() > 0 ? box.nextElementSibling.style.display = '' : box.nextElementSibling.style.display = 'none';
+                }
+				//因为军标接口暂时获取不到内联文本，这里在军标对象中获取，后续希望改回来
+				if(tag.map.gJMP.LastNode && tag.map.getSymbolByUid(tag.map.gJMP.LastNode.getID())){
+					refs.inwardText.setContent(tag.map.getSymbolByUid(tag.map.gJMP.LastNode.getID()).inward,true);
+                    refs.inwardVisibility.checked = true;
+				}else{
+					refs.inwardText.setContent(null,true);
+                    refs.inwardVisibility.checked = false;
+				}
+                refs.annoText.setContent(attrs.annoText,true);
+                refs.annoVisibility.checked = attrs.annoVisibility;
+                refs.annoTextColor.setColor(attrs.annoTextColor.c16);
+                refs.annoTextSize.setContent(attrs.annoTextSize,true);
+                refs.annoLineColor.setColor(attrs.annoLineColor.c16);
+                refs.annotLineVisibility.checked = attrs.annotLineVisibility;
+
+                //refs.foilLine.checked = attrs.foilLine;
+                //refs.lineType.value = attrs.lineType;
+                //attrs.outLineColor && refs.outLineColor.setColor(attrs.outLineColor.c16);
+                //refs.outLineWidth.setContent(attrs.outLineWidth, true);
+
+                //自定义属性
+                _.each(tag.customEdits,function (item) {
+                    refs[item.key].setContent(node.customAttrs[item.key],true);
+                });
+            }
+            else if(tag.currentNode) {
+                tag.currentNode = null;
+                tag.jbatts = tag.defaultJbjbatts;
+                try {
+                    tag.update();// 更新渲染一次
+                }catch (err){
+//                    console.log(err);
+                }
+                refs.color.setColor('white');
+                refs.width.setContent();
+                refs.height.setContent();
+                refs.mirror.value = '0';
+                refs.fill.checked = false;
+
+                //refs.foilLine.checked = false;
+               // refs.lineType.value = '0';
+                //refs.outLineColor.setColor('white');
+                refs.fillColor.setColor('white');
+                //refs.outLineWidth.setContent();
+
+                //注记属性
+                refs.annoText.setContent();
+                refs.annoVisibility.checked = false;
+                refs.inwardVisibility.checked = false;
+                refs.annoTextSize.setContent();
+                refs.inwardText.setContent();
+                tag.refs.annoTextColor.setColor('white');
+                tag.refs.annoLineColor.setColor('white');
+                refs.annotLineVisibility.checked = false;
+                //自定义属性
+                _.each(tag.customEdits,function (item) {
+                    refs[item.key].setContent();
+                });
+            }
+        };
+
+        tag.on('mount', function() {
+            //实现折叠效果
+            var pRoot = $$(tag.refs.content).find('.splitRoot').eq(0);
+            var items = pRoot.find('.splitItem');
+            items.each(function (i,item) {
+                var val = $$(item);
+                var btn = val.find('.splitBtn').eq(0);
+                btn.addClass('active');
+
+                var content = val.find('.splitContent').eq(0);
+                btn.click(function () {
+                    if(btn.hasClass('active')){
+                        btn.removeClass('active');
+                        content.css('display','none');
+                    }
+                    else {
+                        btn.addClass('active');
+                        content.css('display','block');
+                    }
+                });
+            });
+            //实现折叠效果 end
+        });
+
+        tag.addCustomEdit = function (optsions) {
+            var opts = _.merge({
+                label:'属性名',
+                desc:'鼠标悬停时的详细描述',
+                errorTitle:'出错时的title',
+                key:'zdyshuxkey',
+                type:'text', //暂不可选,可选范围 ，text , check, list ，range
+                 validator:null,//验证器函数
+            },optsions);
+            tag.customEdits.push(opts);
+        };
+
+        tag.onCustomEditValChanged = function (target,val) {
+            if(tag.currentNode){
+                var key = target.opts.dref;
+                tag.map.jmpApi.setCustomAttribute(tag.currentNode,key,val);
+            }
+        };
+    </script>
+</jbproperty>

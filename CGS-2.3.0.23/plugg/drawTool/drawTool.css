@@ -1,0 +1,544 @@
+.CgsDrawTool_body
+{
+	position: absolute;
+	width: 390px;
+	height: 125px;
+	background-image:url('./image/background.png');
+    background-size: 100% 100%;
+}
+.CgsDrawTool_body_inside
+{
+	width: 312px;
+    height: 195px;
+	border:1px solid #2F4058;
+	background-color: #09111dcc;
+	left: 3px;
+    top: 3px;
+}
+.CgsDrawTool_topbox
+{
+	width: 100%;
+	height: 68px;
+}
+.CgsDrawTool_bottombox
+{
+	width: 100%;
+	height: 40%;
+	color: white;
+}
+.CgsDrawTool_topbox_outImg{
+	width: 28px;
+    height: 28px;
+    border: 1px solid rgba(53,172,238,1);
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 34px;
+    background-image: url(./image/1-normal.png);
+    background-size: 100% 100%;
+}
+.CgsDrawTool_topbox_outImg:hover{
+	background-image:url('./image/2-hover.png');
+}
+.CgsDrawTool_topbox_outImg:active{
+	background-image:url('./image/3-onclick.png');
+}
+.CgsDrawTool_topbox_pointButton
+{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-left: 1px;
+    margin-top: 1px;
+    font-size: 12px;
+    background-image: url(./image/point.png);
+    cursor: pointer;
+}
+.CgsDrawTool_topbox_textButtonBox{
+	width: 36px;
+    height: 32px;
+    float: left;
+    margin-left: 16px;
+    margin-top: 14px;
+    border-left: 1px solid #405397;
+}
+.CgsDrawTool_topbox_outTextImg{
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(53,172,238,1);
+    float: left;
+    margin-left: 15px;
+    margin-top: 1px;
+    color: white;
+    font-size: 12px;
+	text-align:center;
+	line-height: 34px;
+    background-image: url(./image/1-normal.png);
+    background-size: 100% 100%;
+}
+.CgsDrawTool_topbox_outTextImg:hover{
+	background-image:url('./image/2-hover.png');
+}
+.CgsDrawTool_topbox_outTextImg:active{
+	background-image:url('./image/3-onclick.png');
+}
+
+.CgsDrawTool_topbox_textButton
+{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-left: 1px;
+    margin-top: 1px;
+    font-size: 12px;
+	background-image:url('./image/text.png');
+	cursor: pointer;
+}
+.CgsDrawTool_topbox_outLineImg{
+	width: 28px;
+	height: 28px;
+	border:1px solid rgba(53,172,238,1);
+	float: left;
+	margin-left:35px;
+	margin-top: 15px;
+	color: white;
+	font-size: 12px;
+	text-align:center;
+	line-height: 34px;
+    background-image: url(./image/1-normal.png);
+    background-size: 100% 100%;
+}
+.CgsDrawTool_topbox_outLineImg:hover{
+	background-image:url('./image/2-hover.png');
+}
+.CgsDrawTool_topbox_outLineImg:active{
+	background-image:url('./image/3-onclick.png');
+}
+.CgsDrawTool_topbox_lineButton
+{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-left: 1px;
+    margin-top: 1px;
+    font-size: 12px;
+	background-image:url('./image/line.png');
+	cursor: pointer;
+}
+.CgsDrawTool_topbox_mianButton
+{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-left: 1px;
+    margin-top: 1px;
+    font-size: 12px;
+	background-image:url('./image/mian.png');
+	cursor: pointer;
+}
+.CgsDrawTool_topbox_rectButton
+{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-left: 1px;
+    margin-top: 1px;
+    font-size: 12px;
+	background-image:url('./image/rect.png');
+	cursor: pointer;
+}
+.CgsDrawTool_topbox_circleButton
+{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-left: 1px;
+    margin-top: 1px;
+    font-size: 12px;
+	background-image:url('./image/circle.png');
+	cursor: pointer;
+}
+.CgsDrawTool_topbox_pointLabelbutton
+{
+    width: 31px;
+    height: 16px;
+    float: left;
+    margin-left: 15px;
+    margin-top: -7px;
+	color: white;
+	font-size: 12px;
+	text-align:center;
+	line-height: 34px;
+}
+.CgsDrawTool_topbox_labelBox{
+	float: left;
+	width: 100%;
+	height: 25px;
+}
+.CgsDrawTool_topbox_labelbutton
+{
+    width: 31px;
+    height: 16px;
+    float: left;
+    margin-left: 34px;
+    margin-top: -7px;
+	color: white;
+	font-size: 12px;
+	text-align:center;
+	line-height: 34px;
+}
+.CgsDrawTool_topbox_textLabelbutton
+{
+    width: 31px;
+    height: 16px;
+    float: left;
+    margin-left: 31px;
+    margin-top: -7px;
+	color: white;
+	font-size: 12px;
+	text-align:center;
+	line-height: 34px;
+}
+.CgsDrawTool_topbox_buttonLine{
+    width: 291px;
+    float: left;
+    border-bottom: 1px solid #2f4058;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+.CgsDrawTool_bottombox_handleHead{
+    width: 63px;
+    height: 22px;
+    float: left;
+    margin-top: 16px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 13px;
+    background-size: 100% 100%;
+    color: white;
+    line-height: 21px;
+	background-image:url('./image/drawnormal.png');
+	cursor: default;
+}
+.CgsDrawTool_bottombox div:hover{ 
+	background-image:url('./image/drawhover.png');
+}
+.CgsDrawTool_bottombox div:active{ 
+	background-image:url('./image/drawonclick.png');
+}
+.CgsDrawTool_bottombox_handle{
+    width: 63px;
+    height: 22px;
+    float: left;
+    margin-top: 16px;
+    margin-left: 13px;
+    text-align: center;
+    font-size: 13px;
+    background-size: 100% 100%;
+    color: white;
+    line-height: 21px;
+	background-image:url('./image/drawnormal.png');
+	cursor: pointer;
+}
+.CgsDrawTool_bottombox_handle_selected{
+    width: 63px;
+    height: 22px;
+    float: left;
+    margin-top: 16px;
+    margin-left: 13px;
+    text-align: center;
+    font-size: 13px;
+    background-size: 100% 100%;
+    color: #aac3e0;
+    line-height: 21px;
+	background-image:url('./image/drawhover.png');
+	cursor: pointer;
+}
+.CgsDrawTool_infoBox{
+	width: 219px;
+	height: 252px;
+	background-color:rgba(13,25,42,0.7);
+	background-clip:padding-box;
+	border-style:solid;
+	border-color:#6a859c;
+	border-width:1px;
+	top:100px;
+	left:100px;
+	z-index:500;
+}
+.CgsDrawTool_infoBox_top{
+	width: 213px;
+	height: 27px;	
+	background-image: -moz-linear-gradient( -90deg, rgba(95,111,131,0.54902) 0%, rgba(43,56,68,0) 100%);
+    background-image: -webkit-linear-gradient( -90deg, rgba(95,111,131,0.54902) 0%, rgba(43,56,68,0) 100%);
+    background-image: -ms-linear-gradient( -90deg, rgba(95,111,131,0.54902) 0%, rgba(43,56,68,0) 100%);
+	margin-left:2px;
+	margin-right:2px;
+	margin-top:2px;
+	border-style:solid;
+	border-width:1px;
+	border-color:rgba(105,122,141,0.9);
+	vertical-align:middle;
+	position:relative;
+	border-bottom-width:0px;
+}
+.CgsDrawTool_infoBox_top_title{
+    margin-left: 9px;
+    width: 174px;
+    height: 27px;
+    float: left;
+    font-family: '微软雅黑';
+    font-size: 14px;
+    text-align: left;
+    color: white;
+    line-height: 23px;
+}
+.CgsDrawTool_infoBox_top_close{
+	width: 11px;
+	height: 11px;
+	float: left;
+	margin-left: 14px;
+	margin-top: 4px;
+	background-image: url('../../plugg/toponymyPlugg/image/delinput.png');
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.CgsDrawTool_infoBox_body{
+	width: 213px;
+	height: 220px;
+	height:-moz-calc(100% - 39px);
+	height:-webkit-calc(100% - 39px);
+	height:calc(100% - 39px);
+	border-style:solid;
+	border-width:1px;
+	border-color:#6a859c;
+	margin-left:2px;
+	margin-right:2px;
+	position:relative;
+}
+.CgsDrawTool_infoBox_center{
+	width: 172px;
+    margin-top: -1px;
+    height: 65px;
+}
+.CgsDrawTool_infoBox_botton{
+	width: 172px;
+	height: 102px;
+}
+.CgsDrawTool_infoBox_center_title{
+	font-family: '微软雅黑';
+    font-size: 12px;
+    text-align: left;
+    margin-left: 17px;
+    margin-top: 10px;
+    color: #bdbaf9;
+}
+.CgsDrawTool_infoBox_center_title_textarea{
+	font-family: '微软雅黑';
+    font-size: 12px;
+    text-align: left;
+    margin-left: 17px;
+    margin-top: 10px;
+    color: #bdbaf9;
+}
+.CgsDrawTool_infoBox_center_input{
+	height: 20px;
+    width: 176px;
+    margin-top: 10px;
+    margin-left: 17px;
+    background-color: #1a2842;
+    border: 1px solid #6a859c;
+    color: #d1c6ea;
+}
+.CgsDrawTool_infoBox_botton_textarea{
+	height: 60px;
+    width: 171px;
+    margin-top: 5px;
+    margin-left: 18px;
+    background-color: #1a2842;
+    border: 1px solid #6a859c;
+    color: #d1c6ea;
+}
+.CgsDrawTool_infoBox_fundus_save{
+	float: left;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    margin-left: 150px;
+    background-color: #1e3142;
+	background-image: url('./image/save.png');
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.CgsDrawTool_infoBox_fundus_clear{
+	float: left;
+    width: 18px;
+    height: 18px;
+    margin-top: 0px;
+    margin-left: 12px;
+    background-image: url('./image/delete.png');
+	moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.CgsDeawTool_Name
+{
+	position:absolute;
+	width:350px;
+	height:350px;
+	background-color:rgba(13,25,42,0.7);
+	background-clip:padding-box;
+	border-style:solid;
+	border-color:#6a859c;
+	border-width:1px;
+	top:100px;
+	left:100px;
+	z-index:500;
+}
+.CgsDrawByMouseEdit_infoBox{
+    width: 219px;
+	height: 100%;
+	background-color:rgba(13,25,42,0.7);
+	background-clip:padding-box;
+	border-style:solid;
+	border-color:#6a859c;
+	border-width:1px;
+	top:100px;
+	left:100px;
+	z-index:500;
+}
+
+.CgsDrawByMouseEdit_infoBox_top{
+	width: 213px;
+	height: 27px;	
+	background-image: -moz-linear-gradient( -90deg, rgba(95,111,131,0.54902) 0%, rgba(43,56,68,0) 100%);
+    background-image: -webkit-linear-gradient( -90deg, rgba(95,111,131,0.54902) 0%, rgba(43,56,68,0) 100%);
+    background-image: -ms-linear-gradient( -90deg, rgba(95,111,131,0.54902) 0%, rgba(43,56,68,0) 100%);
+	margin-left:2px;
+	margin-right:2px;
+	margin-top:2px;
+	border-style:solid;
+	border-width:1px;
+	border-color:rgba(105,122,141,0.9);
+	vertical-align:middle;
+	position:relative;
+	border-bottom-width:0px;
+}
+.CgsDrawByMouseEdit_infoBox_top_title{
+    margin-left: 9px;
+    width: 174px;
+    height: 27px;
+    float: left;
+    font-family: '微软雅黑';
+    font-size: 14px;
+    text-align: left;
+    color: white;
+    line-height: 23px;
+}
+.CgsDrawByMouseEdit_infoBox_top_close{
+	width: 11px;
+	height: 11px;
+	float: left;
+	margin-left: 14px;
+	margin-top: 4px;
+	background-image: url('../../plugg/toponymyPlugg/image/delinput.png');
+	-moz-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+.CgsDrawByMouseEdit_infoBox_body{
+	width: 213px;
+	height: 220px;
+	height:-moz-calc(100% - 39px);
+	height:-webkit-calc(100% - 39px);
+	height:calc(100% - 39px);
+	border-style:solid;
+	border-width:1px;
+	border-color:#6a859c;
+	margin-left:2px;
+    margin-right:2px;
+    margin-bottom: 4px;
+	position:relative;
+}
+
+.CgsDrawByMouseEdit_infoBox_cell{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    /* .sp-dd{
+        display: none;
+    }
+    .sp-replacer sp-light{
+        border-radius: 0px;
+        border: 1px solid #1a3f8c;
+        background: rgba(18, 28, 49, 0.6);
+    } */
+}
+.CgsDrawByMouseEdit_infoBox_cell_title{
+    width: 40%;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    
+}
+#CgsDrawByMouseEdit_infoBox_delete{
+    width: 75px;
+    height: 25px;
+    background-color: #a22133;
+    margin: 0px auto;
+    color: antiquewhite;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#CgsDrawByMouseEdit_infoBox_delete:hover{
+    background-color: #b36872;
+}
+#CgsDrawByMouseEdit_infoBox_delete:active{
+    opacity: 0.8;
+}
+
+#CgsDrawByMouseEdit_infoBox_confirm{
+    width: 75px;
+    height: 25px;
+    background-color: #378231;
+    margin: 0px auto;
+    color: antiquewhite;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#CgsDrawByMouseEdit_infoBox_confirm:hover{
+    background-color: #3fab56;
+}
+#CgsDrawByMouseEdit_infoBox_confirm:active{
+    opacity: 0.8;
+}
+
+.CgsDrawByMouseEdit_infoBox_cell_input{
+    width: 114px;
+    padding: 0px;
+    height: 23px;
+    margin-top: 4px;
+    border-radius: 0px;
+    border: 1px solid #1a3f8c;
+    background: rgba(18, 28, 49, 0.6);
+    color: white;
+    .sp-dd{
+        display: none;
+    }
+}
+
+.CgsDrawByMouseEdit_infoBox_cell_select{
+    width: 114px;
+    padding: 0px;
+    height: 23px;
+    margin-top: 4px;
+    border-radius: 0px;
+    border: 1px solid #1a3f8c;
+    background: rgba(18, 28, 49, 0.6);
+    color: white;
+}

@@ -1,0 +1,151 @@
+<!-- 位置 -->
+<jbgeometryAttribute>
+  <div ref="content" class="CgsTool__content toolPanel">
+    <div class="symbolEdit">
+      <div class="splitRoot">
+        <div class="splitItem">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>坐标</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <virtual each={geo,index in jbatts.geoData }>
+                <div class="tr">
+                  <div class="td" style="width: 85px;">经度:{index}&nbsp;&nbsp;&nbsp;</div>
+                  <div class="td"><input ref={'geoPosLon_'+index} type="number" oninput={onPosInput} dtype="number"
+                      class="full" /></div>
+                </div>
+
+                <div class="tr">
+                  <div class="td">纬度:{index}</div>
+                  <div class="td"><input ref={'geoPosLat_'+index} type="number" oninput={onPosInput} dtype="number"
+                      class="full" /></div>
+                </div>
+              </virtual>
+            </div>
+          </div>
+        </div>
+        <!-- 暂时取消比例值属性展示 -->
+        <!-- <virtual if={jbatts.scale.length>0}>
+                    <div class="splitItem">
+                        <div class="splitBtn no-user-select">
+                            <div class="mark"></div>
+                            <span>比例</span>
+                        </div>
+                        <div class="splitContent">
+                            <div class="divTable">
+                                <virtual each={sca,index in jbatts.scale }>
+                                    <div class="tr">
+                                        <div class="td" style="width: 85px;">比例值:{index}&nbsp;&nbsp;&nbsp;</div>
+                                        <div class="td"><input ref={'scale_'+index} type="number" oninput={onPosInput}
+                                                dtype="number" class="full" /></div>
+                                    </div>
+                                </virtual>
+                            </div>
+                        </div>
+                    </div>
+                </virtual> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    let tag = this
+    let map = this.opts.map
+
+    //军标绘制属性
+    tag.jbatts = {
+      geoData: [
+        [0, 0]
+      ],
+      scale: []
+    };
+    tag.updateAttributes = node => {
+      let refs = tag.refs;
+      if (node) {
+        let attrs = map.jmpApi.getNodeAttrs(node);
+        tag.jbatts.geoData = attrs.geoData;
+        tag.jbatts.scale = attrs.scale;
+        try {
+          tag.update(); //更新渲染一次;
+        } catch (err) {}
+        for (let i = 0; i < attrs.geoData.length; i++) {
+          let geo = attrs.geoData[i];
+          refs['geoPosLon_' + i].value = geo[0];
+          refs['geoPosLat_' + i].value = geo[1];
+        }
+        for (let i = 0; i < attrs.scale.length; i++) {
+          if (refs['scale_' + i]) {
+            refs['scale_' + i].value = attrs.scale[i];
+          }
+        }
+      } else {
+        tag.jbatts = {
+          geoData: [
+            [0, 0]
+          ],
+          scale: []
+        };
+        try {
+          tag.update(); //更新渲染一次;
+        } catch (err) {}
+      }
+    };
+    tag.onPosInput = _.debounce(e => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      let ref = e.target;
+      let refName = $$(ref).attr('ref');
+      let val = Number($$(ref).val());
+
+      let attrs = {};
+      attrs[refName] = val;
+
+      map.jmpApi.setNodeAttrs(node, attrs);
+
+      let change = []
+      if (refName.indexOf("geoPos") > -1) {
+        let position = map.getSymbolByUid(node.id).getPosition();
+        change = [{
+          type: "position",
+          val: position
+        }]
+      } else {
+        let scale = map.getSymbolByUid(node.id).getScale();
+        change = [{
+          type: "scale",
+          val: scale
+        }]
+      }
+      CgsSubPub.publish(CgsEvent.eSymbolValChange, [change, node.name]);
+    }, 500);
+
+    tag.updateGeoAndScale = node => {
+      let refs = tag.refs;
+      if (node) {
+        let attrs = map.jmpApi.getNodeAttrs(node, {
+          geoData: [],
+          scale: []
+        });
+        tag.jbatts.geoData = attrs.geoData;
+        try {
+          tag.update(); //更新渲染一次;
+        } catch (err) {}
+        for (let i = 0; i < attrs.geoData.length; i++) {
+          let geo = attrs.geoData[i];
+          refs['geoPosLon_' + i].value = geo[0];
+          refs['geoPosLat_' + i].value = geo[1];
+        }
+        for (let i = 0; i < attrs.scale.length; i++) {
+          if (refs['scale_' + i]) {
+            refs['scale_' + i].value = attrs.scale[i];
+          }
+        }
+      }
+    };
+  </script>
+</jbgeometryAttribute>

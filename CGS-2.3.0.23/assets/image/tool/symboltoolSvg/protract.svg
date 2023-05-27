@@ -1,0 +1,21 @@
+<svg id="组_39" data-name="组 39" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #adbfd1;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #afc1d3;
+        stroke-width: 1px;
+      }
+    </style>
+  </defs>
+  <path id="形状_787_拷贝" data-name="形状 787 拷贝" class="cls-1" d="M1723.03,210a0.58,0.58,0,0,0-.4.172l-0.93.928,2.2,2.2,0.93-.928a0.536,0.536,0,0,0,0-.774l-1.43-1.426A0.532,0.532,0,0,0,1723.03,210Zm-1.88,1.7-7.15,7.1V221h2.2l7.1-7.15Z" transform="translate(-1706.435 -204.281)"/>
+  <path id="形状_789_拷贝" data-name="形状 789 拷贝" class="cls-2" d="M1718,209a9.883,9.883,0,0,0-8,1c-2.36,1.5,2.5,2.6,3,3s0.13,4.346-1,4-2.43,3.991-2,4c0.67,0.013,2,0,2,0" transform="translate(-1706.435 -204.281)"/>
+</svg>

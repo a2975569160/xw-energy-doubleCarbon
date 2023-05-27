@@ -1,0 +1,406 @@
+<!-- 注记 -->
+<jbannotationAttribute>
+  <div ref="content" class="CgsTool__content toolPanel">
+    <div class="symbolEdit">
+      <div class="splitRoot">
+        <div class="splitItem">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>注记属性</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title">注记内容</div>
+                <div class="td" data-is="cgs_validator_input" ref="annoText" on_val_change={ onValChange } type="text">
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">注记可见</div>
+                <div class="td">
+                  <input ref="annoVisibility" name="seeing" id="seeing" onchange={onSelectValChange} type="checkbox"
+                    dtype="check" />
+                  <label for="seeing"></label>
+                </div>
+              </div>
+              <div class="tr onlyPointJbAttr">
+                <div class="td title">注记位置</div>
+                <div class="td">
+                  <select ref="annoPosition" onchange={onSelectValChange} dtype="number" class="full">
+                    <option value="0">默认位置</option>
+                    <option value="1">左下</option>
+                    <option value="2">右下</option>
+                    <option value="3">右上</option>
+                    <option value="4">左上</option>
+                    <option value="5">中下</option>
+                    <option value="6">中右</option>
+                    <option value="7">中上</option>
+                    <option value="8">中左</option>
+                  </select>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">对齐方式</div>
+                <div class="td">
+                  <select ref="annoAlign" onchange={onSelectValChange} dtype="number" class="full">
+                    <option value="0">自适应</option>
+                    <option value="2">左对齐</option>
+                    <option value="1">右对齐</option>
+                    <option value="3">居中</option>
+                  </select>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">显示背景</div>
+                <div class="td">
+                  <input ref="showBackground" name="backdrop" id="backdrop" onchange={onSelectValChange} type="checkbox"
+                    dtype="check" />
+                  <label for="backdrop"></label>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">背景颜色</div>
+                <div class="td">
+                  <colorpickerhideAlpha ref="backgroundColor" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpickerhideAlpha>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="splitItem">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>文本属性</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title">字体颜色</div>
+                <div class="td">
+                  <colorpickerhideAlpha ref="annoTextColor" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpickerhideAlpha>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">字体大小</div>
+                <div class="td" data-is="cgs_validator_input" ref="annoTextSize" on_val_change={ onValChange }
+                  type="number"></div>
+              </div>
+              <div class="tr">
+                <div class="td title">字体</div>
+                <div class="td">
+                  <select ref="annoFontName" onchange={ onSelectValChange } dtype="string" class="full">
+                    <option value="黑体">黑体</option>
+                    <option value="宋体">宋体</option>
+                    <option value="华文楷体">华文楷体</option>
+                    <option value="华文细黑">华文细黑</option>
+                    <option value="幼圆">幼圆</option>
+                  </select>
+                </div>
+
+              </div>
+              <div class="tr">
+                <div class="td title">字体加粗</div>
+                <div class="td">
+                  <input ref="annoBold" name="overstriking" id="overstriking" onchange={onSelectValChange}
+                    type="checkbox" dtype="check" />
+                  <label for="overstriking"></label>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">字体倾斜</div>
+                <div class="td">
+                  <input ref="annoItalic" name="incline" id="incline" onchange={onSelectValChange} type="checkbox"
+                    dtype="check" />
+                  <label for="incline"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="splitItem">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>位置属性</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr onlyPointJbAttr">
+                <div class="td title">屏幕偏移X</div>
+                <div class="td" data-is="cgs_validator_input" ref="annoOffsetScreenPosX" on_val_change={ onValChange }
+                  type="number"></div>
+              </div>
+              <div class="tr onlyPointJbAttr">
+                <div class="td title">屏幕偏移Y</div>
+                <div class="td" data-is="cgs_validator_input" ref="annoOffsetScreenPosY" on_val_change={ onValChange }
+                  type="number"></div>
+              </div>
+              <div class="tr onlyLineAndPolyJbAttr">
+                <div class="td title">地理偏移X°</div>
+                <div class="td" data-is="cgs_validator_input" ref="annoOffsetGeomPosLon" on_val_change={ onValChange }
+                  type="number"></div>
+              </div>
+              <div class="tr onlyLineAndPolyJbAttr">
+                <div class="td title">地理偏移Y°</div>
+                <div class="td" data-is="cgs_validator_input" ref="annoOffsetGeomPosLat" on_val_change={ onValChange }
+                  type="number"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="splitItem">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>连接线属性</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title">连接线可见</div>
+                <div class="td">
+                  <input ref="annotLineVisibility" name="connectline" id="connectline" onchange={onSelectValChange}
+                    type="checkbox" dtype="check" />
+                  <label for="connectline"></label>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">连接线颜色</div>
+                <div class="td">
+                  <colorpickerhideAlpha ref="annoLineColor" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpickerhideAlpha>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let tag = this
+    let map = this.opts.map
+
+    tag.updateAttributes = node => {
+      let refs = tag.refs;
+      if (node) {
+        let attrs = map.jmpApi.getNodeAttrs(node);
+
+        // 点军标注记不具有地理偏移，线面军标注记不具有注记位置、屏幕偏移，不显示相关控件
+        if (attrs.type === 0) { // 点军标
+          showAttrEle('onlyPointJbAttr');
+          closeAttrEle('onlyLineAndPolyJbAttr');
+        } else { // 线面军标
+          showAttrEle('onlyLineAndPolyJbAttr');
+          closeAttrEle('onlyPointJbAttr');
+        }
+
+        function showAttrEle(className) {
+          let eleCollection = document.getElementsByClassName(className);
+          let j = eleCollection.length;
+          for (let i = 0; i < j; i++) {
+            eleCollection[i].style.display = ''
+          }
+        }
+
+        function closeAttrEle(className) {
+          let eleCollection = document.getElementsByClassName(className);
+          let j = eleCollection.length;
+          for (let i = 0; i < j; i++) {
+            eleCollection[i].style.display = 'none'
+          }
+        }
+
+        // 注记内容
+        refs.annoText.setContent(attrs.annoText, true);
+        // 注记是否可见
+        refs.annoVisibility.checked = attrs.annoVisibility;
+        // 注记位置
+        if (refs.annoPosition) {
+          refs.annoPosition.value = attrs.annoPosition
+        };
+        // 对齐方式
+        refs.annoAlign.value = attrs.annoAlign;
+        // 显示背景
+        refs.showBackground.checked = attrs.showBackground;
+        // 背景颜色
+        refs.backgroundColor.setColor(attrs.backgroundColor.c16);
+        // 注记字体颜色
+        refs.annoTextColor.setColor(attrs.annoTextColor.c16);
+        // 注记字体大小
+        refs.annoTextSize.setContent(attrs.annoTextSize, true);
+        // 字体
+        //   refs.annoFontName.setContent(attrs.annoFontName, true);
+        // 字体加粗
+        refs.annoBold.checked = attrs.annoBold;
+        // 字体倾斜
+        refs.annoItalic.checked = attrs.annoItalic;
+        // 屏幕偏移X
+        refs.annoOffsetScreenPosX.setContent(attrs.annoOffsetScreenPosX, true);
+        // 屏幕偏移Y
+        refs.annoOffsetScreenPosY.setContent(attrs.annoOffsetScreenPosY, true);
+        // 地理偏移X
+        refs.annoOffsetGeomPosLon.setContent(attrs.annoOffsetGeomPosLon, true);
+        // 地理偏移Y
+        refs.annoOffsetGeomPosLat.setContent(attrs.annoOffsetGeomPosLat, true);
+        // 牵引线是否显示
+        refs.annotLineVisibility.checked = attrs.annotLineVisibility;
+        // 牵引线颜色
+        refs.annoLineColor.setColor(attrs.annoLineColor.c16);
+      } else {
+        refs.annoText.setContent();
+        // 注记是否可见
+        refs.annoVisibility.checked = false;
+        // 注记位置
+        if (refs.annoPosition) {
+          refs.annoPosition.value = 0
+        };
+        // 对齐方式
+        refs.annoAlign.value = 0;
+        // 显示背景
+        refs.showBackground.checked = false;
+        // 背景颜色
+        refs.backgroundColor.setColor('white');
+        // 注记字体颜色
+        refs.annoTextColor.setColor('white');
+        // 注记字体大小
+        refs.annoTextSize.setContent();
+        // 字体
+        //   refs.annoFontName.setContent();
+        // 字体加粗
+        refs.annoBold.checked = false;
+        // 字体倾斜
+        refs.annoItalic.checked = false;
+        // 屏幕偏移X
+        refs.annoOffsetScreenPosX.setContent();
+        // 屏幕偏移Y
+        refs.annoOffsetScreenPosY.setContent();
+        // 地理偏移X
+        refs.annoOffsetGeomPosLon.setContent();
+        // 地理偏移Y
+        refs.annoOffsetGeomPosLat.setContent();
+        // 牵引线是否显示
+        refs.annotLineVisibility.checked = false;
+        // 牵引线颜色
+        refs.annoLineColor.setColor('white');
+      }
+    }
+
+    tag.onValChange = (target, val) => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      let ref = target.opts.ref;
+      let attrs = {
+        [ref]: val
+      };
+      tag.setSymbolAttrs(attrs);
+      if (target.opts.ref == "width" || target.opts.ref == "height") {
+        let size = map.getSymbolByUid(node.id).getSize();
+        if (target.opts.ref == "width") {
+          size[0] = val;
+        } else {
+          size[1] = val;
+        }
+        let changeP = [{
+          type: "size",
+          val: size
+        }];
+        CgsSubPub.publish(CgsEvent.eSymbolValChange, [changeP, node.name]);
+      } else {
+        let changeP = [{
+          type: target.opts.ref,
+          val: val
+        }];
+        CgsSubPub.publish(CgsEvent.eSymbolValChange, [changeP, node.name]);
+      }
+    }
+
+    tag.onSelectValChange = e => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      let ref = e.target;
+      let refName = $$(ref).attr('ref');
+      let dtype = $$(ref).attr('dtype');
+      let val = $$(ref).val();
+
+      if (dtype === 'number') {
+        val = Number(val);
+      } else if (dtype === 'check') {
+        val = ref.checked;
+      }
+      let attrs = {
+        [refName]: val
+      };
+      tag.setSymbolAttrs(attrs);
+      let changeP = [{
+        type: ref,
+        val: val
+      }];
+      CgsSubPub.publish(CgsEvent.eSymbolValChange, [changeP, node.name]);
+    }
+
+    tag.colorChange = e => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      let _color = e.currentTarget.__ref.getColor();
+      let refName = e.currentTarget.__ref.opts.ref;
+      let color = {}
+      color.r = _color._r;
+      color.g = _color._g;
+      color.b = _color._b;
+      color.a = _color._a;
+      let attrs = {
+        [refName]: color
+      };
+      tag.setSymbolAttrs(attrs);
+      let changeP = [{
+        type: refName,
+        val: color
+      }];
+      CgsSubPub.publish(CgsEvent.eSymbolValChange, [changeP, node.name]);
+    };
+
+    tag.setSymbolAttrs = attrs => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      map.jmpApi.setNodeAttrs(node, attrs);
+    }
+
+    tag.updateAnnoOffset = node => {
+      let refs = tag.refs;
+      if (node) {
+        let attrs = map.jmpApi.getNodeAttrs(node, {
+          annoOffsetScreenPosX: 0,
+          annoOffsetScreenPosY: 0,
+          annoOffsetGeomPosLon: 0,
+          annoOffsetGeomPosLat: 0
+        });
+        // 屏幕偏移X
+        refs.annoOffsetScreenPosX.setContent(attrs.annoOffsetScreenPosX, true);
+        // 屏幕偏移Y
+        refs.annoOffsetScreenPosY.setContent(attrs.annoOffsetScreenPosY, true);
+        // 地理偏移X
+        refs.annoOffsetGeomPosLon.setContent(attrs.annoOffsetGeomPosLon, true);
+        // 地理偏移Y
+        refs.annoOffsetGeomPosLat.setContent(attrs.annoOffsetGeomPosLat, true);
+      }
+    };
+  </script>
+</jbannotationAttribute>

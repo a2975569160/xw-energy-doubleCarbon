@@ -1,0 +1,1263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Satelite>
+<SateliteInfo>
+	<Item ID="573"/>
+	<Item NAME="00573"/>
+	<Item TLE="1 00573U 63013A   10108.32762351 -.00000008  00000-0  00000+0 0  1649 2 00573  42.7351  94.1969 4014140 163.5906 214.6776  6.39246879208783"/>
+	<Item INCLINATION="42.735100000000003"/>
+	<Item RAAN="94.196899999999999"/>
+	<Item ECCENTRICITY="0.401414000000000"/>
+	<Item PERIGEE="163.591000000000010"/>
+	<Item MEAN_ANOMALY="214.678000000000000"/>
+	<Item MEAN_MOTION="6.392470000000000"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="10808.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="82"/>
+	<Item NAME="00082"/>
+	<Item TLE="1 00082U 61004B   10108.43070536  .00000225  00000-0  22176-3 0  3454 2 00082  38.8529 257.9578 1172669 174.8259 186.5862 12.25236342352206"/>
+	<Item INCLINATION="38.852899999999998"/>
+	<Item RAAN="257.958000000000030"/>
+	<Item ECCENTRICITY="0.117267000000000"/>
+	<Item PERIGEE="174.825999999999990"/>
+	<Item MEAN_ANOMALY="186.586000000000010"/>
+	<Item MEAN_MOTION="12.252400000000000"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="2501.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="85"/>
+	<Item NAME="00085"/>
+	<Item TLE="1 00085U 61004C   10108.51055544  .00001288  00000-0  39426-3 0  3779 2 00085  38.7627 157.9168 0536024  97.7559 268.4347 13.84298916408510"/>
+	<Item INCLINATION="38.762700000000002"/>
+	<Item RAAN="157.917000000000000"/>
+	<Item ECCENTRICITY="0.053602400000000"/>
+	<Item PERIGEE="97.755899999999997"/>
+	<Item MEAN_ANOMALY="268.435000000000000"/>
+	<Item MEAN_MOTION="13.843000000000000"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="1341.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="107"/>
+	<Item NAME="00107"/>
+	<Item TLE="1 00107U 61013A   10108.15161158  .00000532  00000-0  54886-4 0  9936 2 00107  28.7871 155.7820 0584691 162.5213 199.6396 13.99705900442987"/>
+	<Item INCLINATION="28.787099999999999"/>
+	<Item RAAN="155.782000000000010"/>
+	<Item ECCENTRICITY="0.058469100000000"/>
+	<Item PERIGEE="162.520999999999990"/>
+	<Item MEAN_ANOMALY="199.639999999999990"/>
+	<Item MEAN_MOTION="13.997100000000000"/>
+	<Item Nation="4"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="1319.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="115"/>
+	<Item NAME="00115"/>
+	<Item TLE="1 00115U 60002D   10108.18387995 -.00000008  00000-0  28973-4 0  1641 2 00115  48.1675  55.3160 0039767 151.0705 209.2410 14.76859867662622"/>
+	<Item INCLINATION="48.167499999999997"/>
+	<Item RAAN="55.316000000000003"/>
+	<Item ECCENTRICITY="0.003976700000000"/>
+	<Item PERIGEE="151.071000000000000"/>
+	<Item MEAN_ANOMALY="209.241000000000010"/>
+	<Item MEAN_MOTION="14.768599999999999"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="667.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="116"/>
+	<Item NAME="00116"/>
+	<Item TLE="1 00116U 61015A   10108.13310898 -.00000015  00000-0  47664-4 0  9947 2 00116  66.8086 282.9506 0069632  90.8928 270.0130 13.91321868475650"/>
+	<Item INCLINATION="66.808599999999998"/>
+	<Item RAAN="282.951000000000020"/>
+	<Item ECCENTRICITY="0.006963200000000"/>
+	<Item PERIGEE="90.892799999999994"/>
+	<Item MEAN_ANOMALY="270.012999999999980"/>
+	<Item MEAN_MOTION="13.913200000000000"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="974.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="117"/>
+	<Item NAME="00117"/>
+	<Item TLE="1 00117U 61015B   10108.71595495 -.00000046  00000-0  24256-4 0  6123 2 00117  66.8132 348.3479 0071926 106.8156 254.0836 13.89564944474148"/>
+	<Item INCLINATION="66.813199999999995"/>
+	<Item RAAN="348.348000000000010"/>
+	<Item ECCENTRICITY="0.007192600000000"/>
+	<Item PERIGEE="106.816000000000000"/>
+	<Item MEAN_ANOMALY="254.084000000000000"/>
+	<Item MEAN_MOTION="13.895600000000000"/>
+	<Item Nation="7"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="982.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="118"/>
+	<Item NAME="00118"/>
+	<Item TLE="1 00118U 61015C   10108.91740093  .00000061  00000-0  90996-4 0  2072 2 00118  66.7664 358.3450 0077123 105.2952 255.6634 14.00827837489382"/>
+	<Item INCLINATION="66.766400000000004"/>
+	<Item RAAN="358.345000000000030"/>
+	<Item ECCENTRICITY="0.007712300000000"/>
+	<Item PERIGEE="105.295000000000000"/>
+	<Item MEAN_ANOMALY="255.663000000000010"/>
+	<Item MEAN_MOTION="14.008300000000000"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="946.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="119"/>
+	<Item NAME="00119"/>
+	<Item TLE="1 00119U 61015D   10109.23918830 -.00000037  00000-0  20254-4 0  6578 2 00119  66.7283 160.6933 0110327 202.1627 157.4679 14.20603407518827"/>
+	<Item INCLINATION="66.728300000000004"/>
+	<Item RAAN="160.693000000000010"/>
+	<Item ECCENTRICITY="0.011032700000000"/>
+	<Item PERIGEE="202.163000000000010"/>
+	<Item MEAN_ANOMALY="157.467999999999990"/>
+	<Item MEAN_MOTION="14.206000000000000"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="902.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="120"/>
+	<Item NAME="00120"/>
+	<Item TLE="1 00120U 61015E   10108.39686819  .00000201  00000-0  11888-3 0  2317 2 00120  66.7083 267.9924 0129187 291.2891  67.4495 14.21774170507601"/>
+	<Item INCLINATION="66.708299999999994"/>
+	<Item RAAN="267.992000000000020"/>
+	<Item ECCENTRICITY="0.012918700000000"/>
+	<Item PERIGEE="291.288999999999990"/>
+	<Item MEAN_ANOMALY="67.449500000000000"/>
+	<Item MEAN_MOTION="14.217700000000001"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="912.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="121"/>
+	<Item NAME="00121"/>
+	<Item TLE="1 00121U 61015F   10108.95359570  .00000007  00000-0  56919-4 0  5335 2 00121  66.7492 301.9381 0092770 169.3056 191.0044 13.99255802500222"/>
+	<Item INCLINATION="66.749200000000002"/>
+	<Item RAAN="301.937999999999990"/>
+	<Item ECCENTRICITY="0.009277000000000"/>
+	<Item PERIGEE="169.306000000000010"/>
+	<Item MEAN_ANOMALY="191.003999999999990"/>
+	<Item MEAN_MOTION="13.992599999999999"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="963.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="123"/>
+	<Item NAME="00123"/>
+	<Item TLE="1 00123U 61015H   10107.76129092  .00000037  00000-0  42201-4 0  4420 2 00123  66.6788 220.0553 0127715 254.8826 103.8117 14.34135227531770"/>
+	<Item INCLINATION="66.678799999999995"/>
+	<Item RAAN="220.055000000000010"/>
+	<Item ECCENTRICITY="0.012771500000000"/>
+	<Item PERIGEE="254.883000000000010"/>
+	<Item MEAN_ANOMALY="103.812000000000000"/>
+	<Item MEAN_MOTION="14.341400000000000"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="869.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="124"/>
+	<Item NAME="00124"/>
+	<Item TLE="1 00124U 61015J   10108.04283082  .00000145  00000-0  91456-4 0  8568 2 00124  66.5439 314.7582 0086152 254.7949 104.3629 14.27041282515045"/>
+	<Item INCLINATION="66.543899999999994"/>
+	<Item RAAN="314.757999999999980"/>
+	<Item ECCENTRICITY="0.008615200000000"/>
+	<Item PERIGEE="254.794999999999990"/>
+	<Item MEAN_ANOMALY="104.363000000000000"/>
+	<Item MEAN_MOTION="14.270400000000000"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="863.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="125"/>
+	<Item NAME="00125"/>
+	<Item TLE="1 00125U 61015K   10108.77676158 -.00000269  00000-0 -11804-3 0  5822 2 00125  66.8750 251.7316 0071133  52.9899 307.7673 14.03790841488239"/>
+	<Item INCLINATION="66.875000000000000"/>
+	<Item RAAN="251.732000000000000"/>
+	<Item ECCENTRICITY="0.007113300000000"/>
+	<Item PERIGEE="52.989899999999999"/>
+	<Item MEAN_ANOMALY="307.767000000000000"/>
+	<Item MEAN_MOTION="14.037900000000000"/>
+	<Item Nation="7"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="932.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="126"/>
+	<Item NAME="00126"/>
+	<Item TLE="1 00126U 61015L   10108.72629454  .00000314  00000-0  14577-3 0  8973 2 00126  66.7131 201.5876 0080110 267.3996  91.7930 14.31287314517361"/>
+	<Item INCLINATION="66.713099999999997"/>
+	<Item RAAN="201.587999999999990"/>
+	<Item ECCENTRICITY="0.008011000000000"/>
+	<Item PERIGEE="267.399999999999980"/>
+	<Item MEAN_ANOMALY="91.793000000000006"/>
+	<Item MEAN_MOTION="14.312900000000001"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="844.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="127"/>
+	<Item NAME="00127"/>
+	<Item TLE="1 00127U 61015M   10109.14995237  .00000357  00000-0  15543-3 0  8832 2 00127  66.8352  40.2445 0078861 189.0004 170.9662 14.33132839517789"/>
+	<Item INCLINATION="66.835200000000000"/>
+	<Item RAAN="40.244500000000002"/>
+	<Item ECCENTRICITY="0.007886100000000"/>
+	<Item PERIGEE="189.000000000000000"/>
+	<Item MEAN_ANOMALY="170.966000000000010"/>
+	<Item MEAN_MOTION="14.331300000000001"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="837.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="128"/>
+	<Item NAME="00128"/>
+	<Item TLE="1 00128U 61015N   10109.13805353 -.00000022  00000-0  37368-4 0  1564 2 00128  66.6794 159.4047 0089958  39.9036 320.8617 14.00518358488529"/>
+	<Item INCLINATION="66.679400000000001"/>
+	<Item RAAN="159.405000000000000"/>
+	<Item ECCENTRICITY="0.008995800000000"/>
+	<Item PERIGEE="39.903599999999997"/>
+	<Item MEAN_ANOMALY="320.862000000000020"/>
+	<Item MEAN_MOTION="14.005200000000000"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="957.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="130"/>
+	<Item NAME="00130"/>
+	<Item TLE="1 00130U 61015Q   10108.60521945 -.00000001  00000-0  52679-4 0  4247 2 00130  66.7712 114.3535 0079814 111.6907 249.2690 13.98117313486402"/>
+	<Item INCLINATION="66.771199999999993"/>
+	<Item RAAN="114.352999999999990"/>
+	<Item ECCENTRICITY="0.007981400000000"/>
+	<Item PERIGEE="111.691000000000000"/>
+	<Item MEAN_ANOMALY="249.269000000000010"/>
+	<Item MEAN_MOTION="13.981199999999999"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="958.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="131"/>
+	<Item NAME="00131"/>
+	<Item TLE="1 00131U 61015R   10108.85558259  .00000002  00000-0  53852-4 0  4720 2 00131  66.7332  34.3464 0087729 223.9412 135.4675 13.99802137477231"/>
+	<Item INCLINATION="66.733199999999997"/>
+	<Item RAAN="34.346400000000003"/>
+	<Item ECCENTRICITY="0.008772900000000"/>
+	<Item PERIGEE="223.941000000000000"/>
+	<Item MEAN_ANOMALY="135.467999999999990"/>
+	<Item MEAN_MOTION="13.997999999999999"/>
+	<Item Nation="4"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="958.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="132"/>
+	<Item NAME="00132"/>
+	<Item TLE="1 00132U 61015S   10107.69231721 -.00000028  00000-0  36926-4 0  4456 2 00132  66.6633 155.3501 0079984 215.2834 144.2958 13.93947697481037"/>
+	<Item INCLINATION="66.663300000000007"/>
+	<Item RAAN="155.349999999999990"/>
+	<Item ECCENTRICITY="0.007998400000000"/>
+	<Item PERIGEE="215.282999999999990"/>
+	<Item MEAN_ANOMALY="144.295999999999990"/>
+	<Item MEAN_MOTION="13.939500000000001"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="973.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="133"/>
+	<Item NAME="00133"/>
+	<Item TLE="1 00133U 61015T   10108.73860913  .00000295  00000-0  19113-3 0  3197 2 00133  67.1213 343.3108 0052385 154.1434 206.2282 14.14814305497021"/>
+	<Item INCLINATION="67.121300000000005"/>
+	<Item RAAN="343.310999999999980"/>
+	<Item ECCENTRICITY="0.005238500000000"/>
+	<Item PERIGEE="154.143000000000000"/>
+	<Item MEAN_ANOMALY="206.228000000000010"/>
+	<Item MEAN_MOTION="14.148099999999999"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="880.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="134"/>
+	<Item NAME="00134"/>
+	<Item TLE="1 00134U 61015U   10107.69328085 -.00000006  00000-0  50127-4 0  4734 2 00134  66.8815 160.3002 0077641 130.4601 230.3297 13.96067299481579"/>
+	<Item INCLINATION="66.881500000000003"/>
+	<Item RAAN="160.300000000000010"/>
+	<Item ECCENTRICITY="0.007764100000000"/>
+	<Item PERIGEE="130.460000000000010"/>
+	<Item MEAN_ANOMALY="230.330000000000010"/>
+	<Item MEAN_MOTION="13.960699999999999"/>
+	<Item Nation="7"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="963.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="136"/>
+	<Item NAME="00136"/>
+	<Item TLE="1 00136U 61015W   10107.64467657  .00000489  00000-0  22167-3 0  8178 2 00136  67.5293 164.5719 0064471 314.9598  44.6286 14.28380039511159"/>
+	<Item INCLINATION="67.529300000000006"/>
+	<Item RAAN="164.572000000000000"/>
+	<Item ECCENTRICITY="0.006447100000000"/>
+	<Item PERIGEE="314.959999999999980"/>
+	<Item MEAN_ANOMALY="44.628599999999999"/>
+	<Item MEAN_MOTION="14.283799999999999"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="843.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="138"/>
+	<Item NAME="00138"/>
+	<Item TLE="1 00138U 61015Y   10108.66322238 -.00000057  00000-0  12999-4 0  2874 2 00138  67.1545 161.4359 0028980  38.6062 321.7095 13.99270937476041"/>
+	<Item INCLINATION="67.154499999999999"/>
+	<Item RAAN="161.436000000000010"/>
+	<Item ECCENTRICITY="0.002898000000000"/>
+	<Item PERIGEE="38.606200000000001"/>
+	<Item MEAN_ANOMALY="321.709000000000000"/>
+	<Item MEAN_MOTION="13.992699999999999"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="917.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="141"/>
+	<Item NAME="00141"/>
+	<Item TLE="1 00141U 61015AB  10108.09771869  .00000092  00000-0  14711-3 0  3909 2 00141  66.5835  82.2077 0064229 292.6157  66.8133 13.85012038453596"/>
+	<Item INCLINATION="66.583500000000001"/>
+	<Item RAAN="82.207700000000003"/>
+	<Item ECCENTRICITY="0.006422900000000"/>
+	<Item PERIGEE="292.615999999999990"/>
+	<Item MEAN_ANOMALY="66.813299999999998"/>
+	<Item MEAN_MOTION="13.850099999999999"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="993.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="144"/>
+	<Item NAME="00144"/>
+	<Item TLE="1 00144U 61015AE  10108.36704020  .00000066  00000-0  11860-3 0  3911 2 00144  66.5049 196.8416 0042937 174.3732 185.7794 13.88721449464673"/>
+	<Item INCLINATION="66.504900000000006"/>
+	<Item RAAN="196.842000000000010"/>
+	<Item ECCENTRICITY="0.004293700000000"/>
+	<Item PERIGEE="174.372999999999990"/>
+	<Item MEAN_ANOMALY="185.779000000000000"/>
+	<Item MEAN_MOTION="13.887200000000000"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="964.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="145"/>
+	<Item NAME="00145"/>
+	<Item TLE="1 00145U 61015AF  10108.70858656 -.00000021  00000-0  37843-4 0  8530 2 00145  66.9272 213.4106 0069065 313.1244  46.4075 13.99799213490120"/>
+	<Item INCLINATION="66.927199999999999"/>
+	<Item RAAN="213.411000000000000"/>
+	<Item ECCENTRICITY="0.006906500000000"/>
+	<Item PERIGEE="313.124000000000020"/>
+	<Item MEAN_ANOMALY="46.407499999999999"/>
+	<Item MEAN_MOTION="13.997999999999999"/>
+	<Item Nation="4"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="944.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="147"/>
+	<Item NAME="00147"/>
+	<Item TLE="1 00147U 61015AH  10109.19878426  .00000330  00000-0  20745-3 0  7963 2 00147  66.6155  91.6548 0062004 221.0506 138.5909 14.15555060497528"/>
+	<Item INCLINATION="66.615499999999997"/>
+	<Item RAAN="91.654799999999994"/>
+	<Item ECCENTRICITY="0.006200400000000"/>
+	<Item PERIGEE="221.050999999999990"/>
+	<Item MEAN_ANOMALY="138.591000000000010"/>
+	<Item MEAN_MOTION="14.155600000000000"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="885.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="148"/>
+	<Item NAME="00148"/>
+	<Item TLE="1 00148U 61015AJ  10108.72625757  .00000507  00000-0  35478-3 0  2419 2 00148  65.7802  23.3896 0144607  70.1337 291.5288 14.02037957929886"/>
+	<Item INCLINATION="65.780199999999994"/>
+	<Item RAAN="23.389600000000002"/>
+	<Item ECCENTRICITY="0.014460700000000"/>
+	<Item PERIGEE="70.133700000000005"/>
+	<Item MEAN_ANOMALY="291.529000000000000"/>
+	<Item MEAN_MOTION="14.020400000000000"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="991.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="152"/>
+	<Item NAME="00152"/>
+	<Item TLE="1 00152U 61015AN  10108.70711948  .00000260  00000-0  17953-3 0  9589 2 00152  66.5892 189.6928 0163237 240.8206 117.6463 14.07528248494324"/>
+	<Item INCLINATION="66.589200000000005"/>
+	<Item RAAN="189.693000000000010"/>
+	<Item ECCENTRICITY="0.016323700000000"/>
+	<Item PERIGEE="240.821000000000000"/>
+	<Item MEAN_ANOMALY="117.646000000000000"/>
+	<Item MEAN_MOTION="14.075300000000000"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="985.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="154"/>
+	<Item NAME="00154"/>
+	<Item TLE="1 00154U 61015AQ  10108.34471139 -.00000108  00000-0 -17392-4 0  4627 2 00154  66.6590 223.1620 0078616 102.4527 258.5365 14.03008881488073"/>
+	<Item INCLINATION="66.659000000000006"/>
+	<Item RAAN="223.162000000000010"/>
+	<Item ECCENTRICITY="0.007861600000000"/>
+	<Item PERIGEE="102.453000000000000"/>
+	<Item MEAN_ANOMALY="258.536000000000000"/>
+	<Item MEAN_MOTION="14.030099999999999"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="940.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="155"/>
+	<Item NAME="00155"/>
+	<Item TLE="1 00155U 61015AR  10108.50827880  .00000381  00000-0  16969-3 0  8098 2 00155  66.8768 344.0857 0046434 142.3841 218.0527 14.32441860512139"/>
+	<Item INCLINATION="66.876800000000003"/>
+	<Item RAAN="344.086000000000010"/>
+	<Item ECCENTRICITY="0.004643400000000"/>
+	<Item PERIGEE="142.383999999999990"/>
+	<Item MEAN_ANOMALY="218.053000000000000"/>
+	<Item MEAN_MOTION="14.324400000000001"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="816.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="158"/>
+	<Item NAME="00158"/>
+	<Item TLE="1 00158U 61015AU  10108.25920654  .00000292  00000-0  89685-3 0  6832 2 00158  67.0747 205.8962 0616097 223.8387 131.2147 12.64233194258527"/>
+	<Item INCLINATION="67.074700000000007"/>
+	<Item RAAN="205.895999999999990"/>
+	<Item ECCENTRICITY="0.061609700000000"/>
+	<Item PERIGEE="223.839000000000000"/>
+	<Item MEAN_ANOMALY="131.215000000000000"/>
+	<Item MEAN_MOTION="12.642300000000001"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="1884.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="159"/>
+	<Item NAME="00159"/>
+	<Item TLE="1 00159U 61015AV  10107.56372209 -.00000016  00000-0  12196-3 0  8237 2 00159  65.5331 306.8643 0379729 246.6238 109.4425 13.01134189312662"/>
+	<Item INCLINATION="65.533100000000005"/>
+	<Item RAAN="306.863999999999980"/>
+	<Item ECCENTRICITY="0.037972900000000"/>
+	<Item PERIGEE="246.624000000000000"/>
+	<Item MEAN_ANOMALY="109.441999999999990"/>
+	<Item MEAN_MOTION="13.011300000000000"/>
+	<Item Nation="4"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="1547.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="162"/>
+	<Item NAME="00162"/>
+	<Item TLE="1 00162U 61017A   10108.62477636 -.00000081  00000-0  23647-4 0  5289 2 00162  47.9005 161.5590 0045795 281.6915  77.8840 14.43155673563877"/>
+	<Item INCLINATION="47.900500000000001"/>
+	<Item RAAN="161.559000000000000"/>
+	<Item ECCENTRICITY="0.004579500000000"/>
+	<Item PERIGEE="281.692000000000010"/>
+	<Item MEAN_ANOMALY="77.884000000000000"/>
+	<Item MEAN_MOTION="14.431600000000000"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="780.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="163"/>
+	<Item NAME="00163"/>
+	<Item TLE="1 00163U 61018A   10108.85947723  .00000002  00000-0  10000-3 0  2114 2 00163  91.1913 301.6760 0100569 152.6331 207.9888  8.91830006587974"/>
+	<Item INCLINATION="91.191299999999998"/>
+	<Item RAAN="301.675999999999990"/>
+	<Item ECCENTRICITY="0.010056900000000"/>
+	<Item PERIGEE="152.633000000000010"/>
+	<Item MEAN_ANOMALY="207.989000000000000"/>
+	<Item MEAN_MOTION="8.918300000000000"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="3542.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="165"/>
+	<Item NAME="00165"/>
+	<Item TLE="1 00165U 61017B   10108.72864709  .00001719  00000-0  11926-3 0   980 2 00165  47.8767 212.1615 0011084  56.1183 304.0756 15.10615118601808"/>
+	<Item INCLINATION="47.876700000000000"/>
+	<Item RAAN="212.161000000000000"/>
+	<Item ECCENTRICITY="0.001108400000000"/>
+	<Item PERIGEE="56.118299999999998"/>
+	<Item MEAN_ANOMALY="304.076000000000020"/>
+	<Item MEAN_MOTION="15.106199999999999"/>
+	<Item Nation="7"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="541.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="167"/>
+	<Item NAME="00167"/>
+	<Item TLE="1 00167U 61017D   10109.15897503  .00000125  00000-0  12058-3 0  7094 2 00167  47.8480  34.5447 0092913  97.0076 264.1264 14.21714739524709"/>
+	<Item INCLINATION="47.847999999999999"/>
+	<Item RAAN="34.544699999999999"/>
+	<Item ECCENTRICITY="0.009291300000000"/>
+	<Item PERIGEE="97.007599999999996"/>
+	<Item MEAN_ANOMALY="264.125999999999980"/>
+	<Item MEAN_MOTION="14.217100000000000"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="886.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="172"/>
+	<Item NAME="00172"/>
+	<Item TLE="1 00172U 61015AY  10107.96823411  .00000222  00000-0  38985-3 0  3554 2 00172  67.0686 320.6937 0142575 289.1761  69.3917 13.55800448404273"/>
+	<Item INCLINATION="67.068600000000004"/>
+	<Item RAAN="320.694000000000020"/>
+	<Item ECCENTRICITY="0.014257500000000"/>
+	<Item PERIGEE="289.175999999999990"/>
+	<Item MEAN_ANOMALY="69.391700000000000"/>
+	<Item MEAN_MOTION="13.558000000000000"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="1156.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="177"/>
+	<Item NAME="00177"/>
+	<Item TLE="1 00177U 61015BB  10108.53832506  .00000299  00000-0  19151-3 0  6335 2 00177  66.6587 135.9202 0126130 249.4216 109.3302 14.12413957507443"/>
+	<Item INCLINATION="66.658699999999996"/>
+	<Item RAAN="135.919999999999990"/>
+	<Item ECCENTRICITY="0.012613000000000"/>
+	<Item PERIGEE="249.422000000000000"/>
+	<Item MEAN_ANOMALY="109.330000000000000"/>
+	<Item MEAN_MOTION="14.124100000000000"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="942.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="178"/>
+	<Item NAME="00178"/>
+	<Item TLE="1 00178U 61015BC  10108.13898441 -.00000032  00000-0  34194-4 0  4184 2 00178  66.8637  14.2293 0086436 243.0187 116.2027 13.91793751475783"/>
+	<Item INCLINATION="66.863699999999994"/>
+	<Item RAAN="14.229300000000000"/>
+	<Item ECCENTRICITY="0.008643600000000"/>
+	<Item PERIGEE="243.019000000000010"/>
+	<Item MEAN_ANOMALY="116.203000000000000"/>
+	<Item MEAN_MOTION="13.917899999999999"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="985.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="188"/>
+	<Item NAME="00188"/>
+	<Item TLE="1 00188U 61018C   10108.61302731  .00000002  00000-0  10000-3 0  1871 2 00188  91.1845 303.8959 0108710  43.5876 317.3530  8.93773770591046"/>
+	<Item INCLINATION="91.184500000000000"/>
+	<Item RAAN="303.896000000000020"/>
+	<Item ECCENTRICITY="0.010871000000000"/>
+	<Item PERIGEE="43.587600000000002"/>
+	<Item MEAN_ANOMALY="317.353000000000010"/>
+	<Item MEAN_MOTION="8.937740000000000"/>
+	<Item Nation="4"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="3536.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="192"/>
+	<Item NAME="00192"/>
+	<Item TLE="1 00192U 61028A   10108.91299586 -.00000003  00000-0  10000-3 0  2146 2 00192  95.8652  61.7976 0142276 345.3668  14.3093  8.67766100536355"/>
+	<Item INCLINATION="95.865200000000002"/>
+	<Item RAAN="61.797600000000003"/>
+	<Item ECCENTRICITY="0.014227600000000"/>
+	<Item PERIGEE="345.367000000000020"/>
+	<Item MEAN_ANOMALY="14.309300000000000"/>
+	<Item MEAN_MOTION="8.677660000000000"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="3767.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="194"/>
+	<Item NAME="00194"/>
+	<Item TLE="1 00194U 61028C   10107.40886093 -.00000004  00000-0  10000-3 0  7816 2 00194  95.8531  78.0519 0324542 247.8775 108.7330  8.69984430539995"/>
+	<Item INCLINATION="95.853099999999998"/>
+	<Item RAAN="78.051900000000003"/>
+	<Item ECCENTRICITY="0.032454200000000"/>
+	<Item PERIGEE="247.877000000000010"/>
+	<Item MEAN_ANOMALY="108.733000000000000"/>
+	<Item MEAN_MOTION="8.699840000000000"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="3931.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="195"/>
+	<Item NAME="00195"/>
+	<Item TLE="1 00195U 61028D   10108.22715541 -.00000003  00000-0  10000-3 0  7568 2 00195  95.8773  47.7310 0194353  42.6692 318.9082  8.65621817532513"/>
+	<Item INCLINATION="95.877300000000005"/>
+	<Item RAAN="47.731000000000002"/>
+	<Item ECCENTRICITY="0.019435300000000"/>
+	<Item PERIGEE="42.669199999999996"/>
+	<Item MEAN_ANOMALY="318.908000000000020"/>
+	<Item MEAN_MOTION="8.656219999999999"/>
+	<Item Nation="7"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="3835.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="196"/>
+	<Item NAME="00196"/>
+	<Item TLE="1 00196U 61018D   10108.03351283  .00000001  00000-0  10000-3 0  9576 2 00196  91.1928 300.1652 0113265 270.1814  88.6096  8.89664270583975"/>
+	<Item INCLINATION="91.192800000000005"/>
+	<Item RAAN="300.165000000000020"/>
+	<Item ECCENTRICITY="0.011326500000000"/>
+	<Item PERIGEE="270.180999999999980"/>
+	<Item MEAN_ANOMALY="88.609600000000000"/>
+	<Item MEAN_MOTION="8.896640000000000"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="3571.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="202"/>
+	<Item NAME="00202"/>
+	<Item TLE="1 00202U 61031A   10109.14587189  .00000045  00000-0  30292-4 0  5129 2 00202  32.4388  35.8669 0101049  34.8367 325.8825 13.63303246414943"/>
+	<Item INCLINATION="32.438800000000001"/>
+	<Item RAAN="35.866900000000001"/>
+	<Item ECCENTRICITY="0.010104900000000"/>
+	<Item PERIGEE="34.836700000000000"/>
+	<Item MEAN_ANOMALY="325.882000000000010"/>
+	<Item MEAN_MOTION="13.632999999999999"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="1098.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="204"/>
+	<Item NAME="00204"/>
+	<Item TLE="1 00204U 61031C   10108.38537708  .00000042  00000-0  25124-4 0  9486 2 00204  32.4416 161.5299 0098826  29.2784 331.3332 13.64689643416409"/>
+	<Item INCLINATION="32.441600000000001"/>
+	<Item RAAN="161.530000000000000"/>
+	<Item ECCENTRICITY="0.009882600000000"/>
+	<Item PERIGEE="29.278400000000001"/>
+	<Item MEAN_ANOMALY="331.333000000000030"/>
+	<Item MEAN_MOTION="13.646900000000000"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="1091.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="205"/>
+	<Item NAME="00205"/>
+	<Item TLE="1 00205U 61031B   10108.46057619  .00000062  00000-0  47174-4 0  3748 2 00205  32.4398 138.0560 0102239 236.9462 122.1312 13.62269685414009"/>
+	<Item INCLINATION="32.439799999999998"/>
+	<Item RAAN="138.056000000000010"/>
+	<Item ECCENTRICITY="0.010223900000000"/>
+	<Item PERIGEE="236.946000000000000"/>
+	<Item MEAN_ANOMALY="122.131000000000000"/>
+	<Item MEAN_MOTION="13.622700000000000"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="1103.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="210"/>
+	<Item NAME="00210"/>
+	<Item TLE="1 00210U 61015BE  10109.14451664  .00000101  00000-0  16115-3 0  9470 2 00210  66.4576  95.3822 0042233  34.3981 325.9790 13.83512584447886"/>
+	<Item INCLINATION="66.457599999999999"/>
+	<Item RAAN="95.382199999999997"/>
+	<Item ECCENTRICITY="0.004223300000000"/>
+	<Item PERIGEE="34.398099999999999"/>
+	<Item MEAN_ANOMALY="325.978999999999980"/>
+	<Item MEAN_MOTION="13.835100000000001"/>
+	<Item Nation="4"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="982.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="223"/>
+	<Item NAME="00223"/>
+	<Item TLE="1 00223U 61015BK  10107.54379809 -.00000046  00000-0  24118-4 0    86 2 00223  66.8899 232.3768 0073646 217.6367 141.9537 13.88317651471481"/>
+	<Item INCLINATION="66.889899999999997"/>
+	<Item RAAN="232.377000000000010"/>
+	<Item ECCENTRICITY="0.007364600000000"/>
+	<Item PERIGEE="217.637000000000000"/>
+	<Item MEAN_ANOMALY="141.954000000000010"/>
+	<Item MEAN_MOTION="13.883200000000000"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="988.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="224"/>
+	<Item NAME="00224"/>
+	<Item TLE="1 00224U 61015BL  10109.13440066  .00000078  00000-0  96093-4 0  8834 2 00224  66.7409 257.1387 0074550 236.0127 123.3844 14.04951875482033"/>
+	<Item INCLINATION="66.740899999999996"/>
+	<Item RAAN="257.139000000000010"/>
+	<Item ECCENTRICITY="0.007455000000000"/>
+	<Item PERIGEE="236.013000000000010"/>
+	<Item MEAN_ANOMALY="123.384000000000000"/>
+	<Item MEAN_MOTION="14.049500000000000"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="930.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="225"/>
+	<Item NAME="00225"/>
+	<Item TLE="1 00225U 61015BM  10109.21971243  .00000207  00000-0  11045-3 0  8567 2 00225  66.7971 179.9524 0121900 302.1875  56.7460 14.27225972513416"/>
+	<Item INCLINATION="66.797100000000000"/>
+	<Item RAAN="179.952000000000000"/>
+	<Item ECCENTRICITY="0.012190000000000"/>
+	<Item PERIGEE="302.187999999999990"/>
+	<Item MEAN_ANOMALY="56.746000000000002"/>
+	<Item MEAN_MOTION="14.272300000000000"/>
+	<Item Nation="7"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="888.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="226"/>
+	<Item NAME="00226"/>
+	<Item TLE="1 00226U 62002A   10109.09236781 -.00000130  00000-0  11961-4 0  2391 2 00226  48.2970  26.2872 0079302 102.7821 258.1944 14.44672547535281"/>
+	<Item INCLINATION="48.296999999999997"/>
+	<Item RAAN="26.287199999999999"/>
+	<Item ECCENTRICITY="0.007930200000000"/>
+	<Item PERIGEE="102.782000000000000"/>
+	<Item MEAN_ANOMALY="258.194000000000020"/>
+	<Item MEAN_MOTION="14.446700000000000"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="799.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="227"/>
+	<Item NAME="00227"/>
+	<Item TLE="1 00227U 62002B   10108.18131551 -.00000061  00000-0  33400-4 0  9369 2 00227  48.1504 132.6146 0135077 296.7680  61.9450 14.36590260515315"/>
+	<Item INCLINATION="48.150399999999998"/>
+	<Item RAAN="132.615000000000010"/>
+	<Item ECCENTRICITY="0.013507700000000"/>
+	<Item PERIGEE="296.767999999999970"/>
+	<Item MEAN_ANOMALY="61.945000000000000"/>
+	<Item MEAN_MOTION="14.365900000000000"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="866.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="228"/>
+	<Item NAME="00228"/>
+	<Item TLE="1 00228U 62002C   10108.84576336  .00000255  00000-0  50413-4 0  5887 2 00228  48.4325 270.1861 0018588 106.4398 253.8566 14.89965812579230"/>
+	<Item INCLINATION="48.432499999999997"/>
+	<Item RAAN="270.185999999999980"/>
+	<Item ECCENTRICITY="0.001858800000000"/>
+	<Item PERIGEE="106.440000000000000"/>
+	<Item MEAN_ANOMALY="253.857000000000000"/>
+	<Item MEAN_MOTION="14.899699999999999"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="610.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="230"/>
+	<Item NAME="00230"/>
+	<Item TLE="1 00230U 61015BN  10108.34343289 -.00000016  00000-0  43588-4 0  1772 2 00230  66.8867 142.6335 0088813 108.6936 252.3808 13.95532350482179"/>
+	<Item INCLINATION="66.886700000000005"/>
+	<Item RAAN="142.633000000000010"/>
+	<Item ECCENTRICITY="0.008881300000000"/>
+	<Item PERIGEE="108.694000000000000"/>
+	<Item MEAN_ANOMALY="252.381000000000000"/>
+	<Item MEAN_MOTION="13.955299999999999"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="973.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="232"/>
+	<Item NAME="00232"/>
+	<Item TLE="1 00232U 61015BQ  10108.90486322 -.00000030  00000-0  33333-4 0  3250 2 00232  66.8170  56.8581 0061179 340.5443  19.3297 13.98046283481645"/>
+	<Item INCLINATION="66.816999999999993"/>
+	<Item RAAN="56.858100000000000"/>
+	<Item ECCENTRICITY="0.006117900000000"/>
+	<Item PERIGEE="340.543999999999980"/>
+	<Item MEAN_ANOMALY="19.329699999999999"/>
+	<Item MEAN_MOTION="13.980499999999999"/>
+	<Item Nation="4"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="944.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="233"/>
+	<Item NAME="00233"/>
+	<Item TLE="1 00233U 61015BR  10108.18414276  .00000618  00000-0  19510-3 0  1462 2 00233  66.8561 140.0099 0029299  92.0117 268.4323 14.46464930516423"/>
+	<Item INCLINATION="66.856099999999998"/>
+	<Item RAAN="140.009999999999990"/>
+	<Item ECCENTRICITY="0.002929900000000"/>
+	<Item PERIGEE="92.011700000000005"/>
+	<Item MEAN_ANOMALY="268.432000000000020"/>
+	<Item MEAN_MOTION="14.464600000000001"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="757.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="234"/>
+	<Item NAME="00234"/>
+	<Item TLE="1 00234U 61015BS  10107.90007619  .00000054  00000-0  86580-4 0  6653 2 00234  66.8767  45.7122 0064992  99.7894 261.0533 14.00746755484272"/>
+	<Item INCLINATION="66.876700000000000"/>
+	<Item RAAN="45.712200000000003"/>
+	<Item ECCENTRICITY="0.006499200000000"/>
+	<Item PERIGEE="99.789400000000001"/>
+	<Item MEAN_ANOMALY="261.053000000000000"/>
+	<Item MEAN_MOTION="14.007500000000000"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="938.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="235"/>
+	<Item NAME="00235"/>
+	<Item TLE="1 00235U 61015BT  10108.93188228  .00000017  00000-0  51083-4 0  3065 2 00235  66.9538 268.0346 0162842  83.8291 278.1340 14.06631403490479"/>
+	<Item INCLINATION="66.953800000000001"/>
+	<Item RAAN="268.035000000000030"/>
+	<Item ECCENTRICITY="0.016284200000000"/>
+	<Item PERIGEE="83.829099999999997"/>
+	<Item MEAN_ANOMALY="278.134000000000010"/>
+	<Item MEAN_MOTION="14.066300000000000"/>
+	<Item Nation="7"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="988.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="243"/>
+	<Item NAME="00243"/>
+	<Item TLE="1 00243U 61015BY  10109.11335290  .00000287  00000-0  27703-3 0  5868 2 00243  66.4715   2.8310 0037683 261.6692  98.0118 13.93641616459390"/>
+	<Item INCLINATION="66.471500000000006"/>
+	<Item RAAN="2.831000000000000"/>
+	<Item ECCENTRICITY="0.003768300000000"/>
+	<Item PERIGEE="261.668999999999980"/>
+	<Item MEAN_ANOMALY="98.011799999999994"/>
+	<Item MEAN_MOTION="13.936400000000001"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="943.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="244"/>
+	<Item NAME="00244"/>
+	<Item TLE="1 00244U 61015BZ  10108.95842069  .00000020  00000-0  72140-4 0  9378 2 00244  66.8407 309.2168 0075265 313.6897  45.7969 13.93726717476478"/>
+	<Item INCLINATION="66.840699999999998"/>
+	<Item RAAN="309.216999999999980"/>
+	<Item ECCENTRICITY="0.007526500000000"/>
+	<Item PERIGEE="313.690000000000000"/>
+	<Item MEAN_ANOMALY="45.796900000000001"/>
+	<Item MEAN_MOTION="13.937300000000000"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="970.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="245"/>
+	<Item NAME="00245"/>
+	<Item TLE="1 00245U 61015CA  10109.17676384 -.00000203  00000-0 -63753-4 0  9318 2 00245  66.0715  98.7367 0057731 357.8150   2.2647 14.10686997493952"/>
+	<Item INCLINATION="66.071500000000000"/>
+	<Item RAAN="98.736699999999999"/>
+	<Item ECCENTRICITY="0.005773100000000"/>
+	<Item PERIGEE="357.815000000000000"/>
+	<Item MEAN_ANOMALY="2.264700000000000"/>
+	<Item MEAN_MOTION="14.106900000000000"/>
+	<Item Nation="2"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="898.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="246"/>
+	<Item NAME="00246"/>
+	<Item TLE="1 00246U 61015CB  10107.90877276 -.00000044  00000-0  27362-4 0  1322 2 00246  66.8681  45.0922 0068076 331.9190  27.8215 13.85429823806301"/>
+	<Item INCLINATION="66.868099999999998"/>
+	<Item RAAN="45.092199999999998"/>
+	<Item ECCENTRICITY="0.006807600000000"/>
+	<Item PERIGEE="331.918999999999980"/>
+	<Item MEAN_ANOMALY="27.821500000000000"/>
+	<Item MEAN_MOTION="13.854300000000000"/>
+	<Item Nation="3"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="994.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="253"/>
+	<Item NAME="00253"/>
+	<Item TLE="1 00253U 61015CE  10108.88745788  .00000712  00000-0  22277-3 0  8811 2 00253  66.9319 271.8421 0037311 193.9232 166.0855 14.45968836516697"/>
+	<Item INCLINATION="66.931899999999999"/>
+	<Item RAAN="271.841999999999980"/>
+	<Item ECCENTRICITY="0.003731100000000"/>
+	<Item PERIGEE="193.923000000000000"/>
+	<Item MEAN_ANOMALY="166.085000000000010"/>
+	<Item MEAN_MOTION="14.459700000000000"/>
+	<Item Nation="5"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="765.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="254"/>
+	<Item NAME="00254"/>
+	<Item TLE="1 00254U 61015CF  10109.18271905  .00000393  00000-0  15781-3 0  8324 2 00254  66.7792 137.5355 0082495 216.4388 143.1071 14.36409155522968"/>
+	<Item INCLINATION="66.779200000000003"/>
+	<Item RAAN="137.536000000000000"/>
+	<Item ECCENTRICITY="0.008249500000000"/>
+	<Item PERIGEE="216.438999999999990"/>
+	<Item MEAN_ANOMALY="143.107000000000000"/>
+	<Item MEAN_MOTION="14.364100000000001"/>
+	<Item Nation="6"/>
+	<Item FlatType="2"/>
+	<Item Mission="2"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="829.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="260"/>
+	<Item NAME="00260"/>
+	<Item TLE="1 00260U 61015CG  10107.47742908  .00000369  00000-0  17671-3 0  9792 2 00260  66.7679 230.0593 0055802 197.9345 161.9786 14.28848816510027"/>
+	<Item INCLINATION="66.767899999999997"/>
+	<Item RAAN="230.059000000000000"/>
+	<Item ECCENTRICITY="0.005580200000000"/>
+	<Item PERIGEE="197.935000000000000"/>
+	<Item MEAN_ANOMALY="161.979000000000010"/>
+	<Item MEAN_MOTION="14.288500000000001"/>
+	<Item Nation="7"/>
+	<Item FlatType="1"/>
+	<Item Mission="3"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="835.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="261"/>
+	<Item NAME="00261"/>
+	<Item TLE="1 00261U 61015CH  10108.48850250  .00000165  00000-0  16394-3 0  4560 2 00261  66.6825 357.9609 0083657  55.4269 305.4689 13.99030999485771"/>
+	<Item INCLINATION="66.682500000000005"/>
+	<Item RAAN="357.961000000000010"/>
+	<Item ECCENTRICITY="0.008365700000000"/>
+	<Item PERIGEE="55.426900000000003"/>
+	<Item MEAN_ANOMALY="305.468999999999990"/>
+	<Item MEAN_MOTION="13.990300000000000"/>
+	<Item Nation="8"/>
+	<Item FlatType="2"/>
+	<Item Mission="4"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="957.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+<SateliteInfo>
+	<Item ID="579"/>
+	<Item NAME="00579"/>
+	<Item TLE="1 00579U 63014B   10108.62338073  .00094862  00000-0  11033-1 0  8411 2 00579  84.4027 345.6491 2219218 267.4766  67.2091 10.76644835499295"/>
+	<Item INCLINATION="84.402699999999996"/>
+	<Item RAAN="345.649000000000000"/>
+	<Item ECCENTRICITY="0.221922000000000"/>
+	<Item PERIGEE="267.476999999999980"/>
+	<Item MEAN_ANOMALY="67.209100000000007"/>
+	<Item MEAN_MOTION="10.766400000000001"/>
+	<Item Nation="1"/>
+	<Item FlatType="1"/>
+	<Item Mission="1"/>
+	<Item SecretRank="0"/>
+	<Item Apogee="4207.000000000000000"/>
+	<Item SatIconName="1.png#1.png"/>
+	<Item SatModelName="北斗导航试验卫星"/>
+</SateliteInfo>
+</Satelite>

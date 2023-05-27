@@ -1,0 +1,1323 @@
+@charset "utf-8";
+.cgstoolBarDiv{position:absolute;bottom:8px;left:0;height:48px;width:100%;text-align:center}
+.imagerySplit_sliderDiv{position:absolute;left:50%;height:100%;width:2px;top:0;background-color:rgba(255,255,255,1);z-index:0}
+.toolbar_itemImageDiv{position:absolute;width:46px;height:46px;background-image:url(image/kqz.png);background-repeat:no-repeat;background-size:100% 100%}
+.tool_hoverDiv{position:relative;display:inline-block;width:46px;height:46px;margin-top:3px;margin-left:3px;margin-right:3px;margin-bottom:3px;cursor:pointer;background-image:url(../assets/image/tool/toolbar/toolhover.png);background-repeat:no-repeat;background-size:100% 100%}
+.tool_normalDiv{position:relative;display:inline-block;width:46px;height:46px;margin-top:3px;margin-left:3px;margin-right:3px;margin-bottom:3px;cursor:pointer;background-image:url(../assets/image/tool/toolbar/toolnormal.png);background-repeat:no-repeat;background-size:100% 100%}
+.tool_pressDiv{position:relative;display:inline-block;width:46px;height:46px;margin-top:3px;margin-left:3px;margin-right:3px;margin-bottom:3px;cursor:pointer;background-image:url(../assets/image/tool/toolbar/toolselect.png);background-repeat:no-repeat;background-size:100% 100%}
+.tool_disableDiv{position:relative;display:inline-block;width:46px;height:46px;margin-top:3px;margin-left:3px;margin-right:3px;margin-bottom:3px;cursor:pointer;background-image:url(../assets/image/tool/toolbar/disable.png);background-repeat:no-repeat;background-size:100% 100%}
+.cgstoolBarDiv .tc{background-image:url(../assets/image/tool/toolbar/tc.png)}
+.cgstoolBarDiv .bh{background-image:url(../assets/image/tool/toolbar/bh.png)}
+.cgstoolBarDiv .mx{background-image:url(../assets/image/tool/toolbar/mx.png)}
+.cgstoolBarDiv .cl{background-image:url(../assets/image/tool/toolbar/cl.png)}
+.cgstoolBarDiv .qh{background-image:url(../assets/image/tool/toolbar/qh.png)}
+.cgstoolBarDiv .dw{background-image:url(../assets/image/tool/toolbar/dw.png)}
+.cgstoolBarDiv .fd{background-image:url(../assets/image/tool/toolbar/fd.png)}
+.cgstoolBarDiv .sx{background-image:url(../assets/image/tool/toolbar/sx.png)}
+.cgstoolBarDiv .gz{background-image:url(../assets/image/tool/toolbar/gz.png)}
+.cgstoolBarDiv .dqc{background-image:url(../assets/image/tool/toolbar/dqc.png)}
+.cgstoolBarDiv .wq{background-image:url(../assets/image/tool/toolbar/wq.png)}
+.cgstoolBarDiv .gx{background-image:url(../assets/image/tool/toolbar/gx.png)}
+.cgstoolBarDiv .jbfd{background-image:url(../assets/image/tool/toolbar/jbfd.png)}
+.cgstoolBarDiv .zx{background-image:url(../assets/image/tool/toolbar/zx.png)}
+.cgstoolBarDiv .yx{background-image:url(../assets/image/tool/toolbar/yx.png)}
+.cgstoolBarDiv .pdw{background-image:url(../assets/image/tool/toolbar/pdw.png)}
+.cgstoolBarDiv .dmss{background-image:url(../assets/image/tool/toolbar/dmss.png)}
+.cgstoolBarDiv .tyhz{background-image:url(../assets/image/tool/toolbar/tyhz.png)}
+.cgstoolBarDiv .jbjt{background-image:url(../assets/image/tool/toolbar/jbjt.png)}
+.cgstoolBarDiv .jtgj{background-image:url(../assets/image/tool/toolbar/jtgj.png)}
+.cgstoolBarDiv .yyt{background-image:url(../assets/image/tool/toolbar/yyt.png)}
+.cgstoolBarDiv .sdxx{background-image:url(../assets/image/tool/toolbar/sdxx.png)}
+.cgstoolBarDiv .sxk{background-image:url(../assets/image/tool/toolbar/sxk.png)}
+.cgstoolBarDiv .bc{background-image:url(../assets/image/tool/toolbar/bc.png)}
+.cgstoolBarDiv .dk{background-image:url(../assets/image/tool/toolbar/dk.png)}
+.cgstoolBarDiv .hzty{background-image:url(../assets/image/tool/toolbar/hzty.png)}
+.cgstoolBarDiv .tykz{background-image:url(../assets/image/tool/toolbar/hzty.png)}
+.layer_titleDiv{position:absolute;left:20px;top:60px;width:150px;height:24px;background-image:url(../assets/image/tooltitle.png);background-repeat:repeat-x;border-style:solid;border-image:url(../assets/image/title.png) 2 2 2 2 round}
+.layer_btsDiv{position:absolute;left:20px;top:90px;width:auto;height:auto;background-image:url(../assets/image/tree-bk.png);border-style:solid;border-image:url(../assets/image/tree-bg.png) 2 2 2 2 round}
+.layer_btsDiv_items{position:relative;width:150px;height:30px;margin-top:1px}
+.layer_btsDiv_items_pic{position:absolute;float:left;width:30px;height:30px;background-image:url(../assets/image/empty.png);background-repeat:no-repeat;background-position:center}
+.layer_btsDiv_items_text{position:absolute;float:left;width:auto;height:30px;margin-left:30px;line-height:30px;color:rgba(255,255,255,1);font-family:'微软雅黑'}
+.layer_btsDiv_items .full{background-image:url(../assets/image/full.png)}
+.CgsLayerTool{position:relative;z-index:555;width:100%;height:100%}
+.CgsLayerTool span{color:#fff;font-family:'微软雅黑';font-size:14px}
+.CgsLayerTool__title{height:33px;background-image:url(../assets/image/plugg/layerPlugg/box_title_background.png);background-repeat:no-repeat;background-color:rgba(6,16,45,.8);background-position-x:-40px}
+.CgsLayerTool_title_new{height:33px;vertical-align:middle;position:relative;background-image:none;background-color:rgba(57,83,109,.3)}
+.CgsLayerTool__title *{vertical-align:middle;font-family:'微软雅黑'}
+.CgsLayerTool__titleImg{margin-left:8px}
+.CgsLayerTool__titleText{margin-left:8px;line-height:33px;font-size:16px;color:#bdcff9}
+.CgsLayerTool__titleText_new{font-family:MicrosoftYaHei;font-size:14px;font-weight:400;font-stretch:normal;margin-left:8px;line-height:33px;letter-spacing:2px;color:#fff}
+.CgsLayerTool__container{overflow-y:auto;height:calc(100% - 30px)}
+.CgsLayerTool__line:nth-child(odd){background-color:rgba(52,75,103,.37)}
+.CgsLayerTool__line{height:30px;white-space:nowrap}
+.CgsLayerTool__line span{color:#afc1d3;font-size:14px}
+.CgsLayerTool__stateImg{margin-left:13px;margin-right:5px;width:30px;height:30px;background-position:center;background-repeat:no-repeat;background-image:url(../assets/image/tool/whiteFull.png);display:inline-block}
+.CgsLayerTool__line_disabled .CgsLayerTool__stateImg{background-image:url(../assets/image/tool/geryFull.png)}
+.CgsLayerTool__line_empty .CgsLayerTool__stateImg{background-image:url(../assets/image/tool/empty.png)}
+.CgsLayerTool__lineText{width:calc(100% - 50px);line-height:30px;vertical-align:top;position:relative;text-overflow:ellipsis;overflow:hidden;display:inline-block}
+.CgsLayerTool__bottom{height:30px;position:absolute;width:100%;bottom:0}
+.CgsLayerTool__line_disabled .CgsLayerTool__lineText{color:grey}
+.CgsLayerTool__line_selected .CgsLayerTool__lineText{color:#fff}
+.CgsLayerTool__line_selected{background-color:rgba(255,255,255,.1)!important}
+.CgsLayerTool__bottomTool{position:relative;float:right;width:26px;height:26px}
+.CgsLayerTool__bottomTool:hover{background-image:url(../assets/image/tool/bottomtool-hover.png)}
+.CgsLayerTool__bottomTool:active{background-image:url(../assets/image/tool/bottomtool-select.png)}
+.CgsBottomTool__pressed{background-image:url(../assets/image/tool/bottomtool-select.png)!important}
+.CgsLayerTool__addLayer{width:26px;height:26px;background-image:url(../assets/image/tool/add-normal.png);background-position:center}
+.CgsLayerTool__addLayer:hover{background-image:url(../assets/image/tool/add-hover.png)}
+.CgsLayerTool__addLayer:active{background-image:url(../assets/image/tool/add-select.png)}
+.CgsLayerTool__removeLayer{width:26px;height:26px;background-image:url(../assets/image/tool/remove-normal.png);background-position:center}
+.CgsLayerTool__removeLayer:hover{background-image:url(../assets/image/tool/remove-hover.png)}
+.CgsLayerTool__removeLayer:active{background-image:url(../assets/image/tool/remove-select.png)}
+.CgsLayerWindow{background-image:none;background-color:rgba(13,25,42,.7);border:1px solid #6a859c;width:299px;position:absolute;top:150px;left:600px}
+.CgsLayerWindow__title{width:100%;height:33px;vertical-align:middle;position:relative;background-image:none;background-color:rgba(57,83,109,.3)}
+.CgsLayerWindow__title span{display:inline-block;color:#fff;font-size:14px;font-family:"微软雅黑";line-height:32px;margin-left:10px}
+.CgsLayerWindow__body{background-image:none;margin-left:0;margin-top:8px}
+.CgsLayerWindow__body_bottom{width:100%;height:auto}
+.CgsLayerWindow__input{height:78px;width:335px;margin-left:4px;background:0 0;border-style:none;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;padding:2px}
+.CgsLayerWindow__name{height:30px;line-height:30px;width:100px;margin-left:10px;background:0 0;border-style:none;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;padding:2px}
+.CgsLayerWindow__name_file{height:30px;line-height:30px;width:121px;margin-left:10px;background:0 0;border-style:none;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;padding:2px;float:left}
+.CgsLayerWindow__save_box{height:autopx;width:195px;margin-left:82px;background:0 0;border:#6b7b8c;border-width:1px;border-style:solid;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;float:left;padding:2px;margin-top:-23px;display:block;overflow:hidden;white-space:nowrap}
+.filePosition{height:18px;width:167px;position:absolute;right:32px;bottom:43px;border:1px solid #3b4d61;background-color:rgba(36,51,66,1)}
+.filePosition:hover{border-color:#41abd3}
+.CgsLayerWindow__name_extraInput{height:18px;width:135px!important;margin-left:100px;background:0 0;border:transparent;border-width:1px;border-style:solid;resize:none;color:#fff;font-size:12px;word-break:normal;position:relative;float:left;margin-top:-28px;display:block;overflow:hidden;white-space:nowrap;padding-left:6px;left:-100px;top:28px}
+.CgsLayerWindow__name_input{height:18px;width:159px;margin-left:100px;resize:none;color:#fff;font-size:12px;word-break:normal;position:relative;float:left;margin-top:-28px;display:block;overflow:hidden;white-space:nowrap;padding-left:6px;border:1px solid #3b4d61;background-color:rgba(36,51,66,1)}
+.CgsLayerWindow__name_input:hover{border-color:#41abd3}
+.CgsLayerWindow__name_input::-webkit-input-placeholder{color:#afc1d3}
+.CgsLayerWindow__name_input::-moz-placeholder{color:#afc1d3}
+.CgsLayerWindow__name_input::-ms-input-placeholder{color:#afc1d3}
+.CgsLayerWindow__file_browser{height:20px;width:26px;float:left;margin-top:0;margin-left:141px;box-sizing:border-box;border-left:none;background-image:url(../assets/image/tool/datasource_browser2.png);background-repeat:no-repeat;background-size:100% 100%}
+.CgsLayerWindow__file_browser:hover{cursor:pointer}
+.CgsLayerWindow__file_name{height:20px;width:175px;margin-left:100px;background:0 0;border:#6b7b8c;border-width:1px;border-style:solid;border-right:none;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;float:left;padding:2px;margin-top:-30px;display:block;overflow:hidden;white-space:nowrap}
+.CgsLayerWindow__layerType_select{height:20px;width:167px;margin-left:100px;resize:none;color:#fff;font-size:12px;word-break:normal;position:relative;float:left;margin-top:-28px;display:block;overflow:hidden;white-space:nowrap;padding-left:2px;border:1px solid #3b4d61;background-color:rgba(36,51,66,1)}
+.CgsLayerWindow__layerType_select:hover{border-color:#41abd3}
+.CgsLayerWindow__layerType_select>option{background-color:rgba(13,25,42,.9)}
+.CgsLayerWindow__bottom{background-image:none;border-top:1px solid #6a859c;display:flex;justify-content:flex-start;height:28px;line-height:28px;text-align:center;margin-top:6px}
+.CgsLayerWindow__bottom *{line-height:22px;font-size:12px;font-family:"微软雅黑";color:#fff}
+.CgsLayerWindow__ok{position:absolute;right:20px;cursor:pointer}
+.CgsLayerWindow__cancel{position:absolute;left:20px;cursor:pointer}
+.CgsLayerWindow__ok_editLayer{position:static;width:50%;background-color:#243342;border-right:1px solid #6a859c;line-height:28px}
+.CgsLayerWindow__ok_editLayer:hover{color:#fff;border-color:#546a7f;background-color:#324559}
+.CgsLayerWindow__ok_editDT{position:absolute;right:20px;cursor:pointer}
+.CgsLayerWindow__ok_addDT{position:absolute;right:20px;cursor:pointer}
+.CgsLayerWindow__ok_addDTJS{position:absolute;right:20px;cursor:pointer}
+.CgsLayerWindow__ok_editDom{width:50%;background-color:#243342;line-height:28px}
+.CgsLayerWindow__ok_editDom:hover{cursor:pointer;color:#fff;border-color:#546a7f;background-color:#324559}
+.CgsLayerWindow__ok_newdom{position:absolute;right:20px;cursor:pointer}
+.CgsLayerWindow__ok_newdom_new{position:static;width:50%;background-color:#243342;line-height:28px}
+.CgsLayerWindow__ok_newdom_new:hover{color:#fff;border-color:#546a7f;background-color:#324559}
+.CgsLayerWindow__cancel_editLayer{position:static;width:50%;background-color:#243342;border-right:1px solid #6a859c;line-height:28px}
+.CgsLayerWindow__cancel_editLayer:hover{color:#fff;border-color:#546a7f;background-color:#324559}
+.CgsLayerWindow__cancel_editDT{position:absolute;left:20px;cursor:pointer}
+.CgsLayerWindow__cancel_editDom{width:50%;background-color:#243342;border-right:1px solid #6a859c;line-height:28px}
+.CgsLayerWindow__cancel_editDom:hover{cursor:pointer;color:#fff;border-color:#546a7f;background-color:#324559}
+.CgsLayerWindow__cancel_addDT{position:absolute;left:20px;cursor:pointer}
+.CgsLayerWindow__cancel_addDTJS{position:absolute;left:20px;cursor:pointer}
+.CgsLayerWindow__cancel_newdom{position:absolute;left:20px;cursor:pointer}
+.CgsLayerWindow__cancel_newdom_new{position:static;width:50%;background-color:#243342;border-right:1px solid #6a859c;line-height:28px}
+.CgsLayerWindow__cancel_newdom_new:hover{color:#fff;border-color:#546a7f;background-color:#324559}
+.CgsLayerWindow_ok_file{font-family:'微软雅黑';color:#fff;margin-left:203px;margin-top:-20px;height:20px;width:80px;text-align:center;line-height:20px;background-image:url(../assets/image/tool/saveviewbtBg.png);background-size:100% 100%;background-repeat:no-repeat;font-size:12px}
+.CgsLayerWindow_ok_file:hover{cursor:pointer}
+.CgsLayerWindow_cancel_file{font-family:'微软雅黑';color:#fff;margin-left:20px;height:20px;width:80px;text-align:center;line-height:20px;background-image:url(../assets/image/tool/saveviewbtBg.png);background-size:100% 100%;background-repeat:no-repeat;font-size:12px}
+.CgsLayerWindow_cancel_file:hover{cursor:pointer}
+.CgsLayerWindow__name_checkbox{-webkit-appearance:none;height:20px;width:20px;margin-left:100px;background:0 0;border:#6b7b8c;border-width:1px;border-style:solid;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;float:left;padding:2px;margin-top:-22px;display:block;overflow:hidden;white-space:nowrap;background-image:url(../assets/image/tool/check_box.png);background-repeat:no-repeat;background-size:100% 100%}
+.CgsLayerWindow__name_checkbox_file{-webkit-appearance:none;height:20px;width:20px;background:0 0;border:#6b7b8c;border-width:1px;border-style:solid;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;float:left;padding:2px;margin-top:7px;display:block;overflow:hidden;white-space:nowrap;background-image:url(../assets/image/tool/check_box.png);background-repeat:no-repeat;background-size:100% 100%;margin-left:15px}
+.CgsLayerWindow__name_checkbox:checked{background-image:url(../assets/image/tool/checked_box.png)}
+.CgsLayerWindow__name_checkbox_file:checked{background-image:url(../assets/image/tool/checked_box.png)}
+.navigation_group{position:absolute;right:50px;top:22px}
+.navigation_pie{position:absolute;background:url(../assets/image/scale/bg.png);width:70px;height:70px;top:1px}
+.navigation_home{position:relative;width:28px;height:29px;top:22px;left:21px}
+.navigation_up{position:relative;width:50px;height:25px;top:-25px;left:10px}
+.navigation_right{position:relative;width:25px;height:49px;top:-42px;left:43px}
+.navigation_left{position:relative;width:25px;height:49px;top:-117px;left:2px}
+.navigation_down{position:relative;width:49px;height:25px;top:-57px;left:10px}
+.navigation_panzoomBar{position:absolute;left:12px;top:12px}
+.navigation_zoomin{position:absolute;left:18px;top:63px;width:11px;height:17px;z-index:1;margin:0;padding:0}
+.navigation_zoominImage{position:relative;width:11px;height:17px;background:url(../assets/image/scale/range_up.png)}
+.navigation_zoomin_plus{position:relative;width:5px;height:5px;background:url(../assets/image/scale/plus_hover.png);left:3px;top:-12px}
+.navigation_zoomout{position:absolute;left:18px;top:220px;width:11px;height:17px;z-index:1;margin:0;padding:0}
+.navigation_zoomoutImage{position:relative;width:11px;height:17px;background:url(../assets/image/scale/range_down.png)}
+.navigation_zoomout_minus{position:relative;width:5px;height:5px;background:url(../assets/image/scale/minus_hover.png);left:3px;top:-12px}
+.navigation_input[type=range]{-webkit-appearance:none;-webkit-transform:rotate(90deg);transform:rotate(90deg) translate(0,-.5px);position:absolute;left:-35px;top:156px;width:140px;height:11px;margin:0;padding:0;background:url(../assets/image/scale/range.png);outline:0}
+.navigation_input[type=range]::-moz-range-thumb{height:14px;width:7px;background:url(../assets/image/scale/slider.png)}
+.navigation_input[type=range]::-moz-range-track{height:11px;background:url(../assets/image/scale/range.png)}
+.navigation_input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;height:14px;width:7px;margin-top:-2px;background:url(../assets/image/scale/slider.png)}
+.navigation_input[type=range]:focus{outline:0}
+.CgsToolBone{position:absolute;width:350px;height:350px;background-color:rgba(13,25,42,.7);background-clip:padding-box;border-style:solid;border-color:#6a859c;border-width:1px;top:100px;left:100px;z-index:500}
+.CgsToolBone:hover{z-index:600}
+.CgsToolBone__title{height:33px;vertical-align:middle;position:relative;background-color:rgba(57,83,109,.3)}
+.clean_symbols{color:#fff;width:200px;height:66px;left:23%;top:9.5%;font-family:MicrosoftYaHei;font-size:14px;font-weight:400;font-stretch:normal;position:absolute;background-color:rgba(13,25,42,.7);background-clip:padding-box;border-style:solid;border-color:#6a859c;border-width:1px;visibility:visible}
+.remove_symbols{height:33px;line-height:33px;text-align:center;vertical-align:middle;position:relative;background-color:rgba(57,83,109,.3)}
+.confirm{top:5px;left:20%;color:#fff;position:relative;background-color:rgba(57,83,109,.3)}
+.cancel{top:5px;left:40%;color:#fff;position:relative;background-color:rgba(57,83,109,.3)}
+.CgsToolBone__closeDiv{background-image:none;height:20px;width:20px;text-align:center;line-height:20px;right:2px;top:0;bottom:0;color:#91a2b3;font-size:25px;margin:auto;position:absolute;cursor:pointer}
+.CgsToolBone__closeDiv_Public{background-image:none;height:20px;width:20px;text-align:center;line-height:20px;right:2px;top:0;bottom:0;color:#91a2b3;font-size:25px;margin:auto;position:absolute;cursor:pointer}
+.CgsToolBone__closeDiv_groupName{background-image:none;height:20px;width:20px;text-align:center;line-height:20px;right:2px;top:0;bottom:0;color:#91a2b3;font-size:25px;margin:auto;position:absolute;cursor:pointer}
+.CgsToolBone_left .CgsToolBone__closeDiv{display:none}
+.CgsToolBone__closeDiv:hover{color:#48c5ff}
+.CgsToolBone__closeBtn{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__closeBtn_groupName{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__closeBtn_mask_WMTS{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__closeBtn_mask_WMS{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__closeBtn_mask_WFS{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__closeBtn_mask_Image{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__closeBtn_choseMsak{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__closeBtn_dataOri{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__closeBtn_addLayer{height:20px;width:20px;transform:rotate(45deg);transform-origin:50% 50%}
+.CgsToolBone__container{height:-moz-calc(100% - 33px);height:-webkit-calc(100% - 33px);height:calc(100% - 33px);position:relative}
+.CgsToolBone .ui-resizable-e{width:5px;height:100%;position:absolute;right:-1px;top:-1px;cursor:e-resize}
+.CgsToolBone .ui-resizable-s{height:5px;width:100%;position:absolute;left:-1px;bottom:-1px;cursor:s-resize}
+.CgsToolBone .ui-resizable-se{height:6px;width:5px;position:absolute;right:-1px;bottom:-1px;cursor:se-resize}
+.CgsToolBone__toolContainer{height:100%;overflow-y:auto;overflow-x:hidden}
+.CgsToolBone__bottom{background-image:-moz-linear-gradient(-90deg,rgba(95,111,131,.54902) 0,rgba(43,56,68,0) 100%);background-image:-webkit-linear-gradient(-90deg,rgba(95,111,131,.54902) 0,rgba(43,56,68,0) 100%);background-image:-ms-linear-gradient(-90deg,rgba(95,111,131,.54902) 0,rgba(43,56,68,0) 100%);margin-left:-1px;height:12px;width:100%;border-style:solid;border-width:1px;border-color:rgba(105,122,141,.9);vertical-align:middle;position:absolute;bottom:-1px}
+.CgsMeasureTool{background-color:rgba(13,25,42,.9);bottom:56px;position:absolute;border-color:#6a859c;border-style:solid;background-clip:padding-box;border-width:1px}
+.CgsMeasureTool__line{color:#afc1d3;font-size:14px;height:25px;font-family:"微软雅黑";cursor:pointer}
+.CgsMeasureTool__line:hover{background-color:rgba(52,75,103,.37)}
+.CgsMeasureTool__line:active{background-color:rgba(52,75,103,.5)}
+.CgsMeasureTool__line_select{background-color:rgba(52,75,103,.5)!important}
+.CgsMeasureTool__line span{margin-left:5px;margin-right:5px;line-height:25px}
+.CgsDrawFeatureByMouseTool{background-color:rgba(13,25,42,.9);bottom:56px;position:absolute;border-color:#6a859c;border-style:solid;background-clip:padding-box;border-width:1px}
+.CgsDrawFeatureByMouseTool__row{color:#afc1d3;font-size:14px;height:25px;font-family:"微软雅黑";margin-left:5px;margin-right:5px;line-height:25px;cursor:pointer}
+.CgsDrawFeatureByMouseTool__row:hover{background-color:rgba(52,75,103,.37)}
+.CgsDrawFeatureByMouseTool__row:active{background-color:rgba(52,75,103,.5)}
+.CgsDrawFeatureByMouseTool__row_select{background-color:rgba(52,75,103,.5)!important}
+.CgsGradientTool{position:relative;z-index:555;width:100%;height:100%}
+.CgsGradientTool span{color:#fff;font-family:'微软雅黑';font-size:14px}
+.CgsGradientTool__title{height:33px;width:120px}
+.CgsGradientTool__title:hover{background-image:url(../assets/image/tool/tabHover.png)}
+.CgsGradientTool__title:active{background-image:url(../assets/image/tool/tabSelect.png)}
+.CgsGradientTool__title *{vertical-align:middle;font-family:'微软雅黑'}
+.CgsGradientTool__titleImg{margin-left:8px;pointer-events:none}
+.CgsGradientTool__titleText{margin-left:8px;line-height:33px;font-size:16px;color:#fff;pointer-events:none}
+.CgsGradientTool__colText{line-height:29.6px;font-size:16px;color:#fff;pointer-events:none}
+.CgsFillDigTool__colText{line-height:29.6px;font-size:14px;color:#fff;pointer-events:none}
+.CgsGradientTool__container{overflow-y:auto;height:calc(100%)}
+.CgsProfileTool__container{overflow-y:auto;height:calc(100%)}
+.CgsFillDigTool__container{position:relative;width:100%;height:100%}
+.CgsFillDigTool__TextBox{position:relative;height:calc(100%)}
+.CgsFillDigTool__Text_Left{float:left}
+.CgsFillDigTool__Text_Right{float:right}
+.CgsFillDigTool__Text_Left25{float:left;width:25%}
+.CgsFillDigTool__Text_Left25{float:left;width:25%}
+.CgsFillDigTool__Text_Right20{float:right;height:100%;width:20%;position:relative}
+.CgsFillDigTool__ButtonAnalyze{outline:0;border-color:rgba(120,137,156,1);background-image:url(../assets/image/tool/tabSelect.png);width:100%;height:80%;margin-top:6%;font-family:"微软雅黑";font-size:14px;color:#fff}
+.CgsFillDigTool__InputDiv{width:40%;height:100%;float:left;margin-left:0;margin-right:0;position:relative;z-index:557}
+.CgsFillDigTool__SliderDiv{width:30%;height:100%;float:left;margin-left:0;margin-right:0;position:relative;z-index:557}
+.CgsFillDigTool__range{margin-top:5%;width:100%}
+.CgsFillDigTool__InputForm{width:40%;height:100%;float:left;margin-left:0;margin-right:0}
+.CgsFillDigTool__Input{border-style:solid;border-color:rgba(52,75,203,1);position:absolute;left:0;top:0;width:100%;height:80%;font-family:"微软雅黑";font-size:14px;color:#fff;background-color:rgba(52,75,103,.1)}
+.CgsFillDigTool__ButtonDiv{width:9%;height:100%;float:left;margin-left:1%;margin-right:0;position:relative}
+.CgsFillDigTool__ButtonUp{position:absolute;left:0;top:0;width:100%;height:50%}
+.CgsFillDigTool__ButtonDown{position:absolute;left:0;bottom:0;width:100%;height:50%}
+.CgsFillDigTool__Text{height:10%;font-family:"微软雅黑";margin-left:8px;margin-right:8px;font-size:12px;color:#fff}
+.CgsLayerTool__line:nth-child(odd){background-color:rgba(52,75,103,.37)}
+.CgsLayerTool__line{height:30px;white-space:nowrap}
+.CgsGradientWindow{position:absolute;background-image:url(../assets/image/window/body.png);background-repeat:no-repeat;background-size:100% 100%;width:347px;height:auto;top:calc(50% - 72px);left:calc(50% - 175px);z-index:600}
+.CgsGradientWindow__title{margin-top:2px;width:349px;height:32px;background-image:url(../assets/image/window/top.png);background-position:center}
+.CgsGradientWindow__title span{display:inline-block;color:#fff;font-size:14px;font-family:"微软雅黑";line-height:32px;margin-left:10px;pointer-events:none}
+.CgsGradientWindow__body{width:343px;height:auto;margin-left:3px;background-image:url(../assets/image/window/input.png);background-repeat:no-repeat;background-size:100% 100%}
+.CgsGradientWindow__input{height:105px;width:318px;margin-left:10px;background:0 0;border:#6b7b8c;border-width:1px;border-style:solid;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;padding:2px}
+.CgsGradientWindow__name{height:30px;line-height:30px;width:100px;margin-left:10px;background:0 0;border-style:none;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;padding:2px}
+.CgsGradientWindow__name_input{height:20px;width:200px;margin-left:80px;background:0 0;border:#6b7b8c;border-width:1px;border-style:solid;resize:none;color:#afc1d3;font-size:12px;word-break:normal;position:relative;float:left;padding:2px;margin-top:-30px;line-height:20px;display:block}
+.CgsGradientWindow__bottom{height:22px;position:relative;width:343px;background-image:url(../assets/image/window/bottom.png);top:-3px}
+.CgsGradientWindow__bottom *{line-height:22px;font-size:12px;font-family:"微软雅黑";color:#fff}
+.CgsGradientWindow__ok{position:absolute;right:20px;cursor:pointer}
+.CgsGradientWindow__cancel{position:absolute;left:20px;cursor:pointer}
+.CgsLocateTool{background-color:rgba(13,25,42,.9);bottom:56px;position:absolute;border-color:#6a859c;border-style:solid;background-clip:padding-box;border-width:1px}
+.CgsLocateTool__btn{color:#fff;font-size:14px;height:25px;font-family:"微软雅黑";background-color:rgba(13,25,42,.9);border-color:#6a859c;border-style:solid;background-clip:padding-box;border-width:1px;margin:3px}
+.CgsLocateTool__btn_select{background-color:rgba(52,75,103,.5)!important}
+.CgsLocateTool__btn span{margin-left:5px;margin-right:5px;line-height:25px;pointer-events:none}
+.CgsLocateTool_group{position:relative;float:left;width:100%;margin-top:12px;margin-left:12px;font-size:12px;font-family:微软雅黑;color:#fff;overflow:hidden;clear:both}
+.CgsLocateTool_label{float:left;width:30px;height:24px;background-color:#131025;font-size:12px;font-family:微软雅黑;color:#afc1d3;margin:3px;margin-top:5px}
+.CgsLocateTool_value{float:left;width:55px;height:24px;border:1px solid #41596b;box-sizing:border-box;padding-left:2px;background-color:#131025;font-size:12px;font-family:微软雅黑;color:#fff;margin:3px}
+.CgsMarkTool{position:relative;z-index:555;width:100%;height:100%}
+.CgsMarkTool span{color:#fff;font-family:'微软雅黑';font-size:14px}
+.CgsMarkTool__title{height:33px;width:80px}
+.CgsMarkTool__title:hover{background-image:url(../assets/image/tool/tabHover.png)}
+.CgsMarkTool__title:active{background-image:url(../assets/image/tool/tabSelect.png)}
+.CgsMarkTool__title *{vertical-align:middle;font-family:'微软雅黑'}
+.CgsMarkTool__titleImg{margin-left:8px}
+.CgsMarkTool__titleText{margin-left:8px;line-height:33px;font-size:16px;color:#fff}
+.CgsMarkTool *{color:#fff;font-family:'微软雅黑';-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}
+.CgsMarkTool__top{height:25px;margin-top:1px;margin-bottom:1px;position:relative}
+.CgsMarkTool__switchTab{height:25px;width:155px;right:0;position:absolute;background-image:url(../assets/image/tool/marktool/currentclassnormal.png)}
+.CgsMarkTool__switchTab_selected{background-image:url(../assets/image/tool/marktool/currentclassselect.png)!important}
+.CgsMarkTool__currentClass{position:relative;left:15px;height:25px}
+.CgsMarkTool__currentClassText{line-height:25px}
+.CgsMarkTool__classContainer{width:150px;left:2px;position:relative;text-align:center;background-color:rgba(13,25,42,.9);border-color:#6a859c;border-style:solid;background-clip:padding-box;border-width:1px;z-index:520}
+.CgsMarkTool__classContainer p{height:22px;line-height:22px}
+.CgsMarkTool__classContainer p:hover{background:url('../assets/image/tool/marktool/lineselect.png" ) 2px no-repeat;}.CgsMarkTool__container{ height:calc( 100% - 55px); width:100%; overflow-x:hidden; overflow-y:auto;}/* .CgsMarkTool__container ::-webkit-scrollbar{ width:13px; background-color:none; position:relative; border-color:#6b7b8c; border-width:1px; border-style:solid;}.CgsMarkTool__container ::-webkit-scrollbar-thumb{ background-color:#28374e; border-width:2px; border-color:rgba(0,0,0,0); border-top-width:0px; border-bottom-width:0px; border-style:solid; background-clip:padding-box;}.CgsMarkTool__container ::-webkit-scrollbar-button{ background-color:#55616f; border-width:2px; border-color:rgba(0,0,0,0); border-style:solid; width:11px; height:13px; background-clip:padding-box;} */.CgsMarkTool__toolContainer{ margin-left:4px; margin-right:4px; margin-top:5px;}.CgsMarkTool__tool{ z-index:510; height:46px; width:46px; position:relative; float:left; background-image:url(../assets/image/toolbg-normal.png); margin:2px;}.CgsMarkTool__tool:hover{ background-image:url(../assets/image/toolbg-hover.png);}.CgsMarkTool__tool:active{ background-image:url(../assets/image/toolbg-pressed.png);}.CgsMarkTool__tool_active{ background-image:url(../assets/image/toolbg-pressed.png) !important;}.CgsMarkTool__tool img{ height:40px; width:40px; left:3px; top:3px; position:relative;}.CgsMarkTool__bottom{ height:30px; position:absolute; width:100%; bottom:0px;}.CgsMarkTool__bottomTool{ position:relative; float:right; width:26px; height:26px;}.CgsMarkTool__bottomTool:hover{ background-image:url("../assets/image/tool/bottomtool-hover.png')}
+.CgsMarkTool__bottomTool:active{background-image:url(../assets/image/tool/bottomtool-select.png)}
+.CgsMarkTool__removeAll{width:26px;height:26px;background-image:url(../assets/image/tool/remove-normal.png);background-position:center}
+.CgsMarkTool__removeAll:hover{background-image:url(../assets/image/tool/remove-hover.png)}
+.CgsMarkTool__removeAll:active{background-image:url(../assets/image/tool/remove-select.png)}
+.view-point-container{font-family:'微软雅黑';font-size:12px;color:#fff;position:relative}
+.view-point-container .view-point-item{position:relative}
+.view-point-container .view-point-item .bg-img{position:relative;height:22px}
+.view-point-container .view-point-item .bg-img img{height:100%}
+.view-point-container .view-point-item .view-lb{position:absolute;top:3px;left:8px}
+.view-point-container .view-point-item .view-lb .lb1{display:inline-block;width:60px}
+.view-point-container .view-point-item .view-lb .lb2{display:inline-block}
+.view-point-container .view-point-item .view-lb .lb-divider{display:inline-block;width:2px}
+.aa-plotScaleDiv-bg{position:absolute;top:-40px;left:-8px;height:50px;width:290px}
+.CgsSymbolTool__title{height:33px;width:80px}
+.CgsSymbolTool__title:hover{background-image:url(image/tool/tabHover.png)}
+.CgsSymbolTool__title:active{background-image:url(image/tool/tabSelect.png)}
+.CgsSymbolTool__title *{vertical-align:middle;font-family:'微软雅黑'}
+.CgsSymbolTool__titleImg{margin-left:8px;pointer-events:none}
+.CgsSymbolTool *{color:#fff;font-family:'微软雅黑';-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}
+.CgsToolBone_left .CgsMaSymbolToolsearchBar{float:right;margin-right:1px}
+.CgsSymbolTool__libButton{position:relative;float:right;width:60px;height:22px;text-align:center;background-size:cover;background-image:url(../assets/image/tool/symboltool/tab_normal.png);top:1px}
+.CgsToolBone_left .CgsSymbolTool__libButton{float:left}
+.CgsSymbolTool__libButton:hover{background-image:url(../assets/image/tool/symboltool/tab_hover.png)}
+.CgsSymbolTool__libButton:active{background-image:url(../assets/image/tool/symboltool/tab_select.png)!important}
+.CgsSymbolTool__libButton_active{background-image:url(../assets/image/tool/symboltool/tab_select.png)!important}
+.CgsSymbolTool__currentClass{position:relative;left:15px;height:25px}
+.CgsSymbolTool__currentClassText{line-height:25px}
+.CgsSymbolTool__classContainer{width:150px;left:2px;position:relative;text-align:center;background-color:rgba(13,25,42,.9);border-color:#6a859c;border-style:solid;background-clip:padding-box;border-width:1px;z-index:520}
+.CgsSymbolTool__classContainer p{height:22px;line-height:22px}
+.CgsSymbolTool__classContainer p:hover{background:url(../assets/image/tool/MarkTool/lineselect.png) 2px no-repeat}
+.CgsSymbolTool__toolContainer{margin-left:4px;margin-right:4px;margin-top:5px}
+.CgsSymbolTool__bottomTool{position:relative;float:right;width:26px;height:26px}
+.CgsSymbolTool__bottomTool:hover{background-image:url(../assets/image/tool/bottomtool-hover.png)}
+.CgsSymbolTool__bottomTool:active{background-image:url(../assets/image/tool/bottomtool-select.png)}
+.CgsSymbolTool__load{width:26px;height:26px;background-image:url(../assets/image/tool/symboltool/symbolLoad.png);background-position:center;background-size:contain}
+.CgsSymbolTool__destory{width:16px;height:16px;margin-left:6px;margin-top:6px;background-image:url(../assets/image/tool/symboltool/chaifen.png);background-position:center;background-size:contain}
+.CgsSymbolTool__combin{width:16px;height:16px;margin-left:6px;margin-top:6px;background-image:url(../assets/image/tool/symboltool/zuhe.png);background-position:center;background-size:contain}
+.CgsSymbolTool__sequence{width:26px;height:26px;background:url(../assets/image/tool/symboltool/draw_sequence.png) no-repeat;background-position:center}
+.CgsSymbolTool__sequence_open{background:url(../assets/image/tool/symboltool/draw_unsequence.png) no-repeat;background-position:center}
+.CgsSymbolPropertyTool{width:100%;height:100%}
+.CgsSymbolPropertyTool_grid{width:100%;height:100px}
+.CgsSymbolTool__bottom{height:37px;position:absolute;width:100%;bottom:0;border-width:0;border-top-width:1px;border-color:#6a859c;border-style:solid}
+.CgsSymbolTool__bottomTool{position:relative;float:right;width:26px;height:26px}
+.CgsSymbolTool__bottomTool:hover{background-image:url(../assets/image/tool/bottomtool-hover.png)}
+.CgsSymbolTool__bottomTool:active{background-image:url(../assets/image/tool/bottomtool-select.png)}
+.CgsSymbolTool_button-group{position:absolute;z-index:9;width:100%;height:100%;line-height:38px;background-image:-webkit-linear-gradient(-90deg,rgba(95,111,131,.54902) 0,rgba(43,56,68,0) 100%)}
+.CgsSymbolTool_button-group button{width:calc(20% - 4px);line-height:30px;cursor:pointer;background-color:#405269;border-bottom-width:0;border-width:0;color:#83a2cd}
+.CgsSymbolTool_button-group button:hover{background-color:#4e5d6e;color:#f5f6f7}
+#symbolmanager-right-context{position:absolute;background:#55616f;width:80px;color:#fff}
+#symbolmanager-right-context div{padding-left:10px}
+#symbolmanager-right-context div:hover{background:#29496F}
+.circleClusterOverlay{width:154px;padding:10px;background:url(../assets/image/cluster/clusterWindow.png) no-repeat;background-size:100% 100%;font-family:"微软雅黑";font-size:14px;color:#cce0fb;overflow-x:hidden}
+.circleClusterLine{height:22px;line-height:22px;white-space:nowrap;overflow-x:hidden}
+.circleClusterIcon{width:12px;height:22px;background:url(../assets/image/cluster/clusterDot.png) no-repeat;background-position:center;position:relative;float:left}
+.tipsWindow{position:absolute;float:left;width:100%;height:100%;z-index:9999;background-color:rgba(0,0,0,.7);top:0}
+.tipsWindow .outerDiv{position:absolute;float:left;width:400px;height:160px;left:calc(50% - 200px);top:calc(50% - 80px);background-image:url(../assets/image/tool/tipsWindowBg.png);background-size:100% 100%;background-repeat:no-repeat}
+.tipsSelf{position:absolute;width:336px;min-height:20px;color:#dcdddd;font-size:16px;text-align:center;line-height:20px;left:32px;margin-top:70px;white-space:pre-wrap}
+.tipsConfirm{position:absolute;float:left;width:336px;height:24px;font-size:16px;text-align:center;line-height:24px;color:#fff;left:32px;bottom:22px;border-radius:6px;z-index:1001}
+.tipsConfirm:hover{cursor:pointer}
+.cesium-infoBox .InfoBox__Content{background:rgba(38,38,38,.95)}
+.cesium-infoBox .InfoBox__Content .InfoBox__Table{color:#edffff;font-family:sans-serif;font-size:13px;padding:4px 10px;margin-right:4px;width:100%}
+.cesium-infoBox .InfoBox__Content .InfoBox__Table body{background-color:transparent}
+.cesium-infoBox .InfoBox__Content .InfoBox__Table td{background-color:rgba(84,84,84,.8)}
+.cesium-infoBox .InfoBox__Content .InfoBox__Table td{font-weight:400;padding:3px;vertical-align:middle;text-align:center}
+.cesium-performanceDisplay-defaultContainer{left:10px;right:unset}
+.no-user-select{-moz-user-select:none;-khtml-user-select:none;user-select:none}
+.wrap{background-color:red;height:calc(100% - 60px);overflow-y:scroll}
+.bottom{height:50px}
+.satellite_one{padding:7px}
+#satelliteDiv{border:#29496F;background-color:#162634;width:119px;color:#fff;font-size:15px}
+#satelliteDiv :hover{background-color:#496481}
+.CgsSymbolAttr_opt{cursor:pointer;float:left;color:#fff;width:calc(25% - 4px);text-align:center;font-size:18px;background-color:#333;height:30px;margin:2px}
+.CgsSymbolAttr_opt_active{background-color:#515f71;color:#86a5d1}
+.cgs-scale-line{position:absolute;left:30px;bottom:30px}
+.cgs-scale-line-inner{white-space:nowrap;border:1px solid #000;border-top:none;-webkit-box-shadow:0 1px 0 0 #fff,inset 0 -1px 0 0 #fff,1px 0 0 0 #fff,inset -1px 0 0 0 #fff,-1px 0 0 0 #fff,inset 1px 0 0 0 #fff;box-shadow:0 1px 0 0 #fff,inset 0 -1px 0 0 #fff,1px 0 0 0 #fff,inset -1px 0 0 0 #fff,-1px 0 0 0 #fff,inset 1px 0 0 0 #fff;color:#000;font-size:12px;line-height:1px;font-weight:700;padding-bottom:8px;text-shadow:-1px 1px #fff,1px 1px #fff,-1px -1px #fff,1px -1px #fff;word-spacing:1px;text-align:center;will-change:contents,width;-webkit-transition:all .25s;transition:all .25s}
+.ol-overviewmap:not(.ol-collapsed){background:rgba(255,255,255,.8)}
+.ol-overviewmap{height:100%;width:100%}
+.ol-control{position:absolute;background-color:rgba(255,255,255,.4);border-radius:4px}
+.ol-control.ol-collapsed{background-color:unset;pointer-events:none}
+.ol-overviewmap .ol-overviewmap-map{border:1px solid #7b98bc;height:100%;width:100%}
+.ol-overviewmap .ol-overviewmap-map,.ol-overviewmap button{display:inline-block}
+.ol-control button{display:block;margin:1px;padding:0;color:#fff;font-size:1.14em;font-weight:700;text-decoration:none;text-align:center;height:1.375em;width:1.375em;line-height:.4em;background-color:rgba(0,60,136,.5);border:none;border-radius:2px;bottom:1px;right:2px;position:absolute;pointer-events:all}
+.ol-overviewmap.ol-collapsed .ol-overviewmap-map,.ol-overviewmap.ol-uncollapsible button{display:none}
+.ol-control button:focus,.ol-control button:hover{text-decoration:none;background-color:rgba(0,60,136,.7)}
+.ol-overviewmap-box{border:2px dotted rgba(0,60,136,.7)}
+.demoPanel__input_{width:120px;margin-left:5px}
+.demoPanel__input_inrange_{width:45px;text-align:center}
+.demoPanel__range_{display:inline-block;margin:0;vertical-align:middle}
+.height-changed{width:210px;height:42px;padding:10px;border-radius:10px;border:1px #32619b solid;position:absolute;left:25%;top:130px;background-color:rgba(0,12,37,.8)}
+.cgstooltip{position:relative;background:rgba(0,0,0,.5);border-radius:4px;color:#fff;padding:4px 8px;opacity:.7;white-space:nowrap}
+.cgstooltip-measure{opacity:1;font-weight:700}
+.cgstooltip-static{background-color:#fc3;color:#000;border:1px solid #fff}
+.cgstooltip-analyze:before,.cgstooltip-measure:before,.cgstooltip-static:before{border-top:6px solid rgba(0,0,0,.5);border-right:6px solid transparent;border-left:6px solid transparent;content:"";position:absolute;bottom:-6px;margin-left:-7px;left:50%}
+.cgstooltip-static:before{border-top-color:#fc3}
+.cesium-feature-popup,.ol-feature-popup{position:absolute;background-color:#fff;-webkit-filter:drop-shadow(0 1px 4px rgba(0,0,0,.2));filter:drop-shadow(0 1px 4px rgba(0, 0, 0, .2));padding:15px;border-radius:10px;border:1px solid #ccc;bottom:12px;left:-50px;min-width:280px}
+.cesium-feature-popup:after,.cesium-feature-popup:before,.ol-feature-popup:after,.ol-feature-popup:before{top:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute}
+.cesium-feature-popup:after,.ol-feature-popup:after{border-top-color:#fff;border-width:10px;left:48px;margin-left:-10px}
+.cesium-feature-popup:before,.ol-feature-popup:before{border-top-color:#ccc;border-width:11px;left:48px;margin-left:-11px}
+.cesium-feature-popup-small{position:absolute;background-color:#d4f999;-webkit-filter:drop-shadow(0 1px 4px rgba(0,0,0,.2));filter:drop-shadow(0 1px 4px rgba(0, 0, 0, .2));padding:0;height:14px;width:14px;border-radius:1px;border:1px solid #ccc;bottom:23px;left:-11px;min-width:0;font-size:14px;font-weight:900;text-align:center;cursor:default}
+.cesium-feature-popup-star{position:absolute;background-color:transparent;padding:0;height:14px;width:14px;border:none;bottom:23px;left:-11px;min-width:0;font-size:14px;cursor:default;background-image:url(../assets/mapNote/star.png);background-size:100%}
+.cesium-feature-popup-small:after,.cesium-feature-popup-small:before{top:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute}
+.cesium-feature-popup-small:after{border-top-color:#d4f999;border-width:8px;left:-1px;margin-left:0}
+.cesium-feature-popup-small:before{border-top-color:#d4f999;border-width:8px;left:-1px;margin-left:0}
+.ol-feature-popup-closer{text-decoration:none;position:absolute;top:-3px;right:5px}
+.ol-feature-popup-closer:after{content:"✖"}
+.ol-feature-popup-smaller{text-decoration:none;position:absolute;top:-3px;right:20px}
+.ol-feature-popup-smaller:after{content:"\25BC"}
+.draggable-popup{min-height:41px;background-color:#fff;padding-top:6px;padding-bottom:4px;padding-right:4px;border-radius:1px;border:0 solid #ccc;bottom:12px;min-width:100px}
+.popopu-image{width:74px;height:74px;margin-top:4px;margin-left:11px;float:left;border:1px solid #a8adb5}
+.popopu-imageX{content:"✖";width:76px;height:76px;margin-top:4px;margin-left:11px;float:left;border:0}
+.cesium-feature-popup-save{width:21px;height:22px;text-decoration:none;position:absolute;top:-22px;right:61px;background-image:url(../assets/mapNote/normalsave.png);background-size:100% 100%;display:none}
+.cesium-feature-popup-del{text-decoration:none;position:absolute;top:-3px;right:50px}
+.cesium-feature-popup-del:after{content:"✖"}
+.cesium-feature-popup-closer{width:15px;height:15px;text-decoration:none;position:absolute;top:-20px;right:4px;background-image:url(../assets/mapNote/normaldel.png);display:none}
+.cesium-feature-popup-closer:hover{background-image:url(../assets/mapNote/normaldelhover.png)}
+.cesium-feature-popup-smaller{width:15px;height:15px;text-decoration:none;position:absolute;top:-20px;right:24px;background-image:url(../assets/mapNote/normalsmall.png);display:none}
+.cesium-feature-popup-smaller:hover{background-image:url(../assets/mapNote/normalsmallhover.png)}
+.cesium-feature-popup-adder{width:14px;height:14px;text-decoration:none;position:absolute;top:-19px;right:44px;background-size:100% 100%;background-image:url(../assets/mapNote/normaladd.png);display:none}
+.cesium-feature-popup-adder:hover{background-image:url(../assets/mapNote/normaladd.png)}
+.popopu-leftBox{float:left;width:92px}
+.popopu-leftBox-addImg{float:left;border:0;width:76px;height:11px;margin-top:4px;margin-left:12px;background-image:url(../assets/mapNote/normaladdimg.png)}
+.popopu-leftBox-delImg{width:23px;height:23px;left:65px;background-image:url(../assets/mapNote/normalimgdel.png);background-size:100% 100%}
+.popopu-leftButton{width:11px;height:99px;float:left;margin-top:0;background-color:rgba(6,16,56,.5);border:1px solid #233f57}
+.popopu-leftBox-image{width:5px;height:13px;float:left;background-image:url(../assets/mapNote/buttonright.png);margin-top:44px;margin-left:2px;border:0!important;display:block}
+.popopu-leftRetractileButton{width:12px;height:76px;float:left;position:absolute;margin-top:4px}
+.popopu-popopu-leftRetractileButton-image{width:6px;height:13px;float:left;background-image:url(../assets/mapNote/buttonrig22ht.png);margin-top:38px;margin-left:2px;display:block}
+.popopu-textarea::-webkit-scrollbar{width:8px;background-color:#faf3b6}
+.popopu-textarea::-webkit-scrollbar-thumb{background-color:green}
+.cesium-feature-popup-bigimgcloser{width:25px;height:25px;text-decoration:none;position:absolute;top:-40px;right:-40px;background-size:100% 100%;background-image:url(../assets/mapNote/chakantupianguanbinormal.png)}
+.cesium-feature-popup-bigimgcloser:hover{background-image:url(../assets/mapNote/chakantupianguanbinormalhover.png)}
+.CgsSymbolTool__symbolTree{background-color:rgba(13,25,42,0);overflow-y:auto;width:100%}
+.CgsToolBone_left .CgsSymbolTool__symbolTree{left:-313px;top:0}
+.CgsSymbolTool__symbolTree::-webkit-scrollbar{width:11px;background-color:none;position:relative;border-color:#6b7b8c;border-width:1px;border-style:solid}
+.CgsSymbolTool__symbolTree::-webkit-scrollbar-thumb{background-color:#28374e;border-width:2px;border-color:transparent;border-top-width:0;border-bottom-width:0;border-style:solid;background-clip:padding-box}
+.CgsSymbolTool__symbolTree::-webkit-scrollbar-button{background-color:#55616f;border-width:2px;border-color:transparent;border-style:solid;width:9px;height:11px;background-clip:padding-box}
+.CgsSymbolTool__symbolTree .tree{margin:0;padding:0;list-style-type:none}
+.CgsSymbolTool__symbolTree .tree li{white-space:nowrap}
+.CgsSymbolTool__symbolTree .tree li ul{list-style-type:none;margin:0;padding:0}
+.CgsSymbolTool__symbolTree .tree-node{height:22px;white-space:nowrap;cursor:pointer;font-size:16px;padding-left:5px;border:solid 1px transparent}
+.CgsSymbolTool__symbolTree .tree-node:hover{background-image:linear-gradient(#243342,#243342),linear-gradient(#243342,#243342);background-blend-mode:normal,normal;border:solid 1px #3b4d61}
+.CgsSymbolTool__symbolTree .tree-hit{width:12px;height:12px;margin:3px;cursor:pointer}
+.CgsSymbolTool__symbolTree .tree-file,.CgsSymbolTool__symbolTree .tree-folder,.CgsSymbolTool__symbolTree .tree-indent{display:inline-block;width:16px;height:18px;vertical-align:middle;overflow:hidden}
+.CgsSymbolTool__symbolTree .tree-checkbox{display:inline-block;width:12px;height:12px;vertical-align:middle;overflow:hidden;position:relative;border:1px solid #41abd3}
+.CgsSymbolTool__symbolTree .tree-title{margin-left:5px}
+.CgsSymbolTool__symbolTree .tree-collapsed,.CgsSymbolTool__symbolTree .tree-expanded{width:0;height:0;position:relative;left:2px;top:-.5px;display:inline-block;vertical-align:middle;border-top:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid transparent;border-left:5px solid #606d7e}
+.CgsSymbolTool__symbolTree .tree-expanded{transform:rotate(90deg);transform-origin:25% 50%}
+.CgsSymbolTool__symbolTree .tree-expanded-hover{border-left-color:#afc1d3}
+.CgsSymbolTool__symbolTree .tree-collapsed-hover{border-left-color:#afc1d3}
+.CgsSymbolTool__symbolTree .tree-checkbox1::after{content:'';width:1.5px;height:4px;position:absolute;top:5px;left:3px;background-color:#fff;transform:rotate(-45deg)}
+.CgsSymbolTool__symbolTree .tree-checkbox1::before{content:'';width:1.5px;height:8px;position:absolute;top:2px;left:7px;background-color:#fff;transform:rotate(45deg)}
+.CgsSymbolTool__symbolTree .tree-checkbox2::after{content:'';width:0;height:0;border:2px solid rgba(255,255,255,.8);border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);box-shadow:#fff 0 0 5px}
+.CgsSymbolTool__symbolTree .tree-title{color:#fff;font-size:12px;display:inline-block;text-decoration:none;white-space:nowrap;padding:0 2px;height:22px;line-height:22px;vertical-align:middle}
+.CgsSymbolTool__symbolTree .tree-node-proxy{font-size:12px;line-height:20px;padding:0 2px 0 20px;border-width:1px;border-style:solid;z-index:9900000}
+.CgsSymbolTool__symbolTree .tree-dnd-icon{display:inline-block;position:absolute;width:16px;height:18px;left:2px;top:50%;margin-top:-9px}
+.CgsSymbolTool__symbolTree .tree-dnd-yes{background:url(../assets/images/tree_icons.png) no-repeat -256px 0}
+.CgsSymbolTool__symbolTree .tree-dnd-no{background:url(../assets/images/tree_icons.png) no-repeat -256px -18px}
+.CgsSymbolTool__symbolTree .tree-node-top{border-top:1px dotted red}
+.CgsSymbolTool__symbolTree .tree-node-bottom{border-bottom:1px dotted red}
+.CgsSymbolTool__symbolTree .tree-node-append .tree-title{border:1px dotted red}
+.CgsSymbolTool__symbolTree .tree-editor{border:1px solid #95B8E7;font-size:12px;line-height:16px;padding:0 4px;margin:0;width:80px;outline-style:none;vertical-align:top;position:absolute;top:0}
+.CgsSymbolTool__symbolTree .tree-node-proxy{background-color:#fff;color:#000;border-color:#95B8E7}
+.CgsSymbolTool__symbolTree .tree-node-hover{background:0 0}
+.CgsSymbolTool__symbolTree .tree-node-hidden{display:none}
+.CgsSymbolTool__symbolTree .icon-blank{width:0}
+.CgsSymbolPropertyTool .tabs-container{overflow:hidden}
+.CgsSymbolPropertyTool .tabs-header{position:relative;padding:0;overflow:hidden}
+.CgsSymbolPropertyTool .tabs-scroller-left,.CgsSymbolPropertyTool .tabs-scroller-right{position:absolute;top:auto;bottom:0;width:18px;font-size:1px;display:none;cursor:pointer;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .tabs-scroller-left{left:0}
+.CgsSymbolPropertyTool .tabs-scroller-right{right:0}
+.CgsSymbolPropertyTool .tabs-tool{position:absolute;bottom:0;padding:1px;overflow:hidden;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .tabs-header-plain .tabs-tool{padding:0 1px}
+.CgsSymbolPropertyTool .tabs-wrap{position:relative;left:0;overflow:hidden;width:100%;margin:0;padding:0}
+.CgsSymbolPropertyTool .tabs-container .panel-body{padding:0;border:0;background:0 0}
+.CgsSymbolPropertyTool .tabs-scrolling{margin-left:18px;margin-right:18px}
+.CgsSymbolPropertyTool .tabs-disabled{opacity:.3;filter:alpha(opacity=30)}
+.CgsSymbolPropertyTool .tabs{list-style-type:none;height:26px;margin:0;padding:0;width:50000px;border-style:solid;border-width:0 0 1px 0;padding-left:2px}
+.CgsSymbolPropertyTool .tabs li{float:left;display:inline-block;margin:0 1px -1px 0;padding:0;position:relative;border:0;width:59px;height:26px}
+.CgsSymbolPropertyTool .tabs li{background:url(../assets/image/tool/symboltool/tab_normal.png);background-size:cover;text-align:center}
+.CgsSymbolPropertyTool .tabs li:hover{background-image:url(../assets/image/tool/symboltool/tab_hover.png)}
+.CgsSymbolPropertyTool .tabs .tabs-selected{background-image:url(../assets/image/tool/symboltool/tab_select.png)!important}
+.CgsSymbolPropertyTool .tabs .tabs-title{font-size:12px;color:#fff;text-decoration:none;line-height:26px;outline:0}
+.CgsSymbolPropertyTool .tabs li a.tabs-inner{text-decoration:none}
+.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-body td{padding-bottom:1px;border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .propertygrid .datagrid-group{height:21px;overflow:hidden;border-width:0 0 1px 0;border-style:solid}
+.CgsSymbolPropertyTool .propertygrid .datagrid-group span{font-weight:700}
+.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-body td{border-color:#ddd}
+.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-group{border-color:#E0ECFF}
+.CgsSymbolPropertyTool .propertygrid .datagrid-view2 .datagrid-group{border-color:#ddd}
+.CgsSymbolPropertyTool .propertygrid .datagrid-group,.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-body,.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-row-over,.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-row-selected{background:0 0}
+.CgsSymbolPropertyTool{padding:0;border:0}
+.CgsSymbolPropertyTool .datagrid .panel-body{overflow:hidden;position:relative}
+.CgsSymbolPropertyTool .datagrid-view{position:relative;overflow:hidden}
+.CgsSymbolPropertyTool .datagrid-view1,.CgsSymbolPropertyTool .datagrid-view2{position:absolute;overflow:hidden;top:0}
+.CgsSymbolPropertyTool .datagrid-view1{left:0}
+.CgsSymbolPropertyTool .datagrid-view2{right:0}
+.CgsSymbolPropertyTool .datagrid-mask{position:absolute;left:0;top:0;width:100%;height:100%;opacity:.3;filter:alpha(opacity=30);display:none}
+.CgsSymbolPropertyTool .datagrid-mask-msg{position:absolute;top:50%;margin-top:-20px;padding:10px 5px 10px 30px;width:auto;height:16px;border-width:2px;border-style:solid;display:none}
+.CgsSymbolPropertyTool .datagrid-empty{position:absolute;left:0;top:0;width:100%;height:25px;line-height:25px;text-align:center}
+.CgsSymbolPropertyTool .datagrid-sort-icon{padding:0;display:none}
+.CgsSymbolPropertyTool .datagrid-toolbar{height:auto;padding:1px 2px;border-width:0 0 1px 0;border-style:solid}
+.CgsSymbolPropertyTool .datagrid-btn-separator{float:left;height:24px;border-left:1px solid #ccc;border-right:1px solid #fff;margin:2px 1px}
+.CgsSymbolPropertyTool .datagrid .datagrid-pager{display:block;margin:0;border-width:1px 0 0 0;border-style:solid}
+.CgsSymbolPropertyTool .datagrid .datagrid-pager-top{border-width:0 0 1px 0}
+.CgsSymbolPropertyTool .datagrid-header{overflow:hidden;cursor:default;border-width:0 0 1px 0;border-style:solid}
+.CgsSymbolPropertyTool .datagrid-header-inner{float:left;width:10000px}
+.CgsSymbolPropertyTool .datagrid-header-row,.CgsSymbolPropertyTool .datagrid-row{height:25px}
+.CgsSymbolPropertyTool .datagrid-body td,.CgsSymbolPropertyTool .datagrid-footer td,.CgsSymbolPropertyTool .datagrid-header td{border-width:0 1px 1px 0;border-style:dotted;margin:0;padding:0}
+.CgsSymbolPropertyTool .datagrid-cell,.CgsSymbolPropertyTool .panel{overflow:hidden;text-align:left;margin:0;border:0;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .panel-body,.CgsSymbolPropertyTool .panel-header{border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .panel-header{padding:5px;position:relative}
+.CgsSymbolPropertyTool .panel-title{background:url(images/blank.gif) no-repeat}
+.CgsSymbolPropertyTool .panel-header-noborder{border-width:0 0 1px 0}
+.CgsSymbolPropertyTool .panel-body{overflow:auto;border-top-width:0;padding:0}
+.CgsSymbolPropertyTool .panel-body-noheader{border-top-width:1px}
+.CgsSymbolPropertyTool .panel-body-noborder{border-width:0}
+.CgsSymbolPropertyTool .panel-body-nobottom{border-bottom-width:0}
+.CgsSymbolPropertyTool .panel-with-icon{padding-left:18px}
+.CgsSymbolPropertyTool .panel-icon,.CgsSymbolPropertyTool .panel-tool{position:absolute;top:50%;margin-top:-8px;height:16px;overflow:hidden}
+.CgsSymbolPropertyTool .panel-icon{left:5px;width:16px}
+.CgsSymbolPropertyTool .panel-tool{right:5px;width:auto}
+.CgsSymbolPropertyTool .panel-tool a{display:inline-block;width:16px;height:16px;opacity:.6;margin:0 0 0 2px;vertical-align:top}
+.CgsSymbolPropertyTool .panel-tool a:hover{opacity:1;background-color:#e6e6e6;-moz-border-radius:3px 3px 3px 3px;-webkit-border-radius:3px 3px 3px 3px;border-radius:3px 3px 3px 3px}
+.CgsSymbolPropertyTool .panel-loading{padding:11px 0 10px 30px}
+.CgsSymbolPropertyTool .panel-noscroll{overflow:hidden}
+.CgsSymbolPropertyTool .panel-fit,.CgsSymbolPropertyTool .panel-fit body{height:100%;margin:0;padding:0;border:0;overflow:hidden}
+.CgsSymbolPropertyTool .panel-loading{background:url(images/loading.gif) no-repeat 10px 10px}
+.CgsSymbolPropertyTool .panel-tool-close{background:url(images/panel_tools.png) no-repeat -16px 0}
+.CgsSymbolPropertyTool .panel-tool-min{background:url(images/panel_tools.png) no-repeat 0 0}
+.CgsSymbolPropertyTool .panel-tool-max{background:url(images/panel_tools.png) no-repeat 0 -16px}
+.CgsSymbolPropertyTool .panel-tool-restore{background:url(images/panel_tools.png) no-repeat -16px -16px}
+.CgsSymbolPropertyTool .panel-tool-collapse{background:url(images/panel_tools.png) no-repeat -32px 0}
+.CgsSymbolPropertyTool .panel-tool-expand{background:url(images/panel_tools.png) no-repeat -32px -16px}
+.CgsSymbolPropertyTool .panel-body,.CgsSymbolPropertyTool .panel-header{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .panel-header{background-color:#f2f2f2;background:-webkit-linear-gradient(top,#fff 0,#f2f2f2 100%);background:-moz-linear-gradient(top,#fff 0,#f2f2f2 100%);background:-o-linear-gradient(top,#fff 0,#f2f2f2 100%);background:linear-gradient(to bottom,#fff 0,#f2f2f2 100%);background-repeat:repeat-x}
+.CgsSymbolPropertyTool .panel-body{background-color:#fff;color:#333;font-size:12px}
+.CgsSymbolPropertyTool .panel-title{font-size:12px;font-weight:700;color:#777;height:16px;line-height:16px}
+.CgsSymbolPropertyTool .panel-footer{border:1px solid #d4d4d4;overflow:hidden;background:#f5f5f5}
+.CgsSymbolPropertyTool .panel-footer-noborder{border-width:1px 0 0 0}
+.CgsSymbolPropertyTool .panel-hleft,.CgsSymbolPropertyTool .panel-hright{position:relative}
+.CgsSymbolPropertyTool .panel-hleft>.panel-body,.CgsSymbolPropertyTool .panel-hright>.panel-body{position:absolute}
+.CgsSymbolPropertyTool .panel-hleft>.panel-header{float:left}
+.CgsSymbolPropertyTool .panel-hright>.panel-header{float:right}
+.CgsSymbolPropertyTool .panel-hleft>.panel-body{border-top-width:1px;border-left-width:0}
+.CgsSymbolPropertyTool .panel-hright>.panel-body{border-top-width:1px;border-right-width:0}
+.CgsSymbolPropertyTool .panel-hleft>.panel-body-nobottom{border-bottom-width:1px;border-right-width:0}
+.CgsSymbolPropertyTool .panel-hright>.panel-body-nobottom{border-bottom-width:1px;border-left-width:0}
+.CgsSymbolPropertyTool .panel-hleft>.panel-footer{position:absolute;right:0}
+.CgsSymbolPropertyTool .panel-hright>.panel-footer{position:absolute;left:0}
+.CgsSymbolPropertyTool .panel-hleft>.panel-header-noborder{border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .panel-hright>.panel-header-noborder{border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .panel-hleft>.panel-body-noborder{border-width:0}
+.CgsSymbolPropertyTool .panel-hright>.panel-body-noborder{border-width:0}
+.CgsSymbolPropertyTool .panel-hleft>.panel-body-noheader{border-left-width:1px}
+.CgsSymbolPropertyTool .panel-hright>.panel-body-noheader{border-right-width:1px}
+.CgsSymbolPropertyTool .panel-hleft>.panel-footer-noborder{border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .panel-hright>.panel-footer-noborder{border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .panel-hleft>.panel-header .panel-icon,.CgsSymbolPropertyTool .panel-hright>.panel-header .panel-icon{margin-top:0;top:5px}
+.CgsSymbolPropertyTool .panel-hleft>.panel-header .panel-title,.CgsSymbolPropertyTool .panel-hright>.panel-header .panel-title{position:absolute;min-width:16px;left:21px;top:5px;bottom:auto;white-space:nowrap;word-wrap:normal;-webkit-transform:rotate(90deg);-webkit-transform-origin:0 0;-moz-transform:rotate(90deg);-moz-transform-origin:0 0;-o-transform:rotate(90deg);-o-transform-origin:0 0;transform:rotate(90deg);transform-origin:0 0}
+.CgsSymbolPropertyTool .panel-hleft>.panel-header .panel-title-up,.CgsSymbolPropertyTool .panel-hright>.panel-header .panel-title-up{position:absolute;min-width:16px;left:21px;top:auto;bottom:5px;text-align:right;white-space:nowrap;word-wrap:normal;-webkit-transform:rotate(-90deg);-webkit-transform-origin:0 0;-moz-transform:rotate(-90deg);-moz-transform-origin:0 0;-o-transform:rotate(-90deg);-o-transform-origin:0 0;transform:rotate(-90deg);transform-origin:0 16px}
+.CgsSymbolPropertyTool .panel-hleft>.panel-header .panel-with-icon.panel-title-up,.CgsSymbolPropertyTool .panel-hright>.panel-header .panel-with-icon.panel-title-up{padding-left:0;padding-right:18px}
+.CgsSymbolPropertyTool .panel-hleft>.panel-header .panel-tool,.CgsSymbolPropertyTool .panel-hright>.panel-header .panel-tool{top:auto;bottom:5px;width:16px;height:auto;left:50%;margin-left:-8px;margin-top:0}
+.CgsSymbolPropertyTool .panel-hleft>.panel-header .panel-tool a,.CgsSymbolPropertyTool .panel-hright>.panel-header .panel-tool a{margin:2px 0 0 0}
+.CgsSymbolPropertyTool .accordion{overflow:hidden;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .accordion .accordion-header{border-width:0 0 1px;cursor:pointer}
+.CgsSymbolPropertyTool .accordion .accordion-body{border-width:0 0 1px}
+.CgsSymbolPropertyTool .accordion-noborder{border-width:0}
+.CgsSymbolPropertyTool .accordion-noborder .accordion-header{border-width:0 0 1px}
+.CgsSymbolPropertyTool .accordion-noborder .accordion-body{border-width:0 0 1px}
+.CgsSymbolPropertyTool .accordion-collapse{background:url(images/accordion_arrows.png) no-repeat 0 0}
+.CgsSymbolPropertyTool .accordion-expand{background:url(images/accordion_arrows.png) no-repeat -16px 0}
+.CgsSymbolPropertyTool .accordion{background:#fff;border-color:#d4d4d4}
+.CgsSymbolPropertyTool .accordion .accordion-header{background:#f2f2f2;filter:none}
+.CgsSymbolPropertyTool .accordion .accordion-header-selected{background:#0081c2}
+.CgsSymbolPropertyTool .accordion .accordion-header-selected .panel-title{color:#fff}
+.CgsSymbolPropertyTool .accordion .panel-last>.accordion-header{border-bottom-color:#f2f2f2}
+.CgsSymbolPropertyTool .accordion .panel-last>.accordion-body{border-bottom-color:#fff}
+.CgsSymbolPropertyTool .accordion .panel-last>.accordion-header-border,.CgsSymbolPropertyTool .accordion .panel-last>.accordion-header-selected{border-bottom-color:#d4d4d4}
+.CgsSymbolPropertyTool .accordion>.panel-hleft{float:left}
+.CgsSymbolPropertyTool .accordion>.panel-hleft>.panel-header{border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .accordion>.panel-hleft>.panel-body{border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .accordion>.panel-hleft.panel-last>.accordion-header{border-right-color:#f2f2f2}
+.CgsSymbolPropertyTool .accordion>.panel-hleft.panel-last>.accordion-body{border-right-color:#fff}
+.CgsSymbolPropertyTool .accordion>.panel-hleft.panel-last>.accordion-header-border,.CgsSymbolPropertyTool .accordion>.panel-hleft.panel-last>.accordion-header-selected{border-right-color:#d4d4d4}
+.CgsSymbolPropertyTool .accordion>.panel-hright{float:right}
+.CgsSymbolPropertyTool .accordion>.panel-hright>.panel-header{border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .accordion>.panel-hright>.panel-body{border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .accordion>.panel-hright.panel-last>.accordion-header{border-left-color:#f2f2f2}
+.CgsSymbolPropertyTool .accordion>.panel-hright.panel-last>.accordion-body{border-left-color:#fff}
+.CgsSymbolPropertyTool .accordion>.panel-hright.panel-last>.accordion-header-border,.CgsSymbolPropertyTool .accordion>.panel-hright.panel-last>.accordion-header-selected{border-left-color:#d4d4d4}
+.CgsSymbolPropertyTool .window{overflow:hidden;padding:5px;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .window .window-header{background:0 0;padding:0 0 6px 0}
+.CgsSymbolPropertyTool .window .window-body{border-width:1px;border-style:solid;border-top-width:0}
+.CgsSymbolPropertyTool .window .window-body-noheader{border-top-width:1px}
+.CgsSymbolPropertyTool .window .panel-body-nobottom{border-bottom-width:0}
+.CgsSymbolPropertyTool .window .window-header .panel-icon,.CgsSymbolPropertyTool .window .window-header .panel-tool{top:50%;margin-top:-11px}
+.CgsSymbolPropertyTool .window .window-header .panel-icon{left:1px}
+.CgsSymbolPropertyTool .window .window-header .panel-tool{right:1px}
+.CgsSymbolPropertyTool .window .window-header .panel-with-icon{padding-left:18px}
+.CgsSymbolPropertyTool .window-proxy{position:absolute;overflow:hidden}
+.CgsSymbolPropertyTool .window-proxy-mask{position:absolute;opacity:.05}
+.CgsSymbolPropertyTool .window-mask{position:absolute;left:0;top:0;width:100%;height:100%;opacity:.4;font-size:1px;overflow:hidden}
+.CgsSymbolPropertyTool .window,.CgsSymbolPropertyTool .window-shadow{position:absolute;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .window-shadow{background:#ccc;-moz-box-shadow:2px 2px 3px #ccc;-webkit-box-shadow:2px 2px 3px #ccc;box-shadow:2px 2px 3px #ccc}
+.CgsSymbolPropertyTool .window,.CgsSymbolPropertyTool .window .window-body{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .window{background-color:#f2f2f2;background:-webkit-linear-gradient(top,#fff 0,#f2f2f2 20%);background:-moz-linear-gradient(top,#fff 0,#f2f2f2 20%);background:-o-linear-gradient(top,#fff 0,#f2f2f2 20%);background:linear-gradient(to bottom,#fff 0,#f2f2f2 20%);background-repeat:repeat-x}
+.CgsSymbolPropertyTool .window-proxy{border:1px dashed #d4d4d4}
+.CgsSymbolPropertyTool .window-mask,.CgsSymbolPropertyTool .window-proxy-mask{background:#ccc}
+.CgsSymbolPropertyTool .window .panel-footer{border:1px solid #d4d4d4;position:relative;top:-1px}
+.CgsSymbolPropertyTool .window-thinborder{padding:0}
+.CgsSymbolPropertyTool .window-thinborder .window-header{padding:5px 5px 6px 5px}
+.CgsSymbolPropertyTool .window-thinborder .window-body{border-width:0}
+.CgsSymbolPropertyTool .window-thinborder .window-header .panel-icon,.CgsSymbolPropertyTool .window-thinborder .window-header .panel-tool{margin-top:-9px;margin-left:5px;margin-right:5px}
+.CgsSymbolPropertyTool .window-noborder{border:0}
+.CgsSymbolPropertyTool .window.panel-hleft .window-header{padding:0 6px 0 0}
+.CgsSymbolPropertyTool .window.panel-hright .window-header{padding:0 0 0 6px}
+.CgsSymbolPropertyTool .window.panel-hleft>.panel-header .panel-title{top:auto;left:16px}
+.CgsSymbolPropertyTool .window.panel-hright>.panel-header .panel-title{top:auto;right:16px}
+.CgsSymbolPropertyTool .window.panel-hleft>.panel-header .panel-title-up,.CgsSymbolPropertyTool .window.panel-hright>.panel-header .panel-title-up{bottom:0}
+.CgsSymbolPropertyTool .window.panel-hleft .window-body{border-width:1px 1px 1px 0}
+.CgsSymbolPropertyTool .window.panel-hright .window-body{border-width:1px 0 1px 1px}
+.CgsSymbolPropertyTool .window.panel-hleft .window-header .panel-icon{top:1px;margin-top:0;left:0}
+.CgsSymbolPropertyTool .window.panel-hright .window-header .panel-icon{top:1px;margin-top:0;left:auto;right:1px}
+.CgsSymbolPropertyTool .window.panel-hleft .window-header .panel-tool,.CgsSymbolPropertyTool .window.panel-hright .window-header .panel-tool{margin-top:0;top:auto;bottom:1px;right:auto;margin-right:0;left:50%;margin-left:-11px}
+.CgsSymbolPropertyTool .window.panel-hright .window-header .panel-tool{left:auto;right:1px}
+.CgsSymbolPropertyTool .window-thinborder.panel-hleft .window-header{padding:5px 6px 5px 5px}
+.CgsSymbolPropertyTool .window-thinborder.panel-hright .window-header{padding:5px 5px 5px 6px}
+.CgsSymbolPropertyTool .window-thinborder.panel-hleft>.panel-header .panel-title{left:21px}
+.CgsSymbolPropertyTool .window-thinborder.panel-hleft>.panel-header .panel-title-up,.CgsSymbolPropertyTool .window-thinborder.panel-hright>.panel-header .panel-title-up{bottom:5px}
+.CgsSymbolPropertyTool .window-thinborder.panel-hleft .window-header .panel-icon,.CgsSymbolPropertyTool .window-thinborder.panel-hright .window-header .panel-icon{margin-top:5px}
+.CgsSymbolPropertyTool .window-thinborder.panel-hleft .window-header .panel-tool,.CgsSymbolPropertyTool .window-thinborder.panel-hright .window-header .panel-tool{left:16px;bottom:5px}
+.CgsSymbolPropertyTool .dialog-content{overflow:auto}
+.CgsSymbolPropertyTool .dialog-toolbar{position:relative;padding:2px 5px}
+.CgsSymbolPropertyTool .dialog-tool-separator{float:left;height:24px;border-left:1px solid #ccc;border-right:1px solid #fff;margin:2px 1px}
+.CgsSymbolPropertyTool .dialog-button{position:relative;top:-1px;padding:5px;text-align:right}
+.CgsSymbolPropertyTool .dialog-button .l-btn{margin-left:5px}
+.CgsSymbolPropertyTool .dialog-button,.CgsSymbolPropertyTool .dialog-toolbar{background:#f5f5f5;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .dialog-toolbar{border-color:#d4d4d4 #d4d4d4 #e6e6e6 #d4d4d4}
+.CgsSymbolPropertyTool .dialog-button{border-color:#e6e6e6 #d4d4d4 #d4d4d4 #d4d4d4}
+.CgsSymbolPropertyTool .window-thinborder .dialog-toolbar{border-left:transparent;border-right:transparent;border-top-color:#f5f5f5}
+.CgsSymbolPropertyTool .window-thinborder .dialog-button{top:0;padding:5px 8px 8px 8px;border-left:transparent;border-right:transparent;border-bottom:transparent}
+.CgsSymbolPropertyTool .l-btn{text-decoration:none;display:inline-block;overflow:hidden;margin:0;padding:0;cursor:pointer;outline:0;text-align:center;vertical-align:middle;line-height:normal}
+.CgsSymbolPropertyTool .l-btn-plain{border-width:0;padding:1px}
+.CgsSymbolPropertyTool .l-btn-left{display:inline-block;position:relative;overflow:hidden;margin:0;padding:0;vertical-align:top}
+.CgsSymbolPropertyTool .l-btn-text{display:inline-block;vertical-align:top;width:auto;line-height:24px;font-size:12px;padding:0;margin:0 4px}
+.CgsSymbolPropertyTool .l-btn-icon{display:inline-block;width:16px;height:16px;line-height:16px;position:absolute;top:50%;margin-top:-8px;font-size:1px}
+.CgsSymbolPropertyTool .l-btn span span .l-btn-empty{display:inline-block;margin:0;width:16px;height:24px;font-size:1px;vertical-align:top}
+.CgsSymbolPropertyTool .l-btn span .l-btn-icon-left{padding:0 0 0 20px;background-position:left center}
+.CgsSymbolPropertyTool .l-btn span .l-btn-icon-right{padding:0 20px 0 0;background-position:right center}
+.CgsSymbolPropertyTool .l-btn-icon-left .l-btn-text{margin:0 4px 0 24px}
+.CgsSymbolPropertyTool .l-btn-icon-left .l-btn-icon{left:4px}
+.CgsSymbolPropertyTool .l-btn-icon-right .l-btn-text{margin:0 24px 0 4px}
+.CgsSymbolPropertyTool .l-btn-icon-right .l-btn-icon{right:4px}
+.CgsSymbolPropertyTool .l-btn-icon-top .l-btn-text{margin:20px 4px 0 4px}
+.CgsSymbolPropertyTool .l-btn-icon-top .l-btn-icon{top:4px;left:50%;margin:0 0 0 -8px}
+.CgsSymbolPropertyTool .l-btn-icon-bottom .l-btn-text{margin:0 4px 20px 4px}
+.CgsSymbolPropertyTool .l-btn-icon-bottom .l-btn-icon{top:auto;bottom:4px;left:50%;margin:0 0 0 -8px}
+.CgsSymbolPropertyTool .l-btn-left .l-btn-empty{margin:0 4px;width:16px}
+.CgsSymbolPropertyTool .l-btn-plain:hover{padding:0}
+.CgsSymbolPropertyTool .l-btn-focus{outline:#00f dotted thin}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-text{line-height:40px}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-icon{width:32px;height:32px;line-height:32px;margin-top:-16px}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-icon-left .l-btn-text{margin-left:40px}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-icon-right .l-btn-text{margin-right:40px}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-icon-top .l-btn-text{margin-top:36px;line-height:24px;min-width:32px}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-icon-top .l-btn-icon{margin:0 0 0 -16px}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-icon-bottom .l-btn-text{margin-bottom:36px;line-height:24px;min-width:32px}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-icon-bottom .l-btn-icon{margin:0 0 0 -16px}
+.CgsSymbolPropertyTool .l-btn-large .l-btn-left .l-btn-empty{margin:0 4px;width:32px}
+.CgsSymbolPropertyTool .l-btn{color:#444;background:#f5f5f5;background-repeat:repeat-x;border:1px solid #bbb;background:-webkit-linear-gradient(top,#fff 0,#e6e6e6 100%);background:-moz-linear-gradient(top,#fff 0,#e6e6e6 100%);background:-o-linear-gradient(top,#fff 0,#e6e6e6 100%);background:linear-gradient(to bottom,#fff 0,#e6e6e6 100%);background-repeat:repeat-x;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .l-btn:hover{background:#e6e6e6;color:#00438a;border:1px solid #ddd;filter:none}
+.CgsSymbolPropertyTool .l-btn-plain{background:0 0;border-width:0;filter:none}
+.CgsSymbolPropertyTool .l-btn-outline{border-width:1px;border-color:#ddd;padding:0}
+.CgsSymbolPropertyTool .l-btn-plain:hover{background:#e6e6e6;color:#00438a;border:1px solid #ddd;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .l-btn-disabled,.CgsSymbolPropertyTool .l-btn-disabled:hover{opacity:.5;cursor:default;background:#f5f5f5;color:#444;background:-webkit-linear-gradient(top,#fff 0,#e6e6e6 100%);background:-moz-linear-gradient(top,#fff 0,#e6e6e6 100%);background:-o-linear-gradient(top,#fff 0,#e6e6e6 100%);background:linear-gradient(to bottom,#fff 0,#e6e6e6 100%);background-repeat:repeat-x}
+.CgsSymbolPropertyTool .l-btn-plain-disabled,.CgsSymbolPropertyTool .l-btn-plain-disabled:hover{background:0 0}
+.CgsSymbolPropertyTool .l-btn-selected,.CgsSymbolPropertyTool .l-btn-selected:hover{background:#ddd}
+.CgsSymbolPropertyTool .l-btn-plain-selected,.CgsSymbolPropertyTool .l-btn-plain-selected:hover{background:#ddd}
+.CgsSymbolPropertyTool .textbox{position:relative;border:1px solid #d4d4d4;background-color:#fff;vertical-align:middle;display:inline-block;overflow:hidden;white-space:nowrap;margin:0;padding:0;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .textbox .textbox-text{font-size:12px;border:0;margin:0;padding:4px;white-space:normal;vertical-align:top;outline-style:none;resize:none;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .textbox .textbox-text::-ms-clear,.CgsSymbolPropertyTool .textbox .textbox-text::-ms-reveal{display:none}
+.CgsSymbolPropertyTool .textbox textarea.textbox-text{white-space:pre-wrap}
+.CgsSymbolPropertyTool .textbox .textbox-prompt{font-size:12px;color:#aaa}
+.CgsSymbolPropertyTool .textbox .textbox-bgicon{background-position:3px center;padding-left:21px}
+.CgsSymbolPropertyTool .textbox .textbox-button,.CgsSymbolPropertyTool .textbox .textbox-button:hover{position:absolute;top:0;padding:0;vertical-align:top;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .textbox .textbox-button-right,.CgsSymbolPropertyTool .textbox .textbox-button-right:hover{right:0;border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .textbox .textbox-button-left,.CgsSymbolPropertyTool .textbox .textbox-button-left:hover{left:0;border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .textbox .textbox-button-top,.CgsSymbolPropertyTool .textbox .textbox-button-top:hover{left:0;border-width:0 0 1px 0}
+.CgsSymbolPropertyTool .textbox .textbox-button-bottom,.CgsSymbolPropertyTool .textbox .textbox-button-bottom:hover{top:auto;bottom:0;left:0;border-width:1px 0 0 0}
+.CgsSymbolPropertyTool .textbox-addon{position:absolute;top:0}
+.CgsSymbolPropertyTool .textbox-label{display:inline-block;width:80px;height:22px;line-height:22px;vertical-align:middle;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0;padding-right:5px}
+.CgsSymbolPropertyTool .textbox-label-after{padding-left:5px;padding-right:0}
+.CgsSymbolPropertyTool .textbox-label-top{display:block;width:auto;padding:0}
+.CgsSymbolPropertyTool .textbox-disabled,.CgsSymbolPropertyTool .textbox-label-disabled{opacity:.6}
+.CgsSymbolPropertyTool .textbox-icon{display:inline-block;width:18px;height:20px;overflow:hidden;vertical-align:top;background-position:center center;cursor:pointer;opacity:.6;text-decoration:none;outline-style:none}
+.CgsSymbolPropertyTool .textbox-icon-disabled,.CgsSymbolPropertyTool .textbox-icon-readonly{cursor:default}
+.CgsSymbolPropertyTool .textbox-icon:hover{opacity:1}
+.CgsSymbolPropertyTool .textbox-icon-disabled:hover{opacity:.6}
+.CgsSymbolPropertyTool .textbox-focused{border-color:#bbb;-moz-box-shadow:0 0 3px 0 #d4d4d4;-webkit-box-shadow:0 0 3px 0 #d4d4d4;box-shadow:0 0 3px 0 #d4d4d4}
+.CgsSymbolPropertyTool .textbox-invalid{border-color:#ffa8a8;background-color:#fff3f3}
+.CgsSymbolPropertyTool .passwordbox-open{background:url(images/passwordbox_open.png) no-repeat center center}
+.CgsSymbolPropertyTool .passwordbox-close{background:url(images/passwordbox_close.png) no-repeat center center}
+.CgsSymbolPropertyTool .filebox .textbox-value{vertical-align:top;position:absolute;top:0;left:-5000px}
+.CgsSymbolPropertyTool .filebox-label{display:inline-block;position:absolute;width:100%;height:100%;cursor:pointer;left:0;top:0;z-index:10;background:url(images/blank.gif) no-repeat}
+.CgsSymbolPropertyTool .l-btn-disabled .filebox-label{cursor:default}
+.CgsSymbolPropertyTool .combo-arrow{width:18px;height:20px;overflow:hidden;display:inline-block;vertical-align:top;cursor:pointer;opacity:.6}
+.CgsSymbolPropertyTool .combo-arrow-hover{opacity:1}
+.CgsSymbolPropertyTool .combo-panel{overflow:auto}
+.CgsSymbolPropertyTool .combo-arrow{background:url(../assets/image/tool/symboltool/combo_arrow.png) no-repeat center center}
+.CgsSymbolPropertyTool .combo-panel{background-color:#fff}
+.CgsSymbolPropertyTool .combo-arrow{background-color:#f2f2f2}
+.CgsSymbolPropertyTool .combo-arrow-hover{background-color:#e6e6e6}
+.CgsSymbolPropertyTool .combo-arrow:hover{background-color:#e6e6e6}
+.CgsSymbolPropertyTool .combo .textbox-icon-disabled:hover{cursor:default}
+.CgsSymbolPropertyTool .combobox-group,.CgsSymbolPropertyTool .combobox-item,.CgsSymbolPropertyTool .combobox-stick{font-size:12px;padding:3px}
+.CgsSymbolPropertyTool .combobox-item-disabled{opacity:.5}
+.CgsSymbolPropertyTool .combobox-gitem{padding-left:10px}
+.CgsSymbolPropertyTool .combobox-group,.CgsSymbolPropertyTool .combobox-stick{font-weight:700}
+.CgsSymbolPropertyTool .combobox-stick{position:absolute;top:1px;left:1px;right:1px;background:inherit}
+.CgsSymbolPropertyTool .combobox-item-hover{background-color:#e6e6e6;color:#00438a}
+.CgsSymbolPropertyTool .combobox-item-selected{background-color:#0081c2;color:#fff}
+.CgsSymbolPropertyTool .combobox-icon{display:inline-block;width:16px;height:16px;vertical-align:middle;margin-right:2px}
+.CgsSymbolPropertyTool .tagbox{cursor:text}
+.CgsSymbolPropertyTool .tagbox .textbox-text{float:left}
+.CgsSymbolPropertyTool .tagbox-label{position:relative;display:block;margin:4px 0 0 4px;padding:0 20px 0 4px;float:left;vertical-align:top;text-decoration:none;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px;background:#e6e6e6;color:#00438a}
+.CgsSymbolPropertyTool .tagbox-remove{background:url(images/tagbox_icons.png) no-repeat -16px center;position:absolute;display:block;width:16px;height:16px;right:2px;top:50%;margin-top:-8px;opacity:.6}
+.CgsSymbolPropertyTool .tagbox-remove:hover{opacity:1}
+.CgsSymbolPropertyTool .textbox-disabled .tagbox-label{cursor:default}
+.CgsSymbolPropertyTool .textbox-disabled .tagbox-remove:hover{cursor:default;opacity:.6}
+.CgsSymbolPropertyTool .layout{position:relative;overflow:hidden;margin:0;padding:0;z-index:0}
+.CgsSymbolPropertyTool .layout-panel{position:absolute;overflow:hidden}
+.CgsSymbolPropertyTool .layout-body{min-width:1px;min-height:1px}
+.CgsSymbolPropertyTool .layout-panel-east,.CgsSymbolPropertyTool .layout-panel-west{z-index:2}
+.CgsSymbolPropertyTool .layout-panel-north,.CgsSymbolPropertyTool .layout-panel-south{z-index:3}
+.CgsSymbolPropertyTool .layout-expand{position:absolute;padding:0;font-size:1px;cursor:pointer;z-index:1}
+.CgsSymbolPropertyTool .layout-expand .panel-body,.CgsSymbolPropertyTool .layout-expand .panel-header{background:0 0;filter:none;overflow:hidden}
+.CgsSymbolPropertyTool .layout-expand .panel-header{border-bottom-width:0}
+.CgsSymbolPropertyTool .layout-expand .panel-body{position:relative}
+.CgsSymbolPropertyTool .layout-expand .panel-body .panel-icon{margin-top:0;top:0;left:50%;margin-left:-8px}
+.CgsSymbolPropertyTool .layout-expand-east .panel-header .panel-icon,.CgsSymbolPropertyTool .layout-expand-west .panel-header .panel-icon{display:none}
+.CgsSymbolPropertyTool .layout-expand-title{position:absolute;top:0;left:21px;white-space:nowrap;word-wrap:normal;-webkit-transform:rotate(90deg);-webkit-transform-origin:0 0;-moz-transform:rotate(90deg);-moz-transform-origin:0 0;-o-transform:rotate(90deg);-o-transform-origin:0 0;transform:rotate(90deg);transform-origin:0 0}
+.CgsSymbolPropertyTool .layout-expand-title-up{position:absolute;top:0;left:0;text-align:right;padding-left:5px;white-space:nowrap;word-wrap:normal;-webkit-transform:rotate(-90deg);-webkit-transform-origin:0 0;-moz-transform:rotate(-90deg);-moz-transform-origin:0 0;-o-transform:rotate(-90deg);-o-transform-origin:0 0;transform:rotate(-90deg);transform-origin:0 0}
+.CgsSymbolPropertyTool .layout-expand-with-icon{top:18px}
+.CgsSymbolPropertyTool .layout-expand .panel-body-noheader .layout-expand-title,.CgsSymbolPropertyTool .layout-expand .panel-body-noheader .panel-icon{top:5px}
+.CgsSymbolPropertyTool .layout-expand .panel-body-noheader .layout-expand-with-icon{top:23px}
+.CgsSymbolPropertyTool .layout-split-proxy-h,.CgsSymbolPropertyTool .layout-split-proxy-v{position:absolute;font-size:1px;display:none;z-index:5}
+.CgsSymbolPropertyTool .layout-split-proxy-h{width:5px;cursor:e-resize}
+.CgsSymbolPropertyTool .layout-split-proxy-v{height:5px;cursor:n-resize}
+.CgsSymbolPropertyTool .layout-mask{position:absolute;background:#fafafa;opacity:.1;z-index:4}
+.CgsSymbolPropertyTool .layout-button-up{background:url(images/layout_arrows.png) no-repeat -16px -16px}
+.CgsSymbolPropertyTool .layout-button-down{background:url(images/layout_arrows.png) no-repeat -16px 0}
+.CgsSymbolPropertyTool .layout-button-left{background:url(images/layout_arrows.png) no-repeat 0 0}
+.CgsSymbolPropertyTool .layout-button-right{background:url(images/layout_arrows.png) no-repeat 0 -16px}
+.CgsSymbolPropertyTool .layout-split-proxy-h,.CgsSymbolPropertyTool .layout-split-proxy-v{background-color:#bbb}
+.CgsSymbolPropertyTool .layout-split-north{border-bottom:5px solid #eee}
+.CgsSymbolPropertyTool .layout-split-south{border-top:5px solid #eee}
+.CgsSymbolPropertyTool .layout-split-east{border-left:5px solid #eee}
+.CgsSymbolPropertyTool .layout-split-west{border-right:5px solid #eee}
+.CgsSymbolPropertyTool .layout-expand{background-color:#f2f2f2}
+.CgsSymbolPropertyTool .layout-expand-over{background-color:#f2f2f2}
+.CgsSymbolPropertyTool .tabs-container{overflow:hidden}
+.CgsSymbolPropertyTool .tabs-header{border-width:1px;border-style:solid;border-bottom-width:0;position:relative;padding:0;padding-top:2px;overflow:hidden}
+.CgsSymbolPropertyTool .tabs-scroller-left,.CgsSymbolPropertyTool .tabs-scroller-right{position:absolute;top:auto;bottom:0;width:18px;font-size:1px;display:none;cursor:pointer;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .tabs-scroller-left{left:0}
+.CgsSymbolPropertyTool .tabs-scroller-right{right:0}
+.CgsSymbolPropertyTool .tabs-tool{position:absolute;bottom:0;padding:1px;overflow:hidden;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .tabs-header-plain .tabs-tool{padding:0 1px}
+.CgsSymbolPropertyTool .tabs-wrap{position:relative;left:0;overflow:hidden;width:100%;margin:0;padding:0}
+.CgsSymbolPropertyTool .tabs-scrolling{margin-left:18px;margin-right:18px}
+.CgsSymbolPropertyTool .tabs-disabled{opacity:.3}
+.CgsSymbolPropertyTool .tabs{list-style-type:none;height:26px;margin:0;padding:0;padding-left:4px;width:50000px;border-style:solid;border-width:0 0 1px 0}
+.CgsSymbolPropertyTool .tabs li{float:left;display:inline-block;margin:0 2px -1px 0;padding:0;position:relative;border:0}
+.CgsSymbolPropertyTool .tabs li a.tabs-inner{display:inline-block;text-decoration:none;margin:0;padding:0 10px;height:25px;line-height:25px;text-align:center;white-space:nowrap;border-width:1px;border-style:solid;-moz-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0}
+.CgsSymbolPropertyTool .tabs li.tabs-selected a.tabs-inner{font-weight:700;outline:0}
+.CgsSymbolPropertyTool .tabs li.tabs-selected a:hover.tabs-inner{cursor:default;pointer:default}
+.CgsSymbolPropertyTool .tabs li a.tabs-close,.CgsSymbolPropertyTool .tabs-p-tool{position:absolute;font-size:1px;display:block;height:12px;padding:0;top:50%;margin-top:-6px;overflow:hidden}
+.CgsSymbolPropertyTool .tabs li a.tabs-close{width:12px;right:5px;opacity:.6}
+.CgsSymbolPropertyTool .tabs-p-tool{right:16px}
+.CgsSymbolPropertyTool .tabs-p-tool a{display:inline-block;font-size:1px;width:12px;height:12px;margin:0;opacity:.6}
+.CgsSymbolPropertyTool .tabs li a:hover.tabs-close,.CgsSymbolPropertyTool .tabs-p-tool a:hover{opacity:1;cursor:hand;cursor:pointer}
+.CgsSymbolPropertyTool .tabs-with-icon{padding-left:18px}
+.CgsSymbolPropertyTool .tabs-icon{position:absolute;width:16px;height:16px;left:10px;top:50%;margin-top:-8px}
+.CgsSymbolPropertyTool .tabs-title{font-size:12px}
+.CgsSymbolPropertyTool .tabs-closable{padding-right:8px}
+.CgsSymbolPropertyTool .tabs-panels{margin:0;padding:0;border-width:1px;border-style:solid;border-top-width:0;overflow:hidden}
+.CgsSymbolPropertyTool .tabs-header-bottom{border-width:0 1px 1px 1px;padding:0 0 2px 0}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs{border-width:1px 0 0 0}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs li{margin:-1px 4px 0 0}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs li a.tabs-inner{-moz-border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs-tool{top:0}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs-scroller-left,.CgsSymbolPropertyTool .tabs-header-bottom .tabs-scroller-right{top:0;bottom:auto}
+.CgsSymbolPropertyTool .tabs-panels-top{border-width:1px 1px 0 1px}
+.CgsSymbolPropertyTool .tabs-header-left{float:left;border-width:1px 0 1px 1px;padding:0}
+.CgsSymbolPropertyTool .tabs-header-right{float:right;border-width:1px 1px 1px 0;padding:0}
+.CgsSymbolPropertyTool .tabs-header-left .tabs-wrap,.CgsSymbolPropertyTool .tabs-header-right .tabs-wrap{height:100%}
+.CgsSymbolPropertyTool .tabs-header-left .tabs{height:100%;padding:4px 0 0 2px;border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .tabs-header-right .tabs{height:100%;padding:4px 2px 0 0;border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .tabs-header-left .tabs li,.CgsSymbolPropertyTool .tabs-header-right .tabs li{display:block;width:100%;position:relative}
+.CgsSymbolPropertyTool .tabs-header-left .tabs li{left:auto;right:0;margin:0 -1px 4px 0;float:right}
+.CgsSymbolPropertyTool .tabs-header-right .tabs li{left:0;right:auto;margin:0 0 4px -1px;float:left}
+.CgsSymbolPropertyTool .tabs-justified li a.tabs-inner{padding-left:0;padding-right:0}
+.CgsSymbolPropertyTool .tabs-header-left .tabs li a.tabs-inner{display:block;text-align:left;padding-left:10px;padding-right:10px;-moz-border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;border-radius:5px 0 0 5px}
+.CgsSymbolPropertyTool .tabs-header-right .tabs li a.tabs-inner{display:block;text-align:left;padding-left:10px;padding-right:10px;-moz-border-radius:0 5px 5px 0;-webkit-border-radius:0 5px 5px 0;border-radius:0 5px 5px 0}
+.CgsSymbolPropertyTool .tabs-panels-right{float:right;border-width:1px 1px 1px 0}
+.CgsSymbolPropertyTool .tabs-panels-left{float:left;border-width:1px 0 1px 1px}
+.CgsSymbolPropertyTool .tabs-header-noborder,.CgsSymbolPropertyTool .tabs-panels-noborder{border:0}
+.CgsSymbolPropertyTool .tabs-header-plain{border:0;background:0 0}
+.CgsSymbolPropertyTool .tabs-pill{padding-bottom:3px}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs-pill{padding-top:3px;padding-bottom:0}
+.CgsSymbolPropertyTool .tabs-header-left .tabs-pill{padding-right:3px}
+.CgsSymbolPropertyTool .tabs-header-right .tabs-pill{padding-left:3px}
+.CgsSymbolPropertyTool .tabs-header .tabs-pill li a.tabs-inner{-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .tabs-header-narrow,.CgsSymbolPropertyTool .tabs-header-narrow .tabs-narrow{padding:0}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs-narrow li,.CgsSymbolPropertyTool .tabs-narrow li{margin-left:0;margin-right:-1px}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs-narrow li.tabs-last,.CgsSymbolPropertyTool .tabs-narrow li.tabs-last{margin-right:0}
+.CgsSymbolPropertyTool .tabs-header-left .tabs-narrow,.CgsSymbolPropertyTool .tabs-header-right .tabs-narrow{padding-top:0}
+.CgsSymbolPropertyTool .tabs-header-left .tabs-narrow li{margin-bottom:-1px;margin-right:-1px}
+.CgsSymbolPropertyTool .tabs-header-left .tabs-narrow li.tabs-last,.CgsSymbolPropertyTool .tabs-header-right .tabs-narrow li.tabs-last{margin-bottom:0}
+.CgsSymbolPropertyTool .tabs-header-right .tabs-narrow li{margin-bottom:-1px;margin-left:-1px}
+.CgsSymbolPropertyTool .tabs-scroller-left{background:#f2f2f2 url(../assets/image/tool/symboltool/tabs_icons.png) no-repeat 1px center}
+.CgsSymbolPropertyTool .tabs-scroller-right{background:#f2f2f2 url(../assets/image/tool/symboltool/tabs_icons.png) no-repeat -15px center}
+.CgsSymbolPropertyTool .tabs li a.tabs-close{background:url(images/tabs_icons.png) no-repeat -34px center}
+.CgsSymbolPropertyTool .tabs li a.tabs-inner:hover{background:#e6e6e6;color:#00438a;filter:none}
+.CgsSymbolPropertyTool .tabs li.tabs-selected a.tabs-inner{background-color:#fff;color:#777;background:-webkit-linear-gradient(top,#fff 0,#fff 100%);background:-moz-linear-gradient(top,#fff 0,#fff 100%);background:-o-linear-gradient(top,#fff 0,#fff 100%);background:linear-gradient(to bottom,#fff 0,#fff 100%);background-repeat:repeat-x}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner{background:-webkit-linear-gradient(top,#fff 0,#fff 100%);background:-moz-linear-gradient(top,#fff 0,#fff 100%);background:-o-linear-gradient(top,#fff 0,#fff 100%);background:linear-gradient(to bottom,#fff 0,#fff 100%);background-repeat:repeat-x}
+.CgsSymbolPropertyTool .tabs-header-left .tabs li.tabs-selected a.tabs-inner{background:-webkit-linear-gradient(left,#fff 0,#fff 100%);background:-moz-linear-gradient(left,#fff 0,#fff 100%);background:-o-linear-gradient(left,#fff 0,#fff 100%);background:linear-gradient(to right,#fff 0,#fff 100%);background-repeat:repeat-y}
+.CgsSymbolPropertyTool .tabs-header-right .tabs li.tabs-selected a.tabs-inner{background:-webkit-linear-gradient(left,#fff 0,#fff 100%);background:-moz-linear-gradient(left,#fff 0,#fff 100%);background:-o-linear-gradient(left,#fff 0,#fff 100%);background:linear-gradient(to right,#fff 0,#fff 100%);background-repeat:repeat-y}
+.CgsSymbolPropertyTool .tabs li a.tabs-inner{color:#777;background-color:#f2f2f2;background:-webkit-linear-gradient(top,#fff 0,#f2f2f2 100%);background:-moz-linear-gradient(top,#fff 0,#f2f2f2 100%);background:-o-linear-gradient(top,#fff 0,#f2f2f2 100%);background:linear-gradient(to bottom,#fff 0,#f2f2f2 100%);background-repeat:repeat-x}
+.CgsSymbolPropertyTool .tabs-header,.CgsSymbolPropertyTool .tabs-tool{background-color:#f2f2f2}
+.CgsSymbolPropertyTool .tabs-header-plain{background:0 0}
+.CgsSymbolPropertyTool .tabs,.CgsSymbolPropertyTool .tabs li a.tabs-inner,.CgsSymbolPropertyTool .tabs li.tabs-selected a.tabs-inner,.CgsSymbolPropertyTool .tabs-header,.CgsSymbolPropertyTool .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner,.CgsSymbolPropertyTool .tabs-header-left .tabs li.tabs-selected a.tabs-inner,.CgsSymbolPropertyTool .tabs-header-right .tabs li.tabs-selected a.tabs-inner,.CgsSymbolPropertyTool .tabs-panels,.CgsSymbolPropertyTool .tabs-scroller-left,.CgsSymbolPropertyTool .tabs-scroller-right,.CgsSymbolPropertyTool .tabs-tool{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .tabs li a:hover.tabs-close,.CgsSymbolPropertyTool .tabs-p-tool a:hover,.CgsSymbolPropertyTool .tabs-scroller-over{background-color:#e6e6e6}
+.CgsSymbolPropertyTool .tabs li.tabs-selected a.tabs-inner{border-bottom:1px solid #fff}
+.CgsSymbolPropertyTool .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner{border-top:1px solid #fff}
+.CgsSymbolPropertyTool .tabs-header-left .tabs li.tabs-selected a.tabs-inner{border-right:1px solid #fff}
+.CgsSymbolPropertyTool .tabs-header-right .tabs li.tabs-selected a.tabs-inner{border-left:1px solid #fff}
+.CgsSymbolPropertyTool .tabs-header .tabs-pill li.tabs-selected a.tabs-inner{background:#0081c2;color:#fff;filter:none;border-color:#d4d4d4}
+.CgsSymbolPropertyTool .datagrid .panel-body{overflow:hidden;position:relative}
+.CgsSymbolPropertyTool .datagrid-view{position:relative;overflow:hidden}
+.CgsSymbolPropertyTool .datagrid-view1,.CgsSymbolPropertyTool .datagrid-view2{position:absolute;overflow:hidden;top:0}
+.CgsSymbolPropertyTool .datagrid-view1{left:0}
+.CgsSymbolPropertyTool .datagrid-view2{right:0}
+.CgsSymbolPropertyTool .datagrid-mask{position:absolute;left:0;top:0;width:100%;height:100%;opacity:.3;display:none}
+.CgsSymbolPropertyTool .datagrid-mask-msg{position:absolute;top:50%;margin-top:-20px;padding:10px 5px 10px 30px;width:auto;height:16px;border-width:2px;border-style:solid;display:none}
+.CgsSymbolPropertyTool .datagrid-empty{position:absolute;left:0;top:0;width:100%;height:25px;line-height:25px;text-align:center}
+.CgsSymbolPropertyTool .datagrid-sort-icon{padding:0;display:none}
+.CgsSymbolPropertyTool .datagrid-toolbar{height:auto;padding:1px 2px;border-width:0 0 1px 0;border-style:solid}
+.CgsSymbolPropertyTool .datagrid-btn-separator{float:left;height:24px;border-left:1px solid #ccc;border-right:1px solid #fff;margin:2px 1px}
+.CgsSymbolPropertyTool .datagrid .datagrid-pager{display:block;margin:0;border-width:1px 0 0 0;border-style:solid}
+.CgsSymbolPropertyTool .datagrid .datagrid-pager-top{border-width:0 0 1px 0}
+.CgsSymbolPropertyTool .datagrid-header{overflow:hidden;cursor:default;border-width:0 0 1px 0;border-style:solid}
+.CgsSymbolPropertyTool .datagrid-header-inner{float:left;width:10000px}
+.CgsSymbolPropertyTool .datagrid-header-row,.CgsSymbolPropertyTool .datagrid-row{height:25px}
+.CgsSymbolPropertyTool .datagrid-body td,.CgsSymbolPropertyTool .datagrid-footer td,.CgsSymbolPropertyTool .datagrid-header td{border-width:0 1px 1px 0;border-style:dotted;margin:0;padding:0}
+.CgsSymbolPropertyTool .datagrid-cell,.CgsSymbolPropertyTool .datagrid-cell-group,.CgsSymbolPropertyTool .datagrid-cell-rownumber,.CgsSymbolPropertyTool .datagrid-header-rownumber{margin:0;padding:0 4px;white-space:nowrap;word-wrap:normal;overflow:hidden;height:18px;line-height:18px;font-size:12px}
+.CgsSymbolPropertyTool .datagrid-header .datagrid-cell{height:auto}
+.CgsSymbolPropertyTool .datagrid-header .datagrid-cell span{font-size:12px}
+.CgsSymbolPropertyTool .datagrid-cell-group{text-align:center;text-overflow:ellipsis}
+.CgsSymbolPropertyTool .datagrid-cell-rownumber,.CgsSymbolPropertyTool .datagrid-header-rownumber{width:30px;text-align:center;margin:0;padding:0}
+.CgsSymbolPropertyTool .datagrid-body{margin:0;padding:0;overflow:auto;zoom:1}
+.CgsSymbolPropertyTool .datagrid-view1 .datagrid-body-inner{padding-bottom:20px}
+.CgsSymbolPropertyTool .datagrid-view1 .datagrid-body{overflow:hidden}
+.CgsSymbolPropertyTool .datagrid-footer{overflow:hidden}
+.CgsSymbolPropertyTool .datagrid-footer-inner{border-width:1px 0 0 0;border-style:solid;width:10000px;float:left}
+.CgsSymbolPropertyTool .datagrid-row-editing .datagrid-cell{height:auto}
+.CgsSymbolPropertyTool .datagrid-cell-check,.CgsSymbolPropertyTool .datagrid-header-check{padding:0;width:27px;height:18px;font-size:1px;text-align:center;overflow:hidden}
+.CgsSymbolPropertyTool .datagrid-cell-check input,.CgsSymbolPropertyTool .datagrid-header-check input{margin:0;padding:0;width:15px;height:18px}
+.CgsSymbolPropertyTool .datagrid-resize-proxy{position:absolute;width:1px;height:10000px;top:0;cursor:e-resize;display:none}
+.CgsSymbolPropertyTool .datagrid-body .datagrid-editable{margin:0;padding:0}
+.CgsSymbolPropertyTool .datagrid-body .datagrid-editable table{width:100%;height:100%}
+.CgsSymbolPropertyTool .datagrid-body .datagrid-editable td{border:0;margin:0;padding:0}
+.CgsSymbolPropertyTool .datagrid-view .datagrid-editable-input{margin:0;padding:2px 4px;border:1px solid #d4d4d4;font-size:12px;outline-style:none;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .datagrid-view .validatebox-invalid{border-color:#ffa8a8}
+.CgsSymbolPropertyTool .datagrid-sort .datagrid-sort-icon{display:inline;padding:0 13px 0 0;background:url(images/datagrid_icons.png) no-repeat -64px center}
+.CgsSymbolPropertyTool .datagrid-sort-desc .datagrid-sort-icon{display:inline;padding:0 13px 0 0;background:url(images/datagrid_icons.png) no-repeat -16px center}
+.CgsSymbolPropertyTool .datagrid-sort-asc .datagrid-sort-icon{display:inline;padding:0 13px 0 0;background:url(images/datagrid_icons.png) no-repeat 0 center}
+.CgsSymbolPropertyTool .datagrid-row-collapse{background:url(images/datagrid_icons.png) no-repeat -48px center}
+.CgsSymbolPropertyTool .datagrid-row-expand{background:url(images/datagrid_icons.png) no-repeat -32px center}
+.CgsSymbolPropertyTool .datagrid-mask-msg{background:#fff url(images/loading.gif) no-repeat scroll 5px center}
+.CgsSymbolPropertyTool .datagrid-header,.CgsSymbolPropertyTool .datagrid-td-rownumber{background-color:#f2f2f2;background:-webkit-linear-gradient(top,#fff 0,#f2f2f2 100%);background:-moz-linear-gradient(top,#fff 0,#f2f2f2 100%);background:-o-linear-gradient(top,#fff 0,#f2f2f2 100%);background:linear-gradient(to bottom,#fff 0,#f2f2f2 100%);background-repeat:repeat-x}
+.CgsSymbolPropertyTool .datagrid-cell-rownumber{color:#333}
+.CgsSymbolPropertyTool .datagrid-resize-proxy{background:#bbb}
+.CgsSymbolPropertyTool .datagrid-mask{background:#ccc}
+.CgsSymbolPropertyTool .datagrid-mask-msg{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .datagrid-pager,.CgsSymbolPropertyTool .datagrid-toolbar{background:#f5f5f5}
+.CgsSymbolPropertyTool .datagrid-footer-inner,.CgsSymbolPropertyTool .datagrid-header,.CgsSymbolPropertyTool .datagrid-pager,.CgsSymbolPropertyTool .datagrid-toolbar{border-color:#e6e6e6}
+.CgsSymbolPropertyTool .datagrid-body td,.CgsSymbolPropertyTool .datagrid-footer td,.CgsSymbolPropertyTool .datagrid-header td{border-color:#ccc}
+.CgsSymbolPropertyTool .datagrid-btable,.CgsSymbolPropertyTool .datagrid-ftable,.CgsSymbolPropertyTool .datagrid-htable{color:#333;border-collapse:separate}
+.CgsSymbolPropertyTool .datagrid-row-alt{background:#f5f5f5}
+.CgsSymbolPropertyTool .datagrid-header td.datagrid-header-over,.CgsSymbolPropertyTool .datagrid-row-over{background:#e6e6e6;color:#00438a;cursor:default}
+.CgsSymbolPropertyTool .datagrid-row-selected{background:rgba(0,129,194,.3);color:#fff}
+.CgsSymbolPropertyTool .datagrid-row-editing .textbox,.CgsSymbolPropertyTool .datagrid-row-editing .textbox-text{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-body td{padding-bottom:1px;border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .propertygrid .datagrid-group{height:21px;overflow:hidden;border-width:0 0 1px 0;border-style:solid}
+.CgsSymbolPropertyTool .propertygrid .datagrid-group span{font-weight:700}
+.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-body td{border-color:#e6e6e6}
+.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-group{border-color:#f2f2f2}
+.CgsSymbolPropertyTool .propertygrid .datagrid-view2 .datagrid-group{border-color:#e6e6e6}
+.CgsSymbolPropertyTool .propertygrid .datagrid-group,.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-body,.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-row-over,.CgsSymbolPropertyTool .propertygrid .datagrid-view1 .datagrid-row-selected{background:0 0}
+.CgsSymbolPropertyTool .datalist .datagrid-header{border-width:0}
+.CgsSymbolPropertyTool .datalist .datagrid-group,.CgsSymbolPropertyTool .m-list .m-list-group{height:25px;line-height:25px;font-weight:700;overflow:hidden;background-color:#f2f2f2;border-style:solid;border-width:0 0 1px 0;border-color:#ccc}
+.CgsSymbolPropertyTool .datalist .datagrid-group-expander{display:none}
+.CgsSymbolPropertyTool .datalist .datagrid-group-title{padding:0 4px}
+.CgsSymbolPropertyTool .datalist .datagrid-btable{width:100%;table-layout:fixed}
+.CgsSymbolPropertyTool .datalist .datagrid-row td{border-style:solid;border-left-color:transparent;border-right-color:transparent;border-bottom-width:0}
+.CgsSymbolPropertyTool .datalist-lines .datagrid-row td{border-bottom-width:1px}
+.CgsSymbolPropertyTool .datalist .datagrid-cell,.CgsSymbolPropertyTool .m-list li{width:auto;height:auto;padding:2px 4px;line-height:18px;position:relative;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.CgsSymbolPropertyTool .datalist-link,.CgsSymbolPropertyTool .m-list li>a{display:block;position:relative;cursor:pointer;color:#333;text-decoration:none;overflow:hidden;margin:-2px -4px;padding:2px 4px;padding-right:16px;line-height:18px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.CgsSymbolPropertyTool .datalist-link::after,.CgsSymbolPropertyTool .m-list li>a::after{position:absolute;display:block;width:8px;height:8px;content:'';right:6px;top:50%;margin-top:-4px;border-style:solid;border-width:1px 1px 0 0;-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-webkit-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}
+.CgsSymbolPropertyTool .m-list{margin:0;padding:0;list-style:none}
+.CgsSymbolPropertyTool .m-list li{border-style:solid;border-width:0 0 1px 0;border-color:#ccc}
+.CgsSymbolPropertyTool .m-list li>a:hover{background:#e6e6e6;color:#00438a}
+.CgsSymbolPropertyTool .m-list .m-list-group{padding:0 4px}
+.CgsSymbolPropertyTool .pagination{zoom:1}
+.CgsSymbolPropertyTool .pagination table{float:left;height:30px}
+.CgsSymbolPropertyTool .pagination td{border:0}
+.CgsSymbolPropertyTool .pagination-btn-separator{float:left;height:24px;border-left:1px solid #ccc;border-right:1px solid #fff;margin:3px 1px}
+.CgsSymbolPropertyTool .pagination .pagination-num{border-width:1px;border-style:solid;margin:0 2px;padding:2px;width:2em;height:auto}
+.CgsSymbolPropertyTool .pagination-page-list{margin:0 6px;padding:1px 2px;width:auto;height:auto;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .pagination-info{float:right;margin:0 6px;padding:0;height:30px;line-height:30px;font-size:12px}
+.CgsSymbolPropertyTool .pagination span{font-size:12px}
+.CgsSymbolPropertyTool .pagination-link .l-btn-text{width:24px;text-align:center;margin:0}
+.CgsSymbolPropertyTool .pagination-first{background:url(images/pagination_icons.png) no-repeat 0 center}
+.CgsSymbolPropertyTool .pagination-prev{background:url(images/pagination_icons.png) no-repeat -16px center}
+.CgsSymbolPropertyTool .pagination-next{background:url(images/pagination_icons.png) no-repeat -32px center}
+.CgsSymbolPropertyTool .pagination-last{background:url(images/pagination_icons.png) no-repeat -48px center}
+.CgsSymbolPropertyTool .pagination-load{background:url(images/pagination_icons.png) no-repeat -64px center}
+.CgsSymbolPropertyTool .pagination-loading{background:url(images/loading.gif) no-repeat center center}
+.CgsSymbolPropertyTool .pagination .pagination-num,.CgsSymbolPropertyTool .pagination-page-list{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .calendar{border-width:1px;border-style:solid;padding:1px;overflow:hidden}
+.CgsSymbolPropertyTool .calendar table{table-layout:fixed;border-collapse:separate;font-size:12px;width:100%;height:100%}
+.CgsSymbolPropertyTool .calendar table td,.CgsSymbolPropertyTool .calendar table th{font-size:12px}
+.CgsSymbolPropertyTool .calendar-noborder{border:0}
+.CgsSymbolPropertyTool .calendar-header{position:relative;height:22px}
+.CgsSymbolPropertyTool .calendar-title{text-align:center;height:22px}
+.CgsSymbolPropertyTool .calendar-title span{position:relative;display:inline-block;top:2px;padding:0 3px;height:18px;line-height:18px;font-size:12px;cursor:pointer;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .calendar-nextmonth,.CgsSymbolPropertyTool .calendar-nextyear,.CgsSymbolPropertyTool .calendar-prevmonth,.CgsSymbolPropertyTool .calendar-prevyear{position:absolute;top:50%;margin-top:-7px;width:14px;height:14px;cursor:pointer;font-size:1px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .calendar-prevmonth{left:20px;background:url(images/calendar_arrows.png) no-repeat -18px -2px}
+.CgsSymbolPropertyTool .calendar-nextmonth{right:20px;background:url(images/calendar_arrows.png) no-repeat -34px -2px}
+.CgsSymbolPropertyTool .calendar-prevyear{left:3px;background:url(images/calendar_arrows.png) no-repeat -1px -2px}
+.CgsSymbolPropertyTool .calendar-nextyear{right:3px;background:url(images/calendar_arrows.png) no-repeat -49px -2px}
+.CgsSymbolPropertyTool .calendar-body{position:relative}
+.CgsSymbolPropertyTool .calendar-body td,.CgsSymbolPropertyTool .calendar-body th{text-align:center}
+.CgsSymbolPropertyTool .calendar-day{border:0;padding:1px;cursor:pointer;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .calendar-other-month{opacity:.3}
+.CgsSymbolPropertyTool .calendar-disabled{opacity:.6;cursor:default}
+.CgsSymbolPropertyTool .calendar-menu{position:absolute;top:0;left:0;width:180px;height:150px;padding:5px;font-size:12px;display:none;overflow:hidden}
+.CgsSymbolPropertyTool .calendar-menu-year-inner{text-align:center;padding-bottom:5px}
+.CgsSymbolPropertyTool .calendar-menu-year{width:50px;text-align:center;border-width:1px;border-style:solid;outline-style:none;resize:none;margin:0;padding:2px;font-weight:700;font-size:12px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .calendar-menu-next,.CgsSymbolPropertyTool .calendar-menu-prev{display:inline-block;width:21px;height:21px;vertical-align:top;cursor:pointer;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .calendar-menu-prev{margin-right:10px;background:url(images/calendar_arrows.png) no-repeat 2px 2px}
+.CgsSymbolPropertyTool .calendar-menu-next{margin-left:10px;background:url(images/calendar_arrows.png) no-repeat -45px 2px}
+.CgsSymbolPropertyTool .calendar-menu-month{text-align:center;cursor:pointer;font-weight:700;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .calendar-body th,.CgsSymbolPropertyTool .calendar-menu-month{color:grey}
+.CgsSymbolPropertyTool .calendar-day{color:#333}
+.CgsSymbolPropertyTool .calendar-sunday{color:#c22}
+.CgsSymbolPropertyTool .calendar-saturday{color:#0e0}
+.CgsSymbolPropertyTool .calendar-today{color:#00f}
+.CgsSymbolPropertyTool .calendar-menu-year{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .calendar{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .calendar-header{background:#f2f2f2}
+.CgsSymbolPropertyTool .calendar-body,.CgsSymbolPropertyTool .calendar-menu{background:#fff}
+.CgsSymbolPropertyTool .calendar-body th{background:#f5f5f5;padding:2px 0}
+.CgsSymbolPropertyTool .calendar-hover,.CgsSymbolPropertyTool .calendar-menu-hover,.CgsSymbolPropertyTool .calendar-nav-hover{background-color:#e6e6e6;color:#00438a}
+.CgsSymbolPropertyTool .calendar-hover{border:1px solid #ddd;padding:0}
+.CgsSymbolPropertyTool .calendar-selected{background-color:#0081c2;color:#fff;border:1px solid #0070a9;padding:0}
+.CgsSymbolPropertyTool .datebox-calendar-inner{height:180px}
+.CgsSymbolPropertyTool .datebox-button{padding:0 5px;text-align:center}
+.CgsSymbolPropertyTool .datebox-button a{line-height:22px;font-size:12px;font-weight:700;text-decoration:none;opacity:.6}
+.CgsSymbolPropertyTool .datebox-button a:hover{opacity:1}
+.CgsSymbolPropertyTool .datebox-close,.CgsSymbolPropertyTool .datebox-current{float:left}
+.CgsSymbolPropertyTool .datebox-close{float:right}
+.CgsSymbolPropertyTool .datebox .combo-arrow{background-image:url(images/datebox_arrow.png);background-position:center center}
+.CgsSymbolPropertyTool .datebox-button{background-color:#f5f5f5}
+.CgsSymbolPropertyTool .datebox-button a{color:#444}
+.CgsSymbolPropertyTool .spinner-arrow{background-color:#f2f2f2;display:inline-block;overflow:hidden;vertical-align:top;margin:0;padding:0;opacity:1;width:18px}
+.CgsSymbolPropertyTool .spinner-arrow-down,.CgsSymbolPropertyTool .spinner-arrow-up{opacity:.6;display:block;font-size:1px;width:18px;height:10px;width:100%;height:50%;color:#444;outline-style:none}
+.CgsSymbolPropertyTool .spinner-arrow-hover{background-color:#e6e6e6;opacity:1}
+.CgsSymbolPropertyTool .spinner-arrow-down:hover,.CgsSymbolPropertyTool .spinner-arrow-up:hover{opacity:1;background-color:#e6e6e6}
+.CgsSymbolPropertyTool .textbox-icon-disabled .spinner-arrow-down:hover,.CgsSymbolPropertyTool .textbox-icon-disabled .spinner-arrow-up:hover{opacity:.6;background-color:#f2f2f2;cursor:default}
+.CgsSymbolPropertyTool .spinner .textbox-icon-disabled{opacity:.6}
+.CgsSymbolPropertyTool .spinner-arrow-up{background:url(images/spinner_arrows.png) no-repeat 1px center}
+.CgsSymbolPropertyTool .spinner-arrow-down{background:url(images/spinner_arrows.png) no-repeat -15px center}
+.CgsSymbolPropertyTool .spinner-button-up{background:url(images/spinner_arrows.png) no-repeat -32px center}
+.CgsSymbolPropertyTool .spinner-button-down{background:url(images/spinner_arrows.png) no-repeat -48px center}
+.CgsSymbolPropertyTool .progressbar{border-width:1px;border-style:solid;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px;overflow:hidden;position:relative}
+.CgsSymbolPropertyTool .progressbar-text{text-align:center;position:absolute}
+.CgsSymbolPropertyTool .progressbar-value{position:relative;overflow:hidden;width:0;-moz-border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;border-radius:5px 0 0 5px}
+.CgsSymbolPropertyTool .progressbar{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .progressbar-text{color:#333;font-size:12px}
+.CgsSymbolPropertyTool .progressbar-value .progressbar-text{background-color:#0081c2;color:#fff}
+.CgsSymbolPropertyTool .searchbox-button{width:18px;height:20px;overflow:hidden;display:inline-block;vertical-align:top;cursor:pointer;opacity:.6}
+.CgsSymbolPropertyTool .searchbox-button-hover{opacity:1}
+.CgsSymbolPropertyTool .searchbox .l-btn-plain{border:0;padding:0;vertical-align:top;opacity:.6;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .searchbox .l-btn-plain:hover{border:0;padding:0;opacity:1;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .searchbox a.m-btn-plain-active{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .searchbox .m-btn-active{border-width:0 1px 0 0;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .searchbox .textbox-button-right{border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .searchbox .textbox-button-left{border-width:0 1px 0 0}
+.CgsSymbolPropertyTool .searchbox-button{background:url(images/searchbox_button.png) no-repeat center center}
+.CgsSymbolPropertyTool .searchbox .l-btn-plain{background:#f2f2f2}
+.CgsSymbolPropertyTool .searchbox .l-btn-plain-disabled,.CgsSymbolPropertyTool .searchbox .l-btn-plain-disabled:hover{opacity:.5}
+.CgsSymbolPropertyTool .slider-disabled{opacity:.5}
+.CgsSymbolPropertyTool .slider-h{height:22px}
+.CgsSymbolPropertyTool .slider-v{width:22px}
+.CgsSymbolPropertyTool .slider-inner{position:relative;height:6px;top:7px;border-width:1px;border-style:solid;border-radius:5px}
+.CgsSymbolPropertyTool .slider-handle{position:absolute;display:block;outline:0;width:20px;height:20px;top:50%;margin-top:-10px;margin-left:-10px}
+.CgsSymbolPropertyTool .slider-tip{position:absolute;display:inline-block;line-height:12px;font-size:12px;white-space:nowrap;top:-22px}
+.CgsSymbolPropertyTool .slider-rule{position:relative;top:15px}
+.CgsSymbolPropertyTool .slider-rule span{position:absolute;display:inline-block;font-size:0;height:5px;border-width:0 0 0 1px;border-style:solid}
+.CgsSymbolPropertyTool .slider-rulelabel{position:relative;top:20px}
+.CgsSymbolPropertyTool .slider-rulelabel span{position:absolute;display:inline-block;font-size:12px}
+.CgsSymbolPropertyTool .slider-v .slider-inner{width:6px;left:7px;top:0;float:left}
+.CgsSymbolPropertyTool .slider-v .slider-handle{left:50%;margin-top:-10px}
+.CgsSymbolPropertyTool .slider-v .slider-tip{left:-10px;margin-top:-6px}
+.CgsSymbolPropertyTool .slider-v .slider-rule{float:left;top:0;left:16px}
+.CgsSymbolPropertyTool .slider-v .slider-rule span{width:5px;height:'auto';border-left:0;border-width:1px 0 0 0;border-style:solid}
+.CgsSymbolPropertyTool .slider-v .slider-rulelabel{float:left;top:0;left:23px}
+.CgsSymbolPropertyTool .slider-handle{background:url(images/slider_handle.png) no-repeat}
+.CgsSymbolPropertyTool .slider-inner{border-color:#d4d4d4;background:#f2f2f2}
+.CgsSymbolPropertyTool .slider-rule span{border-color:#d4d4d4}
+.CgsSymbolPropertyTool .slider-rulelabel span{color:#333}
+.CgsSymbolPropertyTool .menu{position:absolute;margin:0;padding:2px;border-width:1px;border-style:solid;overflow:hidden}
+.CgsSymbolPropertyTool .menu-inline{position:relative}
+.CgsSymbolPropertyTool .menu-item{position:relative;margin:0;padding:0;overflow:hidden;white-space:nowrap;cursor:pointer;border-width:1px;border-style:solid}
+.CgsSymbolPropertyTool .menu-text{height:20px;line-height:20px;float:left;padding-left:28px}
+.CgsSymbolPropertyTool .menu-icon{position:absolute;width:16px;height:16px;left:2px;top:50%;margin-top:-8px}
+.CgsSymbolPropertyTool .menu-rightarrow{position:absolute;width:16px;height:16px;right:0;top:50%;margin-top:-8px}
+.CgsSymbolPropertyTool .menu-line{position:absolute;left:26px;top:0;height:2000px;font-size:1px}
+.CgsSymbolPropertyTool .menu-sep{margin:3px 0 3px 25px;font-size:1px}
+.CgsSymbolPropertyTool .menu-noline .menu-line{display:none}
+.CgsSymbolPropertyTool .menu-noline .menu-sep{margin-left:0;margin-right:0}
+.CgsSymbolPropertyTool .menu-active{-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .menu-item-disabled{opacity:.5;cursor:default}
+.CgsSymbolPropertyTool .menu-text,.CgsSymbolPropertyTool .menu-text span{font-size:12px}
+.CgsSymbolPropertyTool .menu-shadow{position:absolute;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px;background:#ccc;-moz-box-shadow:2px 2px 3px #ccc;-webkit-box-shadow:2px 2px 3px #ccc;box-shadow:2px 2px 3px #ccc}
+.CgsSymbolPropertyTool .menu-rightarrow{background:url(images/menu_arrows.png) no-repeat -32px center}
+.CgsSymbolPropertyTool .menu-line{border-left:1px solid #ccc;border-right:1px solid #fff}
+.CgsSymbolPropertyTool .menu-sep{border-top:1px solid #ccc;border-bottom:1px solid #fff}
+.CgsSymbolPropertyTool .menu{background-color:#fff;border-color:#e6e6e6;color:#333}
+.CgsSymbolPropertyTool .menu-content{background:#fff}
+.CgsSymbolPropertyTool .menu-item{border-color:transparent}
+.CgsSymbolPropertyTool .menu-active{border-color:#ddd;color:#00438a;background:#e6e6e6}
+.CgsSymbolPropertyTool .menu-active-disabled{border-color:transparent;background:0 0;color:#333}
+.CgsSymbolPropertyTool .m-btn-downarrow,.CgsSymbolPropertyTool .s-btn-downarrow{display:inline-block;position:absolute;width:16px;height:16px;font-size:1px;right:0;top:50%;margin-top:-8px}
+.CgsSymbolPropertyTool .m-btn-active,.CgsSymbolPropertyTool .s-btn-active{background:#e6e6e6;color:#00438a;border:1px solid #ddd;filter:none}
+.CgsSymbolPropertyTool .m-btn-plain-active,.CgsSymbolPropertyTool .s-btn-plain-active{background:0 0;padding:0;border-width:1px;border-style:solid;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .m-btn .l-btn-left .l-btn-text{margin-right:20px}
+.CgsSymbolPropertyTool .m-btn .l-btn-icon-right .l-btn-text{margin-right:40px}
+.CgsSymbolPropertyTool .m-btn .l-btn-icon-right .l-btn-icon{right:20px}
+.CgsSymbolPropertyTool .m-btn .l-btn-icon-top .l-btn-text{margin-right:4px;margin-bottom:14px}
+.CgsSymbolPropertyTool .m-btn .l-btn-icon-bottom .l-btn-text{margin-right:4px;margin-bottom:34px}
+.CgsSymbolPropertyTool .m-btn .l-btn-icon-bottom .l-btn-icon{top:auto;bottom:20px}
+.CgsSymbolPropertyTool .m-btn .l-btn-icon-bottom .m-btn-downarrow,.CgsSymbolPropertyTool .m-btn .l-btn-icon-top .m-btn-downarrow{top:auto;bottom:0;left:50%;margin-left:-8px}
+.CgsSymbolPropertyTool .m-btn-line{display:inline-block;position:absolute;font-size:1px;display:none}
+.CgsSymbolPropertyTool .m-btn .l-btn-left .m-btn-line{right:0;width:16px;height:500px;border-style:solid;border-color:#bbb;border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .m-btn .l-btn-icon-bottom .m-btn-line,.CgsSymbolPropertyTool .m-btn .l-btn-icon-top .m-btn-line{left:0;bottom:0;width:500px;height:16px;border-width:1px 0 0 0}
+.CgsSymbolPropertyTool .m-btn-large .l-btn-icon-right .l-btn-text{margin-right:56px}
+.CgsSymbolPropertyTool .m-btn-large .l-btn-icon-bottom .l-btn-text{margin-bottom:50px}
+.CgsSymbolPropertyTool .m-btn-downarrow,.CgsSymbolPropertyTool .s-btn-downarrow{background:url(images/menu_arrows.png) no-repeat 0 center}
+.CgsSymbolPropertyTool .m-btn-plain-active,.CgsSymbolPropertyTool .s-btn-plain-active{border-color:#ddd;background-color:#e6e6e6;color:#00438a}
+.CgsSymbolPropertyTool .s-btn-active .m-btn-line,.CgsSymbolPropertyTool .s-btn-plain-active .m-btn-line,.CgsSymbolPropertyTool .s-btn:hover .m-btn-line{display:inline-block}
+.CgsSymbolPropertyTool .l-btn:hover .s-btn-downarrow,.CgsSymbolPropertyTool .s-btn-active .s-btn-downarrow,.CgsSymbolPropertyTool .s-btn-plain-active .s-btn-downarrow{border-style:solid;border-color:#bbb;border-width:0 0 0 1px}
+.CgsSymbolPropertyTool .messager-body{padding:10px 10px 30px 10px;overflow:auto}
+.CgsSymbolPropertyTool .messager-button{text-align:center;padding:5px}
+.CgsSymbolPropertyTool .messager-button .l-btn{width:70px}
+.CgsSymbolPropertyTool .messager-icon{float:left;width:32px;height:32px;margin:0 10px 10px 0}
+.CgsSymbolPropertyTool .messager-error{background:url(images/messager_icons.png) no-repeat scroll -64px 0}
+.CgsSymbolPropertyTool .messager-info{background:url(images/messager_icons.png) no-repeat scroll 0 0}
+.CgsSymbolPropertyTool .messager-question{background:url(images/messager_icons.png) no-repeat scroll -32px 0}
+.CgsSymbolPropertyTool .messager-warning{background:url(images/messager_icons.png) no-repeat scroll -96px 0}
+.CgsSymbolPropertyTool .messager-progress{padding:10px}
+.CgsSymbolPropertyTool .messager-p-msg{margin-bottom:5px}
+.CgsSymbolPropertyTool .messager-body .messager-input{width:100%;padding:4px 0;outline-style:none;border:1px solid #d4d4d4}
+.CgsSymbolPropertyTool .window-thinborder .messager-button{padding-bottom:8px}
+.CgsSymbolPropertyTool .tree{margin:0;padding:0;list-style-type:none}
+.CgsSymbolPropertyTool .tree li{white-space:nowrap}
+.CgsSymbolPropertyTool .tree li ul{list-style-type:none;margin:0;padding:0}
+.CgsSymbolPropertyTool .tree-node{height:18px;white-space:nowrap;cursor:pointer}
+.CgsSymbolPropertyTool .tree-hit{cursor:pointer}
+.CgsSymbolPropertyTool .tree-checkbox,.CgsSymbolPropertyTool .tree-collapsed,.CgsSymbolPropertyTool .tree-expanded,.CgsSymbolPropertyTool .tree-file,.CgsSymbolPropertyTool .tree-folder,.CgsSymbolPropertyTool .tree-indent{display:inline-block;width:16px;height:18px;vertical-align:top;overflow:hidden}
+.CgsSymbolPropertyTool .tree-expanded{background:url(images/tree_icons.png) no-repeat -18px 0}
+.CgsSymbolPropertyTool .tree-expanded-hover{background:url(images/tree_icons.png) no-repeat -50px 0}
+.CgsSymbolPropertyTool .tree-collapsed{background:url(images/tree_icons.png) no-repeat 0 0}
+.CgsSymbolPropertyTool .tree-collapsed-hover{background:url(images/tree_icons.png) no-repeat -32px 0}
+.CgsSymbolPropertyTool .tree-lines .tree-expanded,.CgsSymbolPropertyTool .tree-lines .tree-root-first .tree-expanded{background:url(images/tree_icons.png) no-repeat -144px 0}
+.CgsSymbolPropertyTool .tree-lines .tree-collapsed,.CgsSymbolPropertyTool .tree-lines .tree-root-first .tree-collapsed{background:url(images/tree_icons.png) no-repeat -128px 0}
+.CgsSymbolPropertyTool .tree-lines .tree-node-last .tree-expanded,.CgsSymbolPropertyTool .tree-lines .tree-root-one .tree-expanded{background:url(images/tree_icons.png) no-repeat -80px 0}
+.CgsSymbolPropertyTool .tree-lines .tree-node-last .tree-collapsed,.CgsSymbolPropertyTool .tree-lines .tree-root-one .tree-collapsed{background:url(images/tree_icons.png) no-repeat -64px 0}
+.CgsSymbolPropertyTool .tree-line{background:url(images/tree_icons.png) no-repeat -176px 0}
+.CgsSymbolPropertyTool .tree-join{background:url(images/tree_icons.png) no-repeat -192px 0}
+.CgsSymbolPropertyTool .tree-joinbottom{background:url(images/tree_icons.png) no-repeat -160px 0}
+.CgsSymbolPropertyTool .tree-folder{background:url(images/tree_icons.png) no-repeat -208px 0}
+.CgsSymbolPropertyTool .tree-folder-open{background:url(images/tree_icons.png) no-repeat -224px 0}
+.CgsSymbolPropertyTool .tree-file{background:url(images/tree_icons.png) no-repeat -240px 0}
+.CgsSymbolPropertyTool .tree-loading{background:url(images/loading.gif) no-repeat center center}
+.CgsSymbolPropertyTool .tree-checkbox0{background:url(images/tree_icons.png) no-repeat -208px -18px}
+.CgsSymbolPropertyTool .tree-checkbox1{background:url(images/tree_icons.png) no-repeat -224px -18px}
+.CgsSymbolPropertyTool .tree-checkbox2{background:url(images/tree_icons.png) no-repeat -240px -18px}
+.CgsSymbolPropertyTool .tree-title{font-size:12px;display:inline-block;text-decoration:none;vertical-align:top;white-space:nowrap;padding:0 2px;height:18px;line-height:18px}
+.CgsSymbolPropertyTool .tree-node-proxy{font-size:12px;line-height:20px;padding:0 2px 0 20px;border-width:1px;border-style:solid;z-index:9900000}
+.CgsSymbolPropertyTool .tree-dnd-icon{display:inline-block;position:absolute;width:16px;height:18px;left:2px;top:50%;margin-top:-9px}
+.CgsSymbolPropertyTool .tree-dnd-yes{background:url(images/tree_icons.png) no-repeat -256px 0}
+.CgsSymbolPropertyTool .tree-dnd-no{background:url(images/tree_icons.png) no-repeat -256px -18px}
+.CgsSymbolPropertyTool .tree-node-top{border-top:1px dotted red}
+.CgsSymbolPropertyTool .tree-node-bottom{border-bottom:1px dotted red}
+.CgsSymbolPropertyTool .tree-node-append .tree-title{border:1px dotted red}
+.CgsSymbolPropertyTool .tree-editor{border:1px solid #d4d4d4;font-size:12px;line-height:16px;padding:0 4px;margin:0;width:80px;outline-style:none;vertical-align:top;position:absolute;top:0}
+.CgsSymbolPropertyTool .tree-node-proxy{background-color:#fff;color:#333;border-color:#d4d4d4}
+.CgsSymbolPropertyTool .tree-node-hover{background:#e6e6e6;color:#00438a}
+.CgsSymbolPropertyTool .tree-node-selected{background:#0081c2;color:#fff}
+.CgsSymbolPropertyTool .tree-node-hidden{display:none}
+.CgsSymbolPropertyTool .validatebox-invalid{border-color:#ffa8a8;background-color:#fff3f3;color:#000}
+.CgsSymbolPropertyTool .tooltip{position:absolute;display:none;z-index:9900000;outline:0;opacity:1;padding:5px;border-width:1px;border-style:solid;border-radius:5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .tooltip-content{font-size:12px}
+.CgsSymbolPropertyTool .tooltip-arrow,.CgsSymbolPropertyTool .tooltip-arrow-outer{position:absolute;width:0;height:0;line-height:0;font-size:0;border-style:solid;border-width:6px;border-color:transparent}
+.CgsSymbolPropertyTool .tooltip-arrow{display:none 9}
+.CgsSymbolPropertyTool .tooltip-right .tooltip-arrow-outer{left:0;top:50%;margin:-6px 0 0 -13px}
+.CgsSymbolPropertyTool .tooltip-right .tooltip-arrow{left:0;top:50%;margin:-6px 0 0 -12px}
+.CgsSymbolPropertyTool .tooltip-left .tooltip-arrow-outer{right:0;top:50%;margin:-6px -13px 0 0}
+.CgsSymbolPropertyTool .tooltip-left .tooltip-arrow{right:0;top:50%;margin:-6px -12px 0 0}
+.CgsSymbolPropertyTool .tooltip-top .tooltip-arrow-outer{bottom:0;left:50%;margin:0 0 -13px -6px}
+.CgsSymbolPropertyTool .tooltip-top .tooltip-arrow{bottom:0;left:50%;margin:0 0 -12px -6px}
+.CgsSymbolPropertyTool .tooltip-bottom .tooltip-arrow-outer{top:0;left:50%;margin:-13px 0 0 -6px}
+.CgsSymbolPropertyTool .tooltip-bottom .tooltip-arrow{top:0;left:50%;margin:-12px 0 0 -6px}
+.CgsSymbolPropertyTool .tooltip{background-color:#fff;border-color:#d4d4d4;color:#333}
+.CgsSymbolPropertyTool .tooltip-right .tooltip-arrow-outer{border-right-color:#d4d4d4}
+.CgsSymbolPropertyTool .tooltip-right .tooltip-arrow{border-right-color:#fff}
+.CgsSymbolPropertyTool .tooltip-left .tooltip-arrow-outer{border-left-color:#d4d4d4}
+.CgsSymbolPropertyTool .tooltip-left .tooltip-arrow{border-left-color:#fff}
+.CgsSymbolPropertyTool .tooltip-top .tooltip-arrow-outer{border-top-color:#d4d4d4}
+.CgsSymbolPropertyTool .tooltip-top .tooltip-arrow{border-top-color:#fff}
+.CgsSymbolPropertyTool .tooltip-bottom .tooltip-arrow-outer{border-bottom-color:#d4d4d4}
+.CgsSymbolPropertyTool .tooltip-bottom .tooltip-arrow{border-bottom-color:#fff}
+.CgsSymbolPropertyTool .switchbutton{text-decoration:none;display:inline-block;overflow:hidden;vertical-align:middle;margin:0;padding:0;cursor:pointer;background:#bbb;border:1px solid #bbb;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .switchbutton-inner{display:inline-block;overflow:hidden;position:relative;top:-1px;left:-1px}
+.CgsSymbolPropertyTool .switchbutton-handle,.CgsSymbolPropertyTool .switchbutton-off,.CgsSymbolPropertyTool .switchbutton-on{display:inline-block;text-align:center;height:100%;float:left;font-size:12px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;border-radius:5px 5px 5px 5px}
+.CgsSymbolPropertyTool .switchbutton-on{background:#0081c2;color:#fff}
+.CgsSymbolPropertyTool .switchbutton-off{background-color:#fff;color:#333}
+.CgsSymbolPropertyTool .switchbutton-on,.CgsSymbolPropertyTool .switchbutton-reversed .switchbutton-off{-moz-border-radius:5px 0 0 5px;-webkit-border-radius:5px 0 0 5px;border-radius:5px 0 0 5px}
+.CgsSymbolPropertyTool .switchbutton-off,.CgsSymbolPropertyTool .switchbutton-reversed .switchbutton-on{-moz-border-radius:0 5px 5px 0;-webkit-border-radius:0 5px 5px 0;border-radius:0 5px 5px 0}
+.CgsSymbolPropertyTool .switchbutton-handle{position:absolute;top:0;left:50%;background-color:#fff;color:#333;border:1px solid #bbb;-moz-box-shadow:0 0 3px 0 #bbb;-webkit-box-shadow:0 0 3px 0 #bbb;box-shadow:0 0 3px 0 #bbb}
+.CgsSymbolPropertyTool .switchbutton-value{position:absolute;top:0;left:-5000px}
+.CgsSymbolPropertyTool .switchbutton-disabled{opacity:.5}
+.CgsSymbolPropertyTool .switchbutton-disabled,.CgsSymbolPropertyTool .switchbutton-readonly{cursor:default}
+.CgsSymbolPropertyTool .tabs-panels{border-color:transparent}
+.CgsSymbolPropertyTool .tabs li a.tabs-inner{border-color:transparent;background:0 0;filter:none;color:#08c}
+.CgsSymbolPropertyTool .menu-active{background-color:#0081c2;border-color:#0081c2;color:#fff}
+.CgsSymbolPropertyTool .menu-active-disabled{border-color:transparent;background:0 0;color:#333}
+.CgsSymbolPropertyTool .datagrid-cell-group,.CgsSymbolPropertyTool .datagrid-cell-rownumber,.CgsSymbolPropertyTool .datagrid-header-rownumber{margin:0;padding:0 4px;white-space:nowrap;word-wrap:normal;overflow:hidden;height:18px;line-height:18px;font-size:12px}
+.CgsSymbolPropertyTool .datagrid-header .datagrid-cell{height:auto}
+.CgsSymbolPropertyTool .datagrid-header .datagrid-cell span{font-size:12px}
+.CgsSymbolPropertyTool .datagrid-cell-group{text-align:center;text-overflow:ellipsis}
+.CgsSymbolPropertyTool .datagrid-cell-rownumber,.CgsSymbolPropertyTool .datagrid-header-rownumber{width:30px;text-align:center;margin:0;padding:0}
+.CgsSymbolPropertyTool .datagrid-body{margin:0;padding:0;overflow:auto;zoom:1}
+.CgsSymbolPropertyTool .datagrid-view1 .datagrid-body-inner{padding-bottom:20px}
+.CgsSymbolPropertyTool .datagrid-view1 .datagrid-body{overflow:hidden}
+.CgsSymbolPropertyTool .datagrid-footer{overflow:hidden}
+.CgsSymbolPropertyTool .datagrid-footer-inner{border-width:1px 0 0 0;border-style:solid;width:10000px;float:left}
+.CgsSymbolPropertyTool .datagrid-row-editing .datagrid-cell{height:auto}
+.CgsSymbolPropertyTool .datagrid-cell-check,.CgsSymbolPropertyTool .datagrid-header-check{padding:0;width:27px;height:18px;font-size:1px;text-align:center;overflow:hidden}
+.CgsSymbolPropertyTool .datagrid-cell-check input,.CgsSymbolPropertyTool .datagrid-header-check input{margin:0;padding:0;width:15px;height:18px}
+.CgsSymbolPropertyTool .datagrid-resize-proxy{position:absolute;width:1px;height:10000px;top:0;cursor:e-resize;display:none}
+.CgsSymbolPropertyTool .datagrid-body .datagrid-editable{margin:0;padding:0}
+.CgsSymbolPropertyTool .datagrid-body .datagrid-editable table{width:100%;height:100%}
+.CgsSymbolPropertyTool .datagrid-body .datagrid-editable td{border:0;margin:0;padding:0}
+.CgsSymbolPropertyTool .datagrid-view .datagrid-editable-input{margin:0;padding:2px 4px;border:1px solid #95B8E7;font-size:12px;outline-style:none;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .datagrid-view .validatebox-invalid{border-color:#ffa8a8}
+.CgsSymbolPropertyTool .datagrid-sort .datagrid-sort-icon{display:inline;padding:0 13px 0 0;background:url(../assets/image/tool/symboltool/datagrid_icons.png) no-repeat -64px center}
+.CgsSymbolPropertyTool .datagrid-sort-desc .datagrid-sort-icon{display:inline;padding:0 13px 0 0;background:url(../assets/image/tool/symboltool/datagrid_icons.png) no-repeat -16px center}
+.CgsSymbolPropertyTool .datagrid-sort-asc .datagrid-sort-icon{display:inline;padding:0 13px 0 0;background:url(../assets/image/tool/symboltool/datagrid_icons.png) no-repeat 0 center}
+.CgsSymbolPropertyTool .datagrid-row-collapse{background:url(../assets/image/tool/symboltool/normal.png) no-repeat center;background-size:cover}
+.CgsSymbolPropertyTool .datagrid-row-expand{background:url(../assets/image/tool/symboltool/normal_2.png) no-repeat center;background-size:cover}
+.CgsSymbolPropertyTool .datagrid-mask-msg{background:#fff url(../assets/images/loading.gif) no-repeat scroll 5px center}
+.CgsSymbolPropertyTool .datagrid-header,.CgsSymbolPropertyTool .datagrid-td-rownumber{background-color:#efefef;background:-webkit-linear-gradient(top,#F9F9F9 0,#efefef 100%);background:-moz-linear-gradient(top,#F9F9F9 0,#efefef 100%);background:-o-linear-gradient(top,#F9F9F9 0,#efefef 100%);background:linear-gradient(to bottom,#F9F9F9 0,#efefef 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#F9F9F9, endColorstr=#efefef, GradientType=0)}
+.CgsSymbolPropertyTool .datagrid-cell-rownumber{color:#fff}
+.CgsSymbolPropertyTool .datagrid-resize-proxy{background:#aac5e7}
+.CgsSymbolPropertyTool .datagrid-mask{background:#ccc}
+.CgsSymbolPropertyTool .datagrid-mask-msg{border-color:#95B8E7}
+.CgsSymbolPropertyTool .datagrid-pager,.CgsSymbolPropertyTool .datagrid-toolbar{background:#F4F4F4}
+.CgsSymbolPropertyTool .datagrid-footer-inner,.CgsSymbolPropertyTool .datagrid-header,.CgsSymbolPropertyTool .datagrid-pager,.CgsSymbolPropertyTool .datagrid-toolbar{border-color:#ddd}
+.CgsSymbolPropertyTool .datagrid-body td,.CgsSymbolPropertyTool .datagrid-footer td,.CgsSymbolPropertyTool .datagrid-header td{border-color:#ccc}
+.CgsSymbolPropertyTool .datagrid-btable,.CgsSymbolPropertyTool .datagrid-ftable,.CgsSymbolPropertyTool .datagrid-htable{color:#fff;border-collapse:separate}
+.CgsSymbolPropertyTool .datagrid-row-alt{background:#fafafa}
+.CgsSymbolPropertyTool .datagrid-header td.datagrid-header-over,.CgsSymbolPropertyTool .datagrid-row-over{background:rgba(255,255,255,.3);color:#fff;cursor:default}
+.CgsSymbolPropertyTool .tabs-inner{background:0 0!important;border:0!important}
+.CgsSymbolPropertyTool .datagrid-header-over{color:#000!important}
+.CgsSymbolPropertyTool .datagrid-row-selected{color:#fff}
+.CgsSymbolPropertyTool .tabs-header{background:0 0}
+.CgsSymbolPropertyTool .datagrid-row-editing .textbox,.CgsSymbolPropertyTool .datagrid-row-editing .textbox-text{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0}
+.CgsSymbolPropertyTool .datagrid-header-row{color:#000}
+.CgsSymbolPropertyTool .datagrid-group{color:#fff;font-size:10px}
+.CgsSymbolPropertyTool .tabs,.tabs *{background:0 0}
+.CgsSymbolPropertyTool .panel.panel-htop{background:0 0}
+.CgsSymbolPropertyTool .panel{background:0 0}
+.CgsSymbolPropertyTool .panel{background:0 0}
+.CgsSymbolPropertyTool .tabs li a.tabs-inner{background:0 0}
+.CgsSymbolPropertyTool .datagrid-row-selected{background:0 0}
+.CgsSymbolPropertyTool .datagrid-row-selected input{color:#000}
+.ztree *{padding:0;margin:0;font-size:16px;line-height:22px;font-family:"微软雅黑";color:#eee}
+.ztree{margin:0;padding:5px;color:#333}
+.ztree li{padding:0;margin:0;list-style:none;line-height:14px;text-align:left;white-space:nowrap;outline:0}
+.ztree li ul{margin:0;padding:0 0 0 18px}
+.ztree li ul.line{background:url(../assets/image/layerTree/img/line_conn.gif) 0 0 repeat-y}
+.ztree li a{padding:1px 3px 0 0;margin:0;cursor:pointer;height:22px;color:#333;background-color:transparent;text-decoration:none;vertical-align:top;display:inline-block;margin-bottom:10px}
+.ztree li a:hover{text-decoration:underline}
+.ztree li a.curSelectedNode{padding-top:0;color:#000;height:22px;border:1px #FFB951 solid;opacity:.8}
+.ztree li a.curSelectedNode_Edit{padding-top:0;color:#000;height:22px;border:1px #FFB951 solid;opacity:.8}
+.ztree li a.tmpTargetNode_inner{padding-top:0;color:#fff;height:22px;border:1px #316AC5 solid;opacity:.8;filter:alpha(opacity=80)}
+.ztree li a input.rename{height:14px;width:80px;padding:0;margin:0;font-size:12px;border:1px #7EC4CC solid}
+.ztree li span{line-height:16px;margin-right:2px}
+.ztree li span.button{line-height:0;margin:0;width:16px;height:16px;display:inline-block;vertical-align:middle;border:0 none;cursor:pointer;outline:0;background-color:transparent;background-repeat:no-repeat;background-attachment:scroll;background-image:url(../assets/image/layerTree/img/zTreeStandard.png)}
+.ztree li span.button.chk{width:13px;height:13px;margin:0 3px 0 0;cursor:auto}
+.ztree li span.button.chk.checkbox_false_full{background-image:url(../assets/image/layerTree/image/empty.png);background-position:center}
+.ztree li span.button.chk.checkbox_false_full_focus{background-image:url(../assets/image/layerTree/image/empty.png);background-position:center}
+.ztree li span.button.chk.checkbox_false_part{background-image:url(../assets/image/layerTree/image/half.png);background-position:center}
+.ztree li span.button.chk.checkbox_false_part_focus{background-image:url(../assets/image/layerTree/image/half.png);background-position:center}
+.ztree li span.button.chk.checkbox_false_disable{background-position:0 -56px}
+.ztree li span.button.chk.checkbox_true_full{background-image:url(../assets/image/layerTree/image/full.png);background-position:center}
+.ztree li span.button.chk.checkbox_true_full_focus{background-image:url(../assets/image/layerTree/image/full.png);background-position:center}
+.ztree li span.button.chk.checkbox_true_part{background-image:url(../assets/image/layerTree/image/half.png);background-position:center}
+.ztree li span.button.chk.checkbox_true_part_focus{background-image:url(../assets/image/layerTree/image/half.png);background-position:center}
+.ztree li span.button.chk.checkbox_true_disable{background-position:-14px -56px}
+.ztree li span.button.chk.radio_false_full{background-position:-28px 0}
+.ztree li span.button.chk.radio_false_full_focus{background-position:-28px -14px}
+.ztree li span.button.chk.radio_false_part{background-position:-28px -28px}
+.ztree li span.button.chk.radio_false_part_focus{background-position:-28px -42px}
+.ztree li span.button.chk.radio_false_disable{background-position:-28px -56px}
+.ztree li span.button.chk.radio_true_full{background-position:-42px 0}
+.ztree li span.button.chk.radio_true_full_focus{background-position:-42px -14px}
+.ztree li span.button.chk.radio_true_part{background-position:-42px -28px}
+.ztree li span.button.chk.radio_true_part_focus{background-position:-42px -42px}
+.ztree li span.button.chk.radio_true_disable{background-position:-42px -56px}
+.ztree li span.button.switch{width:18px;height:18px}
+.ztree li span.button.root_open{background-image:url(../assets/image/layerTree/image/openIcon.png);background-position:center}
+.ztree li span.button.root_close{background-image:url(../assets/image/layerTree/image/closeIcon.png);background-position:center}
+.ztree li span.button.roots_open{background-image:url(../assets/image/layerTree/image/openIcon.png);background-position:center}
+.ztree li span.button.roots_close{background-image:url(../assets/image/layerTree/image/closeIcon.png);background-position:center}
+.ztree li span.button.center_open{background-image:url(../assets/image/layerTree/image/openIcon.png);background-position:center}
+.ztree li span.button.center_close{background-image:url(../assets/image/layerTree/image/closeIcon.png);background-position:center}
+.ztree li span.button.bottom_open{background-image:url(../assets/image/layerTree/image/openIcon.png);background-position:center}
+.ztree li span.button.bottom_close{background-image:url(../assets/image/layerTree/image/closeIcon.png);background-position:center}
+.ztree li span.button.noline_open{background-position:-92px -72px}
+.ztree li span.button.noline_close{background-position:-74px -72px}
+.ztree li span.button.root_docu{background:0 0}
+.ztree li span.button.roots_docu{background-position:-56px 0}
+.ztree li span.button.center_docu{background-position:-56px -18px}
+.ztree li span.button.bottom_docu{background-position:-56px -36px}
+.ztree li span.button.noline_docu{background:0 0}
+.ztree li span.button.ico_open{margin-right:2px;background-image:url(../assets/image/layerTree/image/root.png);background-position:center;vertical-align:top}
+.ztree li span.button.ico_close{margin-right:2px;background-image:url(../assets/image/layerTree/image/root.png);background-position:center;vertical-align:top}
+.ztree li span.button.ico_docu{margin-right:2px;background-image:url(../assets/image/layerTree/image/Document.png);background-position:left;vertical-align:top}
+.ztree li span.button.edit{margin-right:2px;background-position:-110px -48px;vertical-align:top}
+.ztree li span.button.remove{margin-right:2px;background-position:-110px -64px;vertical-align:top}
+.ztree li span.button.ico_loading{margin-right:2px;background:url(../assets/image/layerTree/img/loading.gif) no-repeat scroll 0 0 transparent;vertical-align:top}
+ul.tmpTargetzTree{background-color:#FFE6B0;opacity:.8;filter:alpha(opacity=80)}
+span.tmpzTreeMove_arrow{width:16px;height:16px;display:inline-block;padding:0;margin:2px 0 0 1px;border:0 none;position:absolute;background-color:transparent;background-repeat:no-repeat;background-attachment:scroll;background-position:-110px -80px;background-image:url(../assets/image/layerTree/img/zTreeStandard.png)}
+ul.ztree.zTreeDragUL{margin:0;padding:0;position:absolute;width:auto;height:auto;overflow:hidden;background-color:#cfcfcf;border:1px #00B83F dotted;opacity:.8;filter:alpha(opacity=80)}
+.zTreeMask{z-index:10000;background-color:#cfcfcf;opacity:0;filter:alpha(opacity=0);position:absolute}
+.ztree{margin-left:20px}
+.CgsSymbolTool__titleText{font-family:MicrosoftYaHei;font-size:14px;font-weight:400;font-stretch:normal;margin-left:8px;line-height:33px;letter-spacing:2px;color:#fff}
+.CgsSymbolTool__bottom{z-index:600!important;height:37px;position:absolute;width:100%;left:0;bottom:0;background-color:#243342;border-top:solid 1px #546a7f}
+.CgsSymbolTool__bottomTab{float:left;cursor:pointer;position:relative;text-align:center;line-height:24px;width:calc(25% - 2px);height:24px;color:#6b8ba3;background-color:#243342;border-radius:0 0 2px 0;border-left:solid 1px #385069;border-right:solid 1px #385069;border-bottom:solid 1px #385069}
+.CgsSymbolTool__bottomTab span{pointer-events:none;font-size:13px;letter-spacing:2px}
+.CgsSymbolTool__bottomTab_active{color:#fff;border-color:#546a7f;background-color:#324559}
+.CgsSymbolTool__bottomTool{position:relative;float:right;width:26px;height:26px}
+.CgsToolBone ::-webkit-scrollbar{width:3px;border:0}
+.CgsToolBone ::-webkit-scrollbar-thumb{width:0;border:1.5px solid #63778a;border-radius:1.2px}
+.CgsToolBone ::-webkit-scrollbar-track{width:1px;background-color:rgba(49,63,78,.8)}
+.CgsToolBone ::-webkit-scrollbar-button{display:none}
+.CgsTool__label{height:33px;display:flex;align-items:center}
+.CgsSymbolTool__topLabelWarp>div:hover{border-color:#41abd3}
+.CgsSymbolTool__topLabelWarp{width:26px;height:26px;margin-left:5px;cursor:pointer;position:relative;display:flex;justify-content:center;align-items:center}
+.CgsSymbolTool__topLabelWarp>div{width:15px;height:15px;padding:3px;background-color:#243342;border:1px solid #496076;background-position:center;background-repeat:no-repeat}
+.CgsSymbolTool__save{background-image:url(../assets/image/tool/symboltoolSvg/save.svg)}
+.CgsSymbolTool__open{background-image:url(../assets/image/tool/symboltoolSvg/open.svg)}
+.CgsSymbolTool__manage{background-image:url(../assets/image/tool/symboltoolSvg/edit_normal.svg)}
+.CgsSymbolTool__removeAll{background-image:url(../assets/image/tool/symboltoolSvg/delete.svg)}
+.CgsSymbolTool__protract{background-image:url(../assets/image/tool/symboltoolSvg/protract.svg)}
+.CgsSymbolTool__add{background-image:url(../assets/image/tool/symboltoolSvg/add.svg)}
+.jmpSequenceDrawChecked{border-color:#41abd3!important;background-color:#286772!important}
+.CgsTool__label_line{float:left;width:1px;height:26px;margin-left:5px;background-color:#57718b}
+#jbfunctiontop{padding:2px;border-top:solid 1px #496076;border-bottom:solid 1px #496076}
+.CgsSymbolTool__symbolTree::-webkit-scrollbar{height:3px!important;border:0!important}
+.CgsSymbolTool__symbolTree::-webkit-scrollbar-thumb{height:3px!important;background-color:#63778a!important;border:0!important}
+.CgsSymbolTool__symbolTree::-webkit-scrollbar-track{height:1px!important;background-color:transparent}
+#jbfunctiondown{overflow:hidden;padding:2px}
+.sxdiv_jbclazz{color:#fff;border-top:1px solid #496076}
+.CgsSymbolTool{position:relative;z-index:555;width:100%;height:100%}
+.CgsSymbolTool span{pointer-events:none;color:#fff;font-family:'微软雅黑';font-size:14px}
+.CgsSymbolTool__top{height:40px;padding:0 2px;display:flex;align-items:center;justify-content:center;position:relative}
+.CgsMaSymbolToolsearchBar{display:flex;border:1px solid #6a859c;width:97%}
+.CgsSymbolTool__searchInput{width:calc(100% - 20px);border:none;height:20px;padding:0 4px;background:0 0;color:#fff}
+.CgsSymbolTool__searchButton{display:inline-block;position:relative;width:18px;height:18px;cursor:pointer;border:solid 1px #2293d4;background-image:linear-gradient(0deg,#234359 0,#50768a 100%),linear-gradient(#2293d4,#2293d4)}
+.CgsSymbolTool__searchButton::after{content:'';width:5.5px;height:5.5px;border:solid 1.5px #fff;border-radius:50%;position:absolute;top:3px;left:3.5px}
+.CgsSymbolTool__searchButton::before{content:'';width:6px;height:2px;background-color:#fff;position:absolute;top:11px;left:10px;transform:rotate(45deg)}
+.jmpsequenceDraw_warp{font-size:12px;display:flex}
+.jmpsequenceDraw_warp img{cursor:pointer}
+.CgsSymbolTool__container{padding:0 3px;height:calc(100% - 40px);width:calc(100% - 6px);overflow-x:hidden;overflow-y:auto;display:flex;flex-wrap:wrap;align-content:flex-start}
+.CgsSymbolTool__tool{cursor:pointer;z-index:510;padding:0 5px;height:52px;width:55.2px;margin:2px!important;position:relative;text-align:center;background-color:rgba(23,35,47,.5);border:solid 1px #34495c}
+.CgsSymbolTool__tool:hover{border-color:#41abd3}
+.CgsSymbolTool__tool_active{border-color:#41abd3}
+.CgsSymbolTool__tool img{height:26px;top:5px;position:relative}
+.CgsSymbolTool__tool p{font-size:10px;top:7px;position:relative;pointer-events:none;color:#d2dbe5;text-overflow:ellipsis;width:100%;height:14px;white-space:nowrap;overflow:hidden}
+.symbolEdit{font-size:12px}
+.symbolEdit .td{padding:3px}
+.symbolEdit .full{width:100%}
+.symbolEdit .td input{width:calc(100% - 10px)!important;height:18px;border:1px solid #3b4d61;background-color:rgba(36,51,66,1)}
+.symbolEdit .td input:hover{border-color:#41abd3}
+.symbolEdit .td input:focus{background-color:rgba(36,51,66,.5)}
+.symbolEdit .td input[type=text]{padding:0 4px;color:#fff}
+.symbolEdit .td input[type=number]{padding-left:4px;color:#fff}
+.symbolEdit .td input[type=checkbox]{display:none}
+#backdrop+label,#connectline+label,#contrastcolor+label,#editability+label,#fillcheck+label,#incline+label,#mobility+label,#overstriking+label,#seeing+label,#selectivity+label,#visibilitying+label{display:block;width:16px;height:16px;position:relative;background-image:linear-gradient(#1b2835,#1b2835),linear-gradient(#1b2835,#1b2835);background-blend-mode:normal,normal;box-shadow:0 0 2px 0 rgba(0,0,0,.75),inset 0 0 5px 0 rgba(0,0,0,.75);border:solid 1px #3a4d60}
+#backdrop:checked+label::before,#connectline:checked+label::before,#contrastcolor:checked+label::before,#editability:checked+label::before,#fillcheck:checked+label::before,#incline:checked+label::before,#mobility:checked+label::before,#overstriking:checked+label::before,#seeing:checked+label::before,#selectivity:checked+label::before,#visibilitying:checked+label::before{display:block;content:"\2714";width:16px;height:16px;position:absolute;top:-1px;left:-1px;text-align:center;color:#fff;border:solid 1px #41abd3}
+.symbolEdit .td select{color:#fff;width:100%;height:20px;border:1px solid #3b4d61;background-color:rgba(36,51,66,1)}
+.symbolEdit .td label:hover,.symbolEdit .td select:hover{border-color:#41abd3!important}
+.symbolEdit cgs_font_size_picker div,[data-is=cgs_font_size_picker] div{position:relative;top:-2px}
+.symbolEdit .td option{color:#fff;background-color:#1b2e42}
+.symbolEdit .td option:hover{background-color:#1b2e42}
+.symbolEdit .td .sp-dd{color:transparent;width:16px;height:16px;border-radius:50%;padding:0;background-image:url(../assets/image/tool/symboltool/spectrum.png)}
+.symbolEdit .divTable{width:100%}
+.symbolEdit .splitBtn{cursor:pointer;background-color:#243342;position:relative;width:calc(100% - 6px);height:26px;margin:10px 2px 0 2px;line-height:26px;border:solid 1px #3b4d61}
+.symbolEdit .splitBtn>span{color:#afc1d3;font-size:12px;margin-left:0}
+.symbolEdit .splitBtn>.mark{width:0;height:0;margin-left:10px;cursor:pointer;display:inline-block;border-top:5px solid transparent;border-right:5px solid transparent;border-bottom:5px solid transparent;border-left:5px solid rgba(150,184,219,.8)}
+.symbolEdit .splitBtn.active>span{color:#48c5ff}
+.symbolEdit .splitBtn.active>.mark{border-left:5px solid #48c5ff;transform:rotate(90deg);transform-origin:25% 50%}
+.symbolEdit .splitContent{padding:5px 20px}
+.symbolEdit .colorBox{margin-right:10px;display:inline-block;background-color:#fff;color:#fff;cursor:pointer;width:14px;height:14px;border:1px solid transparent}
+.symbolEdit .sizeBox{padding:1px 8px;display:inline-block;background-color:transparent;color:#fff;cursor:pointer;font-weight:700}
+.symbolEdit .sp-replacer{vertical-align:top!important;padding:0!important;border:0;background-color:transparent}
+.symbolEdit .sp-replacer .sp-preview{width:16px;height:16px;border:0;margin-right:12px}
+.CgsSymbolTool__content{margin:2px;width:calc(100% - 4px);overflow:hidden;height:calc(100% - 40px);overflow-y:auto;color:#fff}
+.no-user-select{-moz-user-select:none;-khtml-user-select:none;user-select:none}
+.divTable{color:#afc1d3;font-size:12px;display:table;box-sizing:border-box}
+.divTable>.tr{display:table-row}
+.divTable>.tr>.td{padding:5px 0;letter-spacing:2px;display:table-cell;vertical-align:middle}
+.divTable>.tr>.title{width:85px}
+.CgsModelTool__modelTree .tree-file,.CgsModelTool__modelTree .tree-folder{display:none!important}
+.CgsModelTool__modelTree .tree-title{margin-left:2px!important}
+#autoScale+label,#backgroundColorIsShow+label,#isAdd+label,#isAdumbration+label,#isEdit+label,#isFill+label,#isMove+label,#isPlacard+label,#labelIsShow+label{display:block;width:16px;height:16px;position:relative;background-image:linear-gradient(#1b2835,#1b2835),linear-gradient(#1b2835,#1b2835);background-blend-mode:normal,normal;box-shadow:0 0 2px 0 rgba(0,0,0,.75),inset 0 0 5px 0 rgba(0,0,0,.75);border:solid 1px #3a4d60}
+#autoScale:checked+label::before,#backgroundColorIsShow:checked+label::before,#isAdd:checked+label::before,#isAdumbration:checked+label::before,#isEdit:checked+label::before,#isFill:checked+label::before,#isMove:checked+label::before,#isPlacard:checked+label::before,#labelIsShow:checked+label::before{display:block;content:"\2714";width:16px;height:16px;position:absolute;top:-1px;left:-1px;text-align:center;color:#fff;border:solid 1px #41abd3}
+.CgsModelTool__tool{cursor:pointer;z-index:510;padding:0 5px;width:55px;height:71px;margin:2px!important;position:relative;text-align:center;background-color:rgba(23,35,47,.5);border:solid 1px #34495c}
+.CgsModelTool__tool:hover{border-color:#41abd3}
+.CgsModelTool__tool_active{border-color:#41abd3}
+.CgsModelTool__tool img{width:55px;height:45px;top:5px;position:relative}
+.CgsModelTool__tool p{font-size:10px;top:9px;position:relative;pointer-events:none;color:#d2dbe5;text-overflow:ellipsis;width:100%;height:14px;white-space:nowrap;overflow:hidden}
+.tree-node-selected{background-color:#243342;border:1px solid #3b4d61!important}
+.mxDivTable{color:#afc1d3;font-size:12px;display:table;box-sizing:border-box}
+.mxDivTable>.tr{display:table-row}
+.mxDivTable>.tr>.td{padding:8px 0;letter-spacing:2px;display:table-cell;vertical-align:middle}
+.mxDivTable>.tr>.td:nth-of-type(1){width:100px;padding-right:2px}
+.mxDivTable>.tr>.label{width:50px!important}
+.mxDivTable>.tr>.wordAttr{width:87px!important}
+.modelEdit .td .attrSpanStyle{color:#fff;min-height:14px;display:inline-block;width:145px;padding:2px 4px;border:1px solid #3b4d61;word-wrap:break-word;word-break:normal;background-color:rgba(36,51,66,1)}
+.modelEdit .td .attrSpanStyle:hover{border-color:#41abd3}
+.mxEditLayer_warp{width:100%;height:100%;display:flex}
+.mxEditLayer_warp .tr{margin:auto;display:flex}
+.mxEditLayer_warp .tr input{color:#fff;padding:2px 4px;border:1px solid #3b4d61;background-color:rgba(36,51,66,1)}
+.CgsModelTool__modelTree #mxEditLayerName{width:100vw;height:100vh;position:fixed;top:0;left:0;z-index:9999}
+.CgsModelTool__modelTree #mxEditLayerName p{position:fixed;border-radius:2px;padding:3px 8px;font-size:12px;display:inline-block;border:1px solid #3b4d61;background-color:rgba(36,51,66,1)}
+.CgsTool__content #mxAttrHelp{width:100vw;height:100vh;top:0;left:0;position:fixed;z-index:9999}
+.CgsTool__content #mxAttrHelp p{width:150px;position:fixed;border-radius:2px;padding:3px 8px;font-size:12px;display:inline-block;border:1px solid #2293d4;color:#fff;background-color:rgba(36,51,66,1)}
+.CgsTool__content #mxAttrHelp p:after{content:'';position:absolute;bottom:-5.5px;left:16px;display:inline-block;width:8px;height:8px;border-left:1px solid #2293d4;border-bottom:1px solid #2293d4;transform:rotate(-45deg);background-color:rgba(36,51,66,1)}
+.modelLabelStyle{padding:3px 6px;color:#000;font-size:12px;letter-spacing:1px;border-radius:5px;background-color:#fff}
+.mxeditlayerTitle{color:#fff;border:0;line-height:33px;padding-left:8px;background-color:transparent}
+.mxDivTable .labelHelp{position:relative;top:-5px;display:inline-block;width:10px;height:10px;border-radius:50%;background-size:100% 100%;background-image:url(../assets/modelFile/icon/help.png);cursor:pointer}
+.modelColorpicker .colorBox{margin-right:8px;display:inline-block;background-color:#fff;color:#fff;cursor:pointer;width:14px;height:14px;border:1px solid transparent}
+.modelColorpicker .sp-preview{margin-right:10px!important}
+.modelColorpicker .colorBox{border:1px solid transparent}
+.modelColorpicker .colorBox:hover{border-color:#2293d4}
+.cgsModelLayer-handle{z-index:600!important;height:37px;position:absolute;width:100%;left:0;bottom:0;background-color:#243342;border-bottom:solid 1px #546a7f;border-top:solid 1px #546a7f;display:flex;justify-content:space-around;align-items:center}
+.cgsModelLayer-handle-close,.cgsModelLayer-handle-submit{cursor:pointer;text-align:center;line-height:24px;width:85px;height:24px;border-radius:0 0 2px 0;color:#fff;border:1px solid#546a7f;background-color:#324559}
+.cgsModelLayer-handle-close:hover,.cgsModelLayer-handle-submit:hover{border-color:#41abd3}
+.CgsModelTool__container img{width:50px;height:40px}

@@ -1,0 +1,740 @@
+<mxprotractattr>
+    <div class="CgsTool__title">
+        <span class='CgsSymbolTool__titleText'>模型属性管理</span>
+    </div>
+    <div ref="content" class="CgsTool__content" style="height:calc(100% - 2px)">
+        <div class="CgsSymbolTool__content">
+            <div ref="drawingAttributeDiv" show={ currentPanel===0 } style="width: 100%;">
+                <mxdrawingAttribute ref="mxdrawingAttributeCon" map={map}></mxdrawingAttribute>
+            </div>
+            <div ref="geometryAttributeDiv" show={ currentPanel===1 } style="width: 100%;">
+                <mxgeometryAttribute ref="mxgeometryAttributeCon" map={map}></mxgeometryAttribute>
+            </div>
+            <div ref="symbolAttributeDiv" show={ currentPanel===2 } style="width: 100%;">
+                <mxdsymbolAttribute ref="mxsymbolAttributeCon" map={map}></mxdsymbolAttribute>
+            </div>
+        </div>
+        <div class='CgsSymbolTool__bottom'>
+            <div ref="drawingAttribute" class="CgsSymbolTool__bottomTab CgsSymbolTool__bottomTab_active" onclick={showDrawingAttr}>
+                <span>样式</span></div>
+            <div ref="geometryAttribute" class="CgsSymbolTool__bottomTab" onclick={showGeometryAttr}><span>位置</span></div>
+            <div ref="annotationAttribute" class="CgsSymbolTool__bottomTab" onclick={showAnnotationAttr}><span>属性</span></div>
+        </div>
+    </div>
+    <script>
+        var tag = this;
+        tag.node = null;
+        var map = this.opts.map;
+        tag.map = map
+        tag.currentPanel = 0;//当前面板 (样式0 ，位置1，属性2)
+
+        tag.updateAttributes = function (node) {
+            tag.node = node;
+            tag.refs.mxdrawingAttributeCon.updateAttributes();
+            tag.refs.mxgeometryAttributeCon.updateAttributes();
+            tag.refs.mxsymbolAttributeCon.updateAttributes();
+        };
+        tag.updateSizeAndGeo = function (node) {
+            // tag.refs.mxdrawingAttributeCon.updateSize(node);
+            // tag.refs.mxgeometryAttributeCon.updateGeoAndScale(node);
+        }
+
+        tag.showDrawingAttr = function () {
+            tag.currentPanel = 0;
+            tag.showAttrTab();
+        }
+        tag.showGeometryAttr = function () {
+            tag.currentPanel = 1;
+            tag.showAttrTab();
+        }
+        tag.showAnnotationAttr = function () {
+            tag.currentPanel = 2;
+            tag.showAttrTab();
+        }
+
+        tag.showAttrTab = function () {
+            var drawingAttribute = $$(tag.refs.drawingAttribute);
+            var geometryAttribute = $$(tag.refs.geometryAttribute);
+            var annotationAttribute = $$(tag.refs.annotationAttribute);
+
+            drawingAttribute.removeClass('CgsSymbolTool__bottomTab_active');
+            geometryAttribute.removeClass('CgsSymbolTool__bottomTab_active');
+            annotationAttribute.removeClass('CgsSymbolTool__bottomTab_active');
+            switch (tag.currentPanel) {
+                case 0:
+                    drawingAttribute.addClass('CgsSymbolTool__bottomTab_active');
+                    break;
+                case 1:
+                    geometryAttribute.addClass('CgsSymbolTool__bottomTab_active');
+                    break;
+                case 2:
+                    annotationAttribute.addClass('CgsSymbolTool__bottomTab_active');
+                    break;
+            }
+        }
+
+        tag.on('mount', function () {
+            //实现折叠效果
+            tag.itemClose($$(tag.refs.mxdrawingAttributeCon.refs.content),11);
+            tag.itemClose($$(tag.refs.mxgeometryAttributeCon.refs.content),12);
+            tag.itemClose($$(tag.refs.mxsymbolAttributeCon.refs.content),14);
+            //实现折叠效果 end
+        });
+
+        tag.itemClose = function (dom,n) {
+            var pRoot = dom.find('.splitRoot').eq(0);
+            var items = pRoot.find('.splitItem');
+            items.each(function (i, item) {
+                var val = $$(item);
+                var btn = val.find('.splitBtn').eq(0);
+                var btn1 = val.find('.splitBtn').eq(1);
+                btn.addClass('active');
+                btn1.addClass('active');
+
+                var content = val.find('.splitContent').eq(0);
+                btn.click(function () {
+                   if (btn.hasClass('active')) {
+                      btn.removeClass('active');
+                      btn1.removeClass('active');
+                      content.slideToggle()
+                    }
+                    else {
+                      btn.addClass('active');
+                      btn1.addClass('active');
+                      content.slideDown();
+                    }
+                });
+            });
+        }
+
+        tag.helpClick = function(e){
+          let div = $$('#mxAttrHelp');
+          if(div){
+            div.remove();
+          }
+          let text = '';
+          let type = $(e.target).parent().text().replace('?','');
+          switch(type){
+            case '最大缩放高度':
+            text ='高度大于此参数时，模型开始缩放！'
+            break;
+            case '最小缩放高度':
+            text ='高度小于此参数时，模型开始缩放！'
+            break;
+          }
+          $$(e.target).parent().append(`<div id='mxAttrHelp'><p>${text}</p></div>`);
+          $$('#mxAttrHelp p').css({
+            left:e.pageX - 19.5,
+            top:e.pageY - 54
+          })
+          $$('#mxAttrHelp').bind("click",function(){
+            $$('#mxAttrHelp').remove();
+          })
+        }
+    </script>
+</mxprotractattr>
+
+<!-- 样式 -->
+<mxdrawingAttribute>
+    <div ref="content" class="CgsTool__content toolPanel">
+        <div class="symbolEdit modelEdit">
+            <div class="splitRoot">
+                <div class="splitItem">
+                    <div class="splitBtn no-user-select">
+                        <div class="mark"></div>
+                        <span>显示属性</span>
+                    </div>
+                    <div class="splitContent">
+                        <div class="mxDivTable">
+                            <div class="tr">
+                                <div class="td">名称</div>
+                                <div class="td">
+                                  <span class="attrSpanStyle" ref="name"></span>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">类型</div>
+                                <div class="td">
+                                  <span class="attrSpanStyle" ref="type"></span>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">像素尺寸</div>
+                                <div class="td">
+                                  <input type="number" ref="pixelSize" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">缩放比例</div>
+                                <div class="td">
+                                  <input type="number" ref="scale" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">最大缩放高度<span class="labelHelp" onclick={parent.helpClick}></span></div>
+                                <div class="td">
+                                  <input type="number" ref="autoMaxScale" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">最小缩放高度<span class="labelHelp" onclick={parent.helpClick}></span></div>
+                                <div class="td">
+                                  <input type="number" ref="autoMinScale" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">自动缩放标识</div>
+                                <div class="td">
+                                    <input ref="autoScale" id="autoScale" name="autoScale" onchange={modelAttrChange} type="checkbox" />
+                                    <label for="autoScale"></label>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">最小可视距离</div>
+                                <div class="td">
+                                  <input type="number" ref="minVisibleHeight" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">最大可视距离</div>
+                                <div class="td">
+                                  <input type="number" ref="maxVisibleHeight" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">轮廓线颜色</div>
+                                <div class="td">
+                                   <colorpicker ref="silhouetteColor" on_val_change={ modelAttrChange }></colorpicker>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">轮廓宽度</div>
+                                <div class="td">
+                                  <input type="number" ref="silhouetteSize" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">航向角度</div>
+                                <div class="td">
+                                  <input type="number" ref="course" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">俯仰角度</div>
+                                <div class="td">
+                                  <input type="number" ref="pitching" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">滚转角度</div>
+                                <div class="td">
+                                  <input type="number" ref="roller" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var tag = this
+        var map = this.opts.map
+        tag.map = map
+        tag.mxAtts = {
+          name: '',//模型名称
+          type: '',//模型类型
+          pixelSize: 0,//像素尺寸
+          scale: 0,//缩放比例
+          silhouetteColor: '',//轮廓线颜色
+          silhouetteSize: 0,//轮廓宽度
+          // color: 0, //模型颜色
+          // colorBlendAmount: 0, //颜色融合度
+          course: 0, //模型航向角度
+          pitching: 0, //模型俯仰角度
+          roller: 0, //模型滚转角度
+          autoMaxScale: 0,//最大缩放倍率
+          autoMinScale: 0,//最小缩放倍率
+          autoScale: 0,//自动缩放标识
+          minVisibleHeight: 0,//最小可视距离
+          maxVisibleHeight: 0,//最大可视距离
+          isFill: false, //是否填充
+          diaphaneity: 0, //透明度
+          isAdumbration: false, //是否轮廓
+          isPlacard: false //是否贴地
+        };
+        
+        tag.updateAttributes = function () {
+          let node = tag.parent.node;
+          var refs = tag.refs;
+          if (node) {
+            let mxAtts = tag.mxAtts;
+            mxAtts.name = node.getName();
+            mxAtts.type = node.getAttribute().modelType;
+            mxAtts.pixelSize = node.getPixelSize();
+            mxAtts.scale = node.getScale();
+            mxAtts.silhouetteColor = node.getSilhouetteColor();
+            mxAtts.silhouetteSize = node.getSilhouetteSize();
+            // mxAtts.color = node.getColor();
+            // mxAtts.colorBlendAmount = node.getColorBlendAmount();
+            mxAtts.course = node.getRotation()[0];
+            mxAtts.pitching = node.getRotation()[1];
+            mxAtts.roller = node.getRotation()[2];
+            mxAtts.autoMaxScale = node.getAutoMaxScale();
+            mxAtts.autoScale = node.getAutoScale();
+            mxAtts.autoMinScale = node.getAutoMinScale();
+            let visibleHeight = node.getVisibleHeight();
+            mxAtts.minVisibleHeight = visibleHeight[0]?visibleHeight[0]:0;
+            mxAtts.maxVisibleHeight = visibleHeight[1]?visibleHeight[1]:'';
+
+
+            $$(refs.name).text(mxAtts.name);
+            $$(refs.type).text(mxAtts.type);
+            refs.pixelSize.value = mxAtts.pixelSize;
+            refs.scale.value = mxAtts.scale;
+            refs.silhouetteColor.setColor(mxAtts.silhouetteColor);
+            refs.silhouetteSize.value = mxAtts.silhouetteSize;
+            // refs.color.value = mxAtts.color;
+            // refs.colorBlendAmount.value = mxAtts.colorBlendAmount;
+            refs.course.value = mxAtts.course;
+            refs.pitching.value = mxAtts.pitching;
+            refs.roller.value = mxAtts.roller;
+            refs.autoMaxScale.value = mxAtts.autoMaxScale;
+            refs.autoMinScale.value = mxAtts.autoMinScale;
+            refs.minVisibleHeight.value = mxAtts.minVisibleHeight;
+            refs.maxVisibleHeight.value = mxAtts.maxVisibleHeight;
+            $$(refs.autoScale).prop("checked", mxAtts.autoScale);
+          } 
+        }
+
+
+        tag.modelAttrChange = function(e,colorVal){
+          let node = tag.parent.node;
+          if(!node) {
+            return;
+          }
+          let val, refName;
+          let mxAtts = tag.mxAtts;
+          if(colorVal){
+            val = e.lastSelectedColor;
+            refName =e.pref;
+          }else{
+            val = e.target.value;
+            refName =$$(e.target).attr('ref');
+          }
+          switch(refName){
+            case 'pixelSize':
+            node.setPixelSize(Number(val));
+            mxAtts.pixelSize = Number(val);
+            break;
+            case 'scale':
+            node.setScale(Number(val));
+            tag.map.modelDrawTool.moveCirclePoint(node);
+            mxAtts.scale = Number(val);
+            break;
+            case 'silhouetteColor':
+            tag.refs.silhouetteColor.setColor(val);
+            node.setSilhouetteColor(val);
+            mxAtts.silhouetteColor = val;
+            break;
+            case 'silhouetteSize':
+            node.setSilhouetteSize(Number(val));
+            mxAtts.silhouetteSize = Number(val);
+            break;
+            case 'course':
+            node.setRotation([Number(val),mxAtts.pitching,mxAtts.roller]);
+            tag.map.modelDrawTool.moveCirclePoint(node);
+            mxAtts.course = Number(val);
+            break;
+            case 'pitching':
+            node.setRotation([mxAtts.course,Number(val),mxAtts.roller]);
+            mxAtts.pitching = Number(val);
+            break;
+            case 'roller':
+            node.setRotation([mxAtts.course,mxAtts.pitching,Number(val)]);
+            mxAtts.roller = Number(val);
+            break;
+            case 'autoMaxScale':
+            node.setAutoMaxScale(Number(val));
+            mxAtts.autoMaxScale = Number(val);
+            break;
+            case 'autoMinScale':
+            node.setAutoMinScale(Number(val));
+            mxAtts.autoMinScale = Number(val);
+            break;
+            case 'autoScale':
+            val = $$(e.target).prop("checked");
+            node.setAutoScale(val);
+            mxAtts.autoScale = val;
+            break;
+            case 'minVisibleHeight':
+            node.setVisibleHeight([val,mxAtts.maxVisibleHeight]);
+            mxAtts.minVisibleHeight = val;
+            break;
+            case 'maxVisibleHeight':
+            node.setVisibleHeight([mxAtts.minVisibleHeight,val]);
+            mxAtts.maxVisibleHeight = val;
+            break;
+          }
+        }
+    </script>
+</mxdrawingAttribute>
+
+<!-- 位置 -->
+<mxgeometryAttribute>
+    <div ref="content" class="CgsTool__content toolPanel">
+        <div class="symbolEdit modelEdit">
+            <div class="splitRoot">
+                <div class="splitItem">
+                    <div class="splitBtn no-user-select">
+                        <div class="mark"></div>
+                        <span>坐标</span>
+                    </div>
+                    <div class="splitContent">
+                        <div class="mxDivTable">
+                            <div class="tr">
+                                <div class="td label">经度</div>
+                                <div class="td">
+                                  <input type="number" ref="longitude" step="0.001" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td label">纬度</div>
+                                <div class="td">
+                                  <input type="number" ref="latitude" step="0.001" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td label">高度</div>
+                                <div class="td">
+                                  <input type="number" ref="height" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tag = this
+        var map = this.opts.map
+        tag.map = map
+        tag.position = {
+          longitude: 0,//经度
+          latitude: 0,//纬度
+          height:0//高度
+        };
+        tag.updateAttributes = function () {
+          let node = tag.parent.node;
+          var refs = tag.refs;
+          if (node) {
+            let position = tag.position;
+            position.longitude = Number(node.getPosition()[0].toFixed(3));
+            position.latitude = Number(node.getPosition()[1].toFixed(3));
+            position.height = node.getPosition()[2]?Number(node.getPosition()[2].toFixed(3)):0;
+
+            refs.longitude.value = position.longitude;
+            refs.latitude.value = position.latitude;
+            refs.height.value = position.height;
+          } 
+        };
+
+        tag.modelAttrChange = function(e,colorVal){
+          let node = tag.parent.node;
+          if(!node) {
+            return;
+          }
+          let position = tag.position;
+          let val = Number(e.target.value);
+          let refName =$$(e.target).attr('ref');
+          switch(refName){
+            case 'longitude':
+            node.setPosition([val,position.latitude,position.height]);
+            position.longitude = val;
+            tag.map.modelDrawTool.moveCirclePoint(node);
+            break;
+            case 'latitude':
+            node.setPosition([position.longitude,val,position.height]);
+            position.latitude = val;
+            tag.map.modelDrawTool.moveCirclePoint(node);
+            break;
+            case 'height':
+            node.setPosition([position.longitude,position.latitude,val]);
+            position.height = val;
+            tag.map.modelDrawTool.moveCirclePoint(node);
+            break;
+          }
+        }
+
+    </script>
+</mxgeometryAttribute>
+
+<!-- 符号 -->
+<mxdsymbolAttribute>
+    <div ref="content" class="CgsTool__content toolPanel">
+        <div class="symbolEdit modelEdit">
+            <div class="splitRoot">
+                <div class="splitItem">
+                    <div class="splitBtn no-user-select">
+                        <div class="mark"></div>
+                        <span>模型属性</span>
+                    </div>
+                    <div class="splitContent">
+                        <div class="mxDivTable">
+                            <div class="tr">
+                                <div class="td label">路径</div>
+                                <div class="td">
+                                    <span class="attrSpanStyle" style="width:170px" ref="modelUrl"></span>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td label">备注</div>
+                                <div class="td">
+                                    <span class="attrSpanStyle" style="width:170px" ref="remark"></span>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td">可移动</div>
+                                <div class="td">
+                                    <input ref="isMove" id="isMove" name="isMove" onchange={modelAttrChange} type="checkbox" />
+                                    <label for="isMove"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="splitItem">
+                    <div class="splitBtn no-user-select">
+                        <div class="mark"></div>
+                        <span>文字属性</span>
+                    </div>
+                    <div class="splitContent">
+                        <div class="mxDivTable">
+                            <div class="tr">
+                                <div class="td wordAttr">标签内容</div>
+                                <div class="td">
+                                    <input type="text" ref="labelText" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">字体</div>
+                                <div class="td">
+                                    <select ref="fontFamily" onchange={modelAttrChange}>
+                                        <option value="宋体">宋体</option>
+                                        <option value="微软雅黑">微软雅黑</option>
+                                        <option value="仿宋">仿宋</option>
+                                        <option value="华文新魏">华文新魏</option>
+                                        <option value="华文中宋">华文中宋</option>
+                                        <option value="华文行楷">华文行楷</option>
+                                        <option value="华文细黑">华文细黑</option>
+                                        <option value="楷体">楷体</option>
+                                        <option value="隶书">隶书</option>
+                                        <option value="黑体">黑体</option>
+                                        <option value="幼圆">幼圆</option>
+                                        <option value="新宋体">新宋体</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">标签可见</div>
+                                <div class="td">
+                                    <input ref="labelIsShow" id="labelIsShow" name="labelIsShow" onchange={modelAttrChange} type="checkbox" />
+                                    <label for="labelIsShow"></label>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">颜色</div>
+                                <div class="td">
+                                   <colorpicker ref="fontColor" on_val_change={ modelAttrChange }></colorpicker>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">大小</div>
+                                <div class="td">
+                                    <input type="number" ref="fontSize" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">缩放比例</div>
+                                <div class="td">
+                                    <input type="number" ref="fontScale" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">轮廓线宽度</div>
+                                <div class="td">
+                                    <input type="number" ref="fontLineWidth" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">屏幕偏移X</div>
+                                <div class="td">
+                                    <input type="number" ref="labelOffsetX" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">屏幕偏移Y</div>
+                                <div class="td">
+                                    <input type="number" ref="labelOffsetY" value="" onchange={modelAttrChange}/>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">背景颜色</div>
+                                <div class="td">
+                                   <colorpicker ref="labelBackgroundColor" on_val_change={ modelAttrChange }></colorpicker>
+                                </div>
+                            </div>
+                            <div class="tr">
+                                <div class="td wordAttr">显示背景</div>
+                                <div class="td">
+                                    <input ref="backgroundColorIsShow" id="backgroundColorIsShow" name="backgroundColorIsShow" onchange={modelAttrChange} type="checkbox" />
+                                    <label for="backgroundColorIsShow"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tag = this
+        var map = this.opts.map
+        tag.map = map
+        tag.attribute = {
+          modelUrl: '',//模型地址
+          remark:'',//备注
+          isMove: true, //是否可移动
+          
+          labelText:'',//字体内容
+          fontFamily:'',//字体风格
+          labelIsShow:false,//标签显隐
+          fontColor:'',//字体颜色
+          fontSize:0,//字体大小
+          fontScale:0,//缩放比例
+          fontLineWidth:0,//轮廓线宽度
+          labelOffsetX:0,//标签偏移量X
+          labelOffsetY:0,//标签偏移量Y
+          labelBackgroundColor:'',//背景色
+          backgroundColorIsShow:false,//背景色显隐
+        }
+        tag.updateAttributes = function () {
+          let node = tag.parent.node;
+          var refs = tag.refs;
+          if (node) {
+            let attribute = tag.attribute;
+            attribute.modelUrl = node.getUrl();
+            attribute.isMove = node.getDragEnable();
+            
+            attribute.labelText = node.getName();
+            let font = node.getFont().split(' ');
+            attribute.fontFamily = font[1];
+            attribute.labelIsShow = node.getLabelVisible();
+            attribute.fontColor = node.getLabelFillColor();
+            attribute.fontSize = Number(font[0].replace('px',''));
+            attribute.fontScale = node.getLabelScale();
+            attribute.fontLineWidth = node.getLabelOutlineWidth();
+            attribute.labelOffsetX = node.getLabelOffset()[0];
+            attribute.labelOffsetY = node.getLabelOffset()[1];
+            attribute.labelBackgroundColor = node.getLabelBackgroundColor();
+            attribute.backgroundColorIsShow = node.getLabelShowBackground();
+
+            refs.labelText.value = attribute.labelText;
+            $$(refs.modelUrl).text(attribute.modelUrl);
+            $$(refs.isMove).prop("checked", attribute.isMove);
+            refs.fontFamily.value = attribute.fontFamily;
+            $$(refs.labelIsShow).prop("checked", attribute.labelIsShow);
+            refs.fontColor.setColor(attribute.fontColor);
+            refs.fontSize.value = attribute.fontSize;
+            refs.fontScale.value = attribute.fontScale;
+            refs.fontLineWidth.value = attribute.fontLineWidth;
+            refs.labelOffsetX.value = attribute.labelOffsetX;
+            refs.labelOffsetY.value = attribute.labelOffsetY;
+            refs.labelBackgroundColor.setColor(attribute.labelBackgroundColor);
+            $$(refs.backgroundColorIsShow).prop("checked", attribute.backgroundColorIsShow);
+          } 
+        }
+
+        tag.modelAttrChange = function(e,colorVal){
+          let node = tag.parent.node;
+          if(!node) {
+            return;
+          }
+
+          let val, refName;
+          let attribute = tag.attribute;
+          if(colorVal){
+            val = e.lastSelectedColor;
+            refName = e.pref;
+          }else{
+            val = e.target.value;
+            refName =$$(e.target).attr('ref');
+          }
+          switch(refName){
+            case 'modelUrl':
+            node.setUrl(val);
+            attribute.modelUrl = val;
+            break;
+            case 'remark':
+            attribute.remark = val;
+            break;
+            case 'isMove':
+            val = $$(e.target).prop("checked");
+            node.setDragEnable(val);
+            attribute.isMove = val;
+            break;
+
+            case 'labelText':
+            node.setName(val);
+            attribute.labelText = val;
+            break;
+            case 'fontFamily':
+            node.setFont(`${attribute.fontSize}px ${val}`);
+            attribute.fontFamily = val;
+            break;
+            case 'labelIsShow':
+            val = $$(e.target).prop("checked");
+            node.setLabelVisible(val);
+            attribute.labelIsShow = val;
+            break;
+            case 'fontColor':
+            tag.refs.fontColor.setColor(val);
+            node.setLabelFillColor(val);
+            attribute.fontColor = val;
+            break;
+            case 'fontSize':
+            node.setFont(`${val}px ${attribute.fontFamily}`);
+            attribute.fontSize = val;
+            break;
+            case 'fontScale':
+            node.setLabelScale(val);
+            attribute.fontScale = val;
+            break;
+            case 'fontLineWidth':
+            node.setLabelOutlineWidth(val);
+            attribute.fontLineWidth = val;
+            break;
+            case 'labelOffsetX':
+            node.setLabelOffset([Number(val),attribute.labelOffsetY])
+            attribute.labelOffsetX = Number(val);
+            break;
+            case 'labelOffsetY':
+            node.setLabelOffset([attribute.labelOffsetX,Number(val)])
+            attribute.labelOffsetY = Number(val);
+            break;
+            case 'labelBackgroundColor':
+            tag.refs.labelBackgroundColor.setColor(val);
+            node.setLabelBackgroundColor(val);
+            attribute.labelBackgroundColor = val;
+            break;
+            case 'backgroundColorIsShow':
+            val = $$(e.target).prop("checked");
+            node.setLabelShowBackground(val);
+            attribute.backgroundColorIsShow = val;
+            break;
+          }
+        }
+    </script>
+</mxdsymbolAttribute>

@@ -1,0 +1,93 @@
+<mxclazz>
+  <div ref="content" style="position: relative">
+      <div class="CgsSymbolTool__symbolTree CgsModelTool__modelTree">
+          <ul ref="tree"></ul>
+      </div>
+  </div>
+  <script>
+      var tag = this;
+      tag.map = opts.map || {};
+      tag.allModels = [];
+      tag.mxtable = opts.mxtable;
+      tag.on('mount', function () {
+          var _$$ = ((!window.$$.fn.draggable) || (window.$$.fn.draggable.length === 1)) ? (window.$) : (window.$$); //easy ui 的痛
+          var $$ = _$$;
+          tag.treeUl = $$(tag.refs.tree);
+
+          function mapData(data,arr){
+            data.forEach((item,index)=>{
+              let obj = {
+                id:item.node.id,
+                text:item.node.name,
+                state:'open',
+                checked:true,
+                isModelNode:item.node.isModelNode,
+                model_type:item.node.model_type?item.node.model_type:'',
+                modelUrl:item.node.modelUrl?item.node.modelUrl:'',
+                type:item.node.type?item.node.type:'',
+                url:item.node.thumbnail?item.node.thumbnail:'',
+                canscale:item.node.canscale?item.node.canscale:'',
+                max_height:item.node.max_height?item.node.max_height:'',
+                min_height:item.node.min_height?item.node.min_height:'',
+                scale:item.node.scale?item.node.scale:'',
+                children:[]
+              };
+              arr.push(obj);
+              if(item.nodeTrees&&item.nodeTrees.length>0){
+                mapData(item.nodeTrees,arr[index].children)
+              }else{
+                tag.allModels.push(obj);
+              }
+            })
+          }
+          var tagTreeLoadInterval = setInterval(function () {
+              if (!tag.map.modelTree) {
+                  return
+              }
+              var oldTreeData = [tag.map.modelTree];
+              var newTreeData = [];
+              if(oldTreeData) mapData(oldTreeData,newTreeData);
+              tag.renderTree(newTreeData);
+              clearInterval(tagTreeLoadInterval)
+          }, 100)
+      });
+      tag.renderTree = function(newTreeData){
+        /* 选中事件 */
+        function onCheck() {
+          //获取所有选中的
+          var selected = tag.treeUl.tree('getChecked');
+          var jbs = [];
+          for (var i = 0; i < selected.length; i++) {
+              var obj = selected[i];
+              if (obj.isModelNode) {
+                  jbs.push({...obj,libId:i});
+              }
+          }
+          if(tag.mxtable){
+            tag.mxtable.trigger('jbsUpdate', jbs);
+          }
+        }
+        tag.tree = tag.treeUl.tree({
+            lines:true,
+            data: newTreeData,
+            animate: true,
+            checkbox: true,
+            onCheck: function () {
+                onCheck();
+            },
+            //选中一行时只check该行
+            onSelect: function (node) {
+                var roots = tag.treeUl.tree('getRoots');
+                for (var i = 0; i < roots.length; i++) {
+                    tag.treeUl.tree('uncheck', roots[i].target);
+                }
+                tag.treeUl.tree('check', node.target);
+            },
+
+            onLoadSuccess: function () {
+                onCheck();
+            },
+        });
+      }
+  </script>
+</mxclazz>

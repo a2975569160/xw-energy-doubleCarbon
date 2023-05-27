@@ -1,0 +1,200 @@
+<!--标绘主面板(整体的)-->
+<jbpanel>
+  <div class="CgsTool__title">
+    <span class='CgsSymbolTool__titleText'>标绘</span>
+  </div>
+  <div ref="content" class="CgsTool__content" style="height:100%">
+    <!--面板顶部标签-->
+    <div class="CgsTool__label">
+      <div class='CgsSymbolTool__topLabelWarp'>
+        <div title={currentPanel===0?'保存':'导出图层'} class='CgsSymbolTool__save' onclick={saveScene}></div>
+      </div>
+      <div class='CgsSymbolTool__topLabelWarp'>
+        <div title={currentPanel===0?'打开':'导入图层'} class='CgsSymbolTool__open' onclick={loadScene}></div>
+      </div>
+      <div class='CgsSymbolTool__topLabelWarp'>
+        <div title={currentPanel===0?'删除所有军标':'删除图层'} class='CgsSymbolTool__removeAll' onclick={cleanScene}></div>
+      </div>
+      <div class='CgsSymbolTool__topLabelWarp'>
+        <div title='军标属性管理' class='CgsSymbolTool__manage' onclick={layerContral}></div>
+      </div>
+      <div class='CgsSymbolTool__topLabelWarp'>
+        <div title='连续标绘' class='CgsSymbolTool__manage CgsSymbolTool__protract' onclick={toggleSequenceDraw}></div>
+      </div>
+      <div class="CgsTool__label_line" show={ currentPanel===1 } />
+      <div class='CgsSymbolTool__topLabelWarp' show={ currentPanel===1 }>
+        <div title='添加图层' class='CgsSymbolTool__add' onclick={addSymbol}></div>
+      </div>
+    </div>
+    <!--中间主体内容-->
+    <div style="height:calc(100% - 73px);overflow: hidden" show={ currentPanel===0 }>
+      <div ref="bhdiv" style="height: 100%;">
+        <div id="jbfunctiontop" style="height: 267px;">
+          <div class='CgsSymbolTool__topbox' style="height: 100%;overflow-y: scroll">
+            <jbclazz ref="jbclazz" map={map}></jbclazz>
+          </div>
+        </div>
+        <div id="jbfunctiondown" style="height: calc(100% - 277px)">
+          <div style="height: 100%;">
+            <jbtable ref="jbtable" map={map} showHeader={false}></jbtable>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ref="sxdiv" show={ currentPanel===1 } class="sxdiv_jbclazz" style="height: calc(100% - 73px);">
+      <jbsymboltree ref="jbsymboltree" map={map}></jbsymboltree>
+    </div>
+    <!--底部tab标签-->
+    <div class='CgsSymbolTool__bottom'>
+      <div ref="btn_bh" class='CgsSymbolTool__bottomTab CgsSymbolTool__bottomTab_active' onclick={show_bh}>
+        <span>标号</span>
+      </div>
+      <!-- 2.3版本暂时不上线 -->
+      <!-- <div ref="btn_sx" class='CgsSymbolTool__bottomTab' onclick={show_sx}>
+        <span>图层</span>
+      </div> -->
+    </div>
+  </div>
+
+
+  <script>
+    var tag = this;
+    tag.map = opts.map || {};
+    tag.currentPanel = 0; //当前面板 (标绘0 ，图层1)
+    tag.on('mount', function () {
+      tag.refs.jbclazz.jbtable = tag.refs.jbtable;
+      //点到地图时，让 输入框 不再focus
+    });
+
+    tag.showByPanel = function () {
+      var btn_bh = $$(tag.refs.btn_bh);
+      var btn_sx = $$(tag.refs.btn_sx);
+      if (tag.currentPanel === 0) {
+        btn_bh.addClass('CgsSymbolTool__bottomTab_active');
+        btn_sx.removeClass('CgsSymbolTool__bottomTab_active');
+      } else {
+        btn_bh.removeClass('CgsSymbolTool__bottomTab_active');
+        btn_sx.addClass('CgsSymbolTool__bottomTab_active');
+      }
+    };
+
+    tag.show_bh = function () {
+      tag.currentPanel = 0;
+      tag.showByPanel();
+
+    };
+
+    tag.show_sx = function () {
+      tag.currentPanel = 1;
+      tag.showByPanel();
+    };
+
+    //删除
+    tag.cleanSceneFlag = false
+    var element = undefined
+    tag.cleanScene = function () {
+      //弹出军标删除确认窗口  庄博 2021/6/8
+      element = $(`
+        <div class="clean_symbols">
+          <div class="remove_symbols">确定删除所有军标？</div>
+          <div>
+            <button class="confirm">确定</button>
+            <button class="cancel">取消</button>
+          </div>
+        </div>
+        `)
+      $('.CgsToolBone').append(element)
+
+      if(tag.cleanSceneFlag === true) {
+        $(".clean_symbols").css('visibility','visible')
+        } else {
+          tag.cleanSceneFlag = true
+        }
+
+      $('.confirm').on('click', function(){
+      if (tag.currentPanel === 0) {
+        tag.map.jmpManage.removeAllSymbols();
+      } else {
+        tag.refs.jbsymboltree.handleDeleteLayer();
+      }
+      $(".clean_symbols").css('visibility','hidden')
+      })
+      $('.cancel').on('click', function(){
+        $(".clean_symbols").css('visibility','hidden')
+      })
+    };
+
+    //军标属性
+    tag.layerContral = function () {
+      // var SymbolLayer = new CgsSymbolLayer(tag.map);
+      // SymbolLayer.activate();
+      var symbolAttr = new CgsSymbolAttr(tag.map);
+      symbolAttr.activate();
+    }
+
+    //上传
+    tag.loadScene = function () {
+      if (tag.currentPanel === 0) {
+        //通过JQuery创建一个不显示的input标签，设置type为File，再手动触发其点击事件，
+        //通过JS自带的FileReader类读取用户选择的文本文件（必须为UTF-8）
+        //之后调用军标工具的从字符串读取场景的接口来读取场景
+        var fr = new FileReader();
+        fr.onload = function () {
+          var sceneData = this.result;
+          tag.map.plotting._tool_manager.switch_creating();
+          tag.map.jmpApi.importByString(sceneData);
+          tag.map.plotting._tool_manager.switch_editing();
+        };
+        inputF = $$("<input type='file' accept='.sml'>");
+        inputF.change(function () {
+          var f = this.files[0];
+          fr.readAsText(f);
+        });
+        inputF.click();
+      } else {
+        tag.refs.jbsymboltree.handleInportLayer();
+      }
+    };
+
+    //下载
+    tag.saveScene = function () {
+      if (tag.currentPanel === 0) {
+        var msg = tag.map.jmpApi.exportAsFormatString();
+        var scenef = new File([msg], 'scene.sml', {
+          type: "text/xml;charset=utf-8"
+        });
+        //使用FileSaver.js提供的saveAs函数，通过浏览器的默认下载工具将字符串保存为本地文件
+        saveAs(scenef);
+      } else {
+        tag.refs.jbsymboltree.handleExportLayer();
+      }
+    }
+
+    //添加图层
+    tag.addSymbol = function () {
+      tag.refs.jbsymboltree.handleAddLayer();
+    }
+
+    //连续标绘
+    tag.toggleSequenceDraw = function () {
+      var protractTag = $$(".CgsSymbolTool__protract");
+      var protractChecked = protractTag.hasClass('jmpSequenceDrawChecked');
+      if (protractChecked) {
+        tag.map.jmpSequenceDraw = false;
+        protractTag.removeClass("jmpSequenceDrawChecked");
+        //解决取消连续绘制异常的问题 mgj
+        var $mapContainer = $$('#' + tag.map.target).children();
+        $mapContainer.find('.CgsSymbolTool__tool_active').removeClass('CgsSymbolTool__tool_active');
+        $$($mapContainer[0]).css('cursor', '');
+        $$($mapContainer[1]).css('cursor', '');
+        tag.map.jmpApi.symbolManager.selectNothing();
+        tag.map.jmpApi.jmpState.isDrawingByMouse = false; //手绘开始
+        tag.map.plotting._tool_manager.switch_editing();
+        //end
+      } else {
+        tag.map.jmpSequenceDraw = true;
+        protractTag.addClass("jmpSequenceDrawChecked");
+      }
+    }
+  </script>
+</jbpanel>

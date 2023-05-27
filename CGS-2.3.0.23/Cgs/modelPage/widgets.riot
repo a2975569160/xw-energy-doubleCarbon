@@ -1,0 +1,172 @@
+<!--模型标绘主面板(整体的)-->
+<mxpanel>
+    <div class="CgsTool__title">
+        <span class='CgsSymbolTool__titleText'>模型</span>
+    </div>
+    <div ref="content" class="CgsTool__content" style="height:100%">
+      <!--面板顶部标签-->
+      <div class="CgsTool__label">
+          <!-- <div class='CgsSymbolTool__topLabelWarp'>
+              <div title={currentPanel===0?'保存':'导出图层'} class='CgsSymbolTool__save' onclick={saveScene}></div>
+          </div>
+          <div class='CgsSymbolTool__topLabelWarp'>
+              <div title={currentPanel===0?'打开':'导入图层'} class='CgsSymbolTool__open' onclick={loadScene}></div>
+          </div> -->
+          <div class='CgsSymbolTool__topLabelWarp'>
+              <div title={currentPanel===0?'删除所有模型':'删除图层'} class='CgsSymbolTool__removeAll' onclick={cleanScene}></div>
+          </div>
+          <div class='CgsSymbolTool__topLabelWarp'>
+            <div title='模型属性管理' class='CgsSymbolTool__manage CgsModelTool__manage' onclick={layerContral}></div>
+          </div>
+          <div class='CgsSymbolTool__topLabelWarp'>
+            <div title='连续标绘' class='CgsSymbolTool__manage CgsSymbolTool__protract' onclick={toggleSequenceDraw}></div>
+          </div>
+          <div class="CgsTool__label_line" show={ currentPanel===1 }/>
+          <div class='CgsSymbolTool__topLabelWarp' show={ currentPanel===1 }>
+              <div title='添加图层' class='CgsSymbolTool__add' onclick={addSymbol}></div>
+          </div>
+      </div>
+      <!--中间主体内容-->
+      <div style="height:calc(100% - 73px);overflow: hidden" show={ currentPanel===0 } >
+          <div ref="bhdiv" style="height: 100%;">
+              <div id="jbfunctiontop" style="height: 267px;">
+                  <div class='CgsSymbolTool__topbox' style="height: 100%;overflow-y: scroll">
+                      <mxclazz ref="mxclazz" map={map}></mxclazz>
+                  </div>
+              </div>
+              <div id="jbfunctiondown" style="height: calc(100% - 277px)">
+                  <div style="height: 100%;">
+                      <mxtable ref="mxtable" map={map} showHeader={false}></mxtable>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div ref="sxdiv" show={ currentPanel===1 } class="sxdiv_jbclazz" style="height: calc(100% - 73px);" >
+        <mxmodeltree ref="mxmodeltree" map={map}></mxmodeltree>
+      </div>
+      <!--底部tab标签-->
+      <div class='CgsSymbolTool__bottom'>
+          <div ref="btn_mx" class='CgsSymbolTool__bottomTab CgsSymbolTool__bottomTab_active' onclick={show_bh}>
+              <span>模型</span>
+          </div>
+          <div ref="btn_tc" class='CgsSymbolTool__bottomTab' onclick={show_sx} style="display: none;">
+              <span>图层</span>
+          </div>
+      </div>
+    </div>
+
+
+    <script>
+        var tag = this;
+        tag.map = opts.map || {};
+        tag.currentPanel = 0;//当前面板 (标绘0 ，图层1)
+        tag.on('mount', function () {
+            tag.refs.mxclazz.mxtable = tag.refs.mxtable;
+            //点到地图时，让 输入框 不再focus
+        });
+
+        tag.showByPanel = function () {
+            var btn_mx = $$(tag.refs.btn_mx);
+            var btn_tc = $$(tag.refs.btn_tc);
+            if(tag.currentPanel === 0){
+                btn_mx.addClass('CgsSymbolTool__bottomTab_active');
+                btn_tc.removeClass('CgsSymbolTool__bottomTab_active');
+            }
+            else {
+                btn_mx.removeClass('CgsSymbolTool__bottomTab_active');
+                btn_tc.addClass('CgsSymbolTool__bottomTab_active');
+            }
+        };
+
+        tag.show_bh = function () {
+            tag.currentPanel = 0;
+            tag.showByPanel();
+
+        };
+
+        tag.show_sx = function () {
+            tag.currentPanel = 1;
+            tag.showByPanel();
+        };
+
+      //删除
+      tag.cleanScene = function () {
+          tag.refs.mxmodeltree.handleDeleteLayer(tag.currentPanel);
+      };
+
+      //军标属性
+      tag.layerContral = function () {
+        if(tag.map.modelAttr){
+          tag.map.modelAttr.deactivate();
+          tag.map.modelAttr = null;
+        }else{
+          var modelAttr = new CgsModelAttr(tag.map);
+          modelAttr.activate();
+        }
+      }
+
+      //上传
+      tag.loadScene = function () {
+        if(tag.currentPanel === 0){
+          //通过JQuery创建一个不显示的input标签，设置type为File，再手动触发其点击事件，
+          //通过JS自带的FileReader类读取用户选择的文本文件（必须为UTF-8）
+          //之后调用军标工具的从字符串读取场景的接口来读取场景
+          var fr = new FileReader();
+          fr.onload = function () {
+              var sceneData = this.result;
+              tag.refs.mxclazz.treeData=JSON.parse(sceneData);
+              tag.refs.mxclazz.renderTree();
+          };
+          inputF = $$("<input type='file' accept='.json'>");
+          inputF.change(function () {
+              var f = this.files[0];
+              fr.readAsText(f);
+          });
+          inputF.click();
+        }else{
+          tag.refs.mxmodeltree.handleInportLayer();
+        }
+      };
+
+      //下载
+      tag.saveScene = function () {
+        if(tag.currentPanel === 0){
+          var data = JSON.stringify(tag.refs.mxclazz.treeUl.tree('getRoots'))
+          var blob = new Blob([data],{type:'text/json'});
+          var scenef = new File([blob], 'modelTree.json', { type: blob.type });
+          //使用FileSaver.js提供的saveAs函数，通过浏览器的默认下载工具将字符串保存为本地文件
+          saveAs(scenef);
+        }else{
+          tag.refs.mxmodeltree.handleExportLayer();
+        }
+      }
+
+      //添加图层
+      tag.addSymbol = function () {
+        var editLayer = new CgsModelEditLayer(tag.map);
+        editLayer.activate();
+        tag.map.editLayer.isEdit = false;
+        tag.map.editLayer.refs.name.value = '';
+        tag.map.editLayer.refs.title.value = '添加图层';
+      }
+
+      //连续标绘
+      tag.toggleSequenceDraw = function () {
+        var protractTag = $$(".CgsSymbolTool__protract");
+        var protractChecked = protractTag.hasClass('jmpSequenceDrawChecked');
+        if(protractChecked){
+          tag.map.mxSequenceDraw = false;
+          tag.map.currentDrawModel = null;
+          protractTag.removeClass("jmpSequenceDrawChecked");
+          //解决取消连续绘制异常的问题 mgj
+          var $mapContainer = $$('#' + tag.map.target).children();
+          $mapContainer.find('.CgsModelTool__tool_active').removeClass('CgsModelTool__tool_active');
+          $$($mapContainer[0]).css('cursor', '');
+          $$($mapContainer[1]).css('cursor', '');
+        }else{
+          tag.map.mxSequenceDraw = true;
+          protractTag.addClass("jmpSequenceDrawChecked");
+        }
+      }
+    </script>
+</mxpanel>

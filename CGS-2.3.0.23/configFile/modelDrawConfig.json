@@ -1,0 +1,82 @@
+{
+  "treeData": [
+    {
+      "id": "1",
+      "name": "模型",
+      "children": [
+        {
+          "id": "1-1",
+          "name": "美军gltf",
+          "children": [
+            {
+              "id": "1-1-1",
+              "name": "舰船",
+              "number": 2, 
+              "children": [
+                {
+                  "id": "1-1-1-1",
+                  "type": "舰船",
+                  "url": "/SDK/assets/modelFile/img/美军濒海战斗舰.png",
+                  "modelUrl": "/SDK/assets/modelFile/gltf/濒海战斗舰.gltf",
+                  "name": "濒海战斗舰",
+                  "modelType": "gltf" ,
+                  "scale": ""
+                },
+                {
+                  "id": "1-1-1-2",
+                  "type": "舰船",
+                  "url": "/SDK/assets/modelFile/img/美军导弹巡洋舰.png",
+                  "modelUrl": "/SDK/assets/modelFile/gltf/导弹巡洋舰.gltf",
+                  "name": "导弹驱逐舰",
+                  "modelType": "gltf" 
+                }
+              ]
+            },
+            {
+              "id": "1-1-2",
+              "name": "飞机",
+              "children": [
+                {
+                  "id": "1-1-2-1",
+                  "type": "飞机",
+                  "url": "/SDK/assets/modelFile/img/美军电子干扰机.png",
+                  "modelUrl": "/SDK/assets/modelFile/gltf/电子干扰机.gltf",
+                  "name": "电子干扰机",
+                  "modelType": "gltf" 
+                },
+                {
+                  "id": "1-1-2-2",
+                  "type": "飞机",
+                  "url": "/SDK/assets/modelFile/img/美军反潜机.png",
+                  "modelUrl": "/SDK/assets/modelFile/gltf/反潜机.gltf",
+                  "name": "反潜机",
+                  "modelType": "gltf" 
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1-2",
+          "name": "台军gltf",
+          "children": [
+            {
+              "id": "1-2-1",
+              "name": "舰船",
+              "children": [
+                {
+                  "id": "1-2-1-1",
+                  "type": "舰船",
+                  "url": "/SDK/assets/modelFile/img/台军海巡舰艇.png",
+                  "modelUrl": "/SDK/assets/modelFile/gltf/海巡舰艇.gltf",
+                  "name": "海巡舰艇",
+                  "modelType": "gltf" 
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

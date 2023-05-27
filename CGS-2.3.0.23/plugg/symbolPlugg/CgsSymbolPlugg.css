@@ -1,0 +1,36 @@
+.satellite_body{
+    color: white;
+}
+.satellite_body_fieldset{
+    border-color: rgba(68, 77, 86, 0.9);
+}
+.satellite_body_fieldset_span2{
+  display: inline-block;
+  margin: 1px 0px 16px 0px;
+}
+.satellite_body_fieldset_input{
+    height: 25px;
+    border: none;
+    width: 141px;
+    padding: 0px 0px 0px 6px;
+    background-color: #525763;
+    color: #dad1d1fa;
+}
+.satellite_body_fieldset_button{
+    border: none;
+    padding: 3px 7px;
+    margin: 0px 6px;
+    color: white;
+    background-color: #506888;
+}
+.satellite_body_fieldset_select{
+    background-color: #10243B;
+    color: white;
+    border-color: rgba(105,122,141,0.9);
+    display: inline-block;
+    padding: 2px;
+}
+.sateillte_play_control-button{
+    /* background-color: #0b2e4c; */
+    margin-left: 3px;
+}

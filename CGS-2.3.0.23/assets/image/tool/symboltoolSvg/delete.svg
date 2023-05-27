@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #afc1d3;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="形状_56_拷贝_8" data-name="形状 56 拷贝 8" class="cls-1" d="M1616.05,207l-2.05,0v2h-4v1h0v1h1v9a2.275,2.275,0,0,0,2.18,2h6.64a2.275,2.275,0,0,0,2.18-2v-9h1v-1h0v-1c0-.339.35,0,0,0h-4v-2l-2.04,0h-0.91Zm-0.05,1h2v1h-3v-1h1Zm-4,3h4c0.3,0.007-.08,0,0,0l0.96-.043c0.08,0-.04.05,0.04,0.043h4v9a1.431,1.431,0,0,1-1,1h-7a1.431,1.431,0,0,1-1-1v-9Zm2,2v6h1v-6h-1Zm2,0v6h1v-6h-1Zm2,0v6h1v-6h-1Z" transform="translate(-1606.08 -204)"/>
+</svg>

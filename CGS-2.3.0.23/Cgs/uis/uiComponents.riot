@@ -1,0 +1,424 @@
+<!--通用组件-->
+<!--双向绑定-->
+<twowaybind>
+  <yield />
+  <script>
+    var tag = this;
+    tag._model = opts.def || '默认值';
+
+    tag.gm = function () {
+      return tag._model;
+    };
+
+    tag.sm = function (val) {
+      tag._model = val;
+      tag.refs.model.value = val;
+    };
+
+    tag.setInputValue = function (val) {
+      tag._model = val;
+      tag.parent.update();
+    };
+
+    this.on('before-mount', function () {
+      tag.parent[tag.opts.model] = tag;
+    });
+
+    this.on('mount', function () {
+      var input = tag.refs.model;
+      var iType = input.type;
+      if (iType === 'text') {
+        input.oninput = function (e) {
+          tag.setInputValue(input.value);
+        };
+      } else {
+        console.warn('不支持的类型');
+      }
+      tag.sm(tag._model)
+    });
+  </script>
+</twowaybind>
+
+<!--验证输入框-->
+<cgs_validator_input>
+  <input class={no:isError} ref="in" oninput={onInput} type="text" style="width: 100%;" />
+
+  <style>
+    .no {
+      background-color: red !important;
+    }
+  </style>
+
+  <script>
+    var tag = this;
+    //对外
+    //validator = 用于实现自定义验证器
+    //解决军标属性（类型为number）输入0值报错和以及输入不是数字时进行过滤 mgj
+    var validator = function (data) {
+      if (tag.opts.type === 'number') {
+        if (tag.opts.ref === "groundOffset") {
+          return isNaN(Number(data)) ? 0 : data;
+        }
+        return (isNaN(Number(data)) || Number(data) == 0) ? 0.0000001 : Math.floor(data);
+      } else {
+        return data;
+      }
+    }
+    tag.opts.validator = tag.opts.validator || validator;
+    //tag.opts.validator = tag.opts.validator || null;
+    //end
+    tag.opts.stype = tag.opts.stype || 'text'; //显示样式可选范围text , check, list  ,TODO range
+    tag.opts.valType = tag.opts.valType || 'text'; //值的类型 text,number
+
+    //on_val_change;//当有正确输入时调用
+    tag.opts.on_val_change = tag.opts.on_val_change || function (val) {};
+
+    //设置内容
+    tag.setContent = function (val, noEmit) {
+      tag.refs.in.value = val;
+      if (val === undefined) {
+        tag.val = null;
+        tag.refs.in.value = "";
+      } else {
+        if (!noEmit) {
+          tag.handleInputChange(val);
+        }
+      }
+    };
+
+    tag.getContent = function () {
+      return tag.val
+    };
+    //对外end
+
+    tag.val = null;
+    tag.defaultValidators = {
+      number: function (data) {
+        tag.val = Number(data);
+        return !isNaN(tag.val);
+      },
+      text: function (data) {
+        tag.val = data;
+        return true;
+      },
+    };
+
+    tag.currentValidator = tag.defaultValidators[tag.opts.valType];
+    tag.isError = false;
+    tag.handleInputChange = function (val) {
+      if (tag.currentValidator(val)) {
+        if (tag.opts.validator) {
+          tag.val = tag.opts.validator(tag.val);
+        }
+        if (tag.val === null) {
+          tag.isError = true;
+          tag.refs.in.setAttribute('title', '不能超过xxx');
+        } else {
+          tag.isError = false;
+          tag.refs.in.setAttribute('title', '');
+          //解决军标属性（类型为number）输入0值报错和以及输入不是数字时进行过滤 mgj
+          if (tag.val === 0.0000001) {
+            tag.refs.in.value = 0;
+          } else {
+            tag.refs.in.value = tag.val;
+          }
+          //tag.refs.in.value = tag.val;
+          //end
+          tag.opts.on_val_change(tag, tag.val);
+        }
+      } else {
+        tag.isError = true;
+      }
+      tag.update();
+    };
+
+    if (tag.opts.stype === 'text') {
+      //防抖函数,避免无法输入
+      tag.onInput = _.debounce(function (ev) {
+        var val = ev.target.value;
+        tag.handleInputChange(val);
+      }, 500);
+    } else {
+      tag.onInput = function (ev) {
+        var val = ev.target.checked;
+        tag.handleInputChange(val);
+      };
+    }
+  </script>
+</cgs_validator_input>
+
+<!--字体大小选择器-->
+<cgs_font_size_picker>
+  <table>
+    <tr>
+      <td>
+        <select ref="in2" onchange={on_select_change}>
+          <option value="0">选择</option>
+          <option each={ size in sizeNames} value={size.val}>{size.name}</option>
+        </select>
+      </td>
+      <td>
+        <div style="display: block" data-is="cgs_validator_input" ref="in1" validator={ fontSizeValidator }
+          on_val_change={ on_val_change } type="number">、
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    var tag = this;
+
+    //对外
+    tag.opts.on_val_change = tag.opts.on_val_change || function (t, val) {};
+    //设置内容
+    tag.setContent = function (val, noemit) {
+      tag.refs.in1.setContent(val, noemit);
+      if (!noemit) {
+        tag.on_val_change(tag, val);
+      }
+    };
+
+    //对外end
+    //名称和大小的关系
+    tag.sizeNames = [{
+        name: "初号",
+        val: 42
+      },
+      {
+        name: "小初",
+        val: 36
+      },
+      {
+        name: "一号",
+        val: 28
+      },
+      {
+        name: "小一",
+        val: 31.5
+      },
+      {
+        name: "二号",
+        val: 21
+      },
+      {
+        name: "小二",
+        val: 18
+      },
+      {
+        name: "三号",
+        val: 16
+      },
+      {
+        name: "四号",
+        val: 14
+      },
+      {
+        name: "小四",
+        val: 12
+      },
+    ];
+    tag.sizeNamesKeyByVal = _.keyBy(tag.sizeNames, 'val');
+    //字体大小验证
+    tag.fontSizeValidator = function (val) {
+      if (val < 4) {
+        val = 4;
+      }
+      if (val > 72) {
+        val = 72;
+      }
+      return val;
+    };
+
+    tag.on_select_change = function (ev) {
+      var n = Number(ev.target.value);
+      tag.refs.in1.setContent(n);
+    };
+
+    tag.lastVal = null; //避免重复修改
+    tag.on_val_change = function (t, val) {
+      if (tag.sizeNamesKeyByVal[val]) {
+        tag.refs.in2.value = val;
+      } else {
+        tag.refs.in2.value = 0;
+      }
+
+      if (val !== tag.lastVal) {
+        tag.lastVal = val;
+        tag.opts.on_val_change(tag, val);
+      }
+    };
+  </script>
+</cgs_font_size_picker>
+
+<!--颜色选择器-->
+<colorpicker>
+  <div style="text-align: left;display: inline-block;width: 100%">
+    <div each="{color in default_colors}" onclick={handleClick} dtype="color" style={getStyleBy(color)}
+      class="colorBox">&nbsp;&nbsp;
+    </div>
+    <input ref="color" type="text" dtype="color" />
+  </div>
+
+  <script>
+    var tag = this;
+    //对外
+    //on_val_change;//当有正确输入时调用
+    tag.opts.on_val_change = tag.opts.on_val_change || function (t, val) {};
+
+    tag.setColor = function (c) {
+      $$(tag.refs.color).spectrum("set", c);
+    };
+    tag.getColor = function () {
+      return $$(tag.refs.color).spectrum("get");
+    };
+
+    //对外end
+    tag.pref = tag.opts.ref;
+    tag.default_colors = tag.opts.default_colors || ['rgb(255,0,0)', 'rgb(33,89,191)', 'rgb(248,181,81)',
+      'rgb(34,172,56)'
+    ];
+    // tag.default_colors = tag.opts.default_colors || ['rgb(255,0,0)','rgb(0,255,0)','rgb(0,0,255)'];
+    tag.getStyleBy = function (color) {
+      return {
+        'background-color': color
+      }
+    };
+
+    tag.lastSelectedColor = null;
+
+    tag.handleClick = function (e) {
+      var ref = e.target;
+      var c = $$(ref).css('background-color');
+      // $$(ref).css('border-color','#2c6bdd');
+      if (tag.lastSelectedColor != c) {
+        tag.setColor(c);
+        tag.lastSelectedColor = c;
+        var val = $$(tag.refs.color).spectrum("get").toRgb();
+        tag.opts.on_val_change(tag, val);
+      }
+    };
+
+    tag.on('mount', function () {
+      //颜色选框
+      var colorOptions = {
+        color: "white",
+        preferredFormat: "rgb",
+        showAlpha: true,
+        showInput: true,
+        showPalette: true,
+        hideAfterPaletteSelect: true,
+        showInitial: true,
+        chooseText: "确认",
+        cancelText: "取消",
+        palette: [
+          ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
+          ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f", "#90f", "#f0f"],
+          ["#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d0e0e3", "#cfe2f3", "#d9d2e9", "#ead1dc"],
+          ["#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#9fc5e8", "#b4a7d6", "#d5a6bd"],
+          ["#e06666", "#f6b26b", "#ffd966", "#93c47d", "#76a5af", "#6fa8dc", "#8e7cc3", "#c27ba0"],
+          ["#c00", "#e69138", "#f1c232", "#6aa84f", "#45818e", "#3d85c6", "#674ea7", "#a64d79"],
+          ["#900", "#b45f06", "#bf9000", "#38761d", "#134f5c", "#0b5394", "#351c75", "#741b47"],
+          ["#600", "#783f04", "#7f6000", "#274e13", "#0c343d", "#073763", "#20124d", "#4c1130"]
+        ],
+
+        hide: function (c) {
+          var c = tag.getColor().toString();
+          if (tag.lastSelectedColor != c) {
+            tag.lastSelectedColor = c;
+            //自带alpha 值，0~1,
+            var val = $$(tag.refs.color).spectrum("get").toRgb();
+            tag.opts.on_val_change(tag, val)
+          }
+        },
+      };
+      $$(tag.refs.color).spectrum(colorOptions);
+      tag.cIns = $$(tag.refs.color);
+    });
+  </script>
+</colorpicker>
+<!--颜色选择器-->
+<colorpickerhideAlpha>
+  <div style="text-align: left;display: inline-block;width: 100%">
+    <div each="{color in default_colors}" onclick={handleClick} dtype="color" style={getStyleBy(color)}
+      class="colorBox">&nbsp;&nbsp;
+    </div>
+    <input ref="color" type="text" dtype="color" />
+  </div>
+
+  <script>
+    var tag = this;
+    //对外
+    //on_val_change;//当有正确输入时调用
+    tag.opts.on_val_change = tag.opts.on_val_change || function (t, val) {};
+
+    tag.setColor = function (c) {
+      $$(tag.refs.color).spectrum("set", c);
+    };
+    tag.getColor = function () {
+      return $$(tag.refs.color).spectrum("get");
+    };
+
+    //对外end
+    tag.pref = tag.opts.ref;
+    tag.default_colors = tag.opts.default_colors || ['rgb(255,0,0)', 'rgb(33,89,191)', 'rgb(248,181,81)',
+      'rgb(34,172,56)'
+    ];
+    // tag.default_colors = tag.opts.default_colors || ['rgb(255,0,0)','rgb(0,255,0)','rgb(0,0,255)'];
+    tag.getStyleBy = function (color) {
+      return {
+        'background-color': color
+      }
+    };
+
+    tag.lastSelectedColor = null;
+
+    tag.handleClick = function (e) {
+      var ref = e.target;
+      var c = $$(ref).css('background-color');
+      // $$(ref).css('border-color','#2c6bdd');
+      if (tag.lastSelectedColor != c) {
+        tag.setColor(c);
+        tag.lastSelectedColor = c;
+        var val = $$(tag.refs.color).spectrum("get").toRgb();
+        tag.opts.on_val_change(tag, val);
+      }
+    };
+
+    tag.on('mount', function () {
+      //颜色选框
+      var colorOptions = {
+        color: "white",
+        preferredFormat: "rgb",
+        showAlpha: false,
+        showInput: true,
+        showPalette: true,
+        hideAfterPaletteSelect: true,
+        showInitial: true,
+        chooseText: "确认",
+        cancelText: "取消",
+        palette: [
+          ["#000", "#444", "#666", "#999", "#ccc", "#eee", "#f3f3f3", "#fff"],
+          ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f", "#90f", "#f0f"],
+          ["#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d0e0e3", "#cfe2f3", "#d9d2e9", "#ead1dc"],
+          ["#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#9fc5e8", "#b4a7d6", "#d5a6bd"],
+          ["#e06666", "#f6b26b", "#ffd966", "#93c47d", "#76a5af", "#6fa8dc", "#8e7cc3", "#c27ba0"],
+          ["#c00", "#e69138", "#f1c232", "#6aa84f", "#45818e", "#3d85c6", "#674ea7", "#a64d79"],
+          ["#900", "#b45f06", "#bf9000", "#38761d", "#134f5c", "#0b5394", "#351c75", "#741b47"],
+          ["#600", "#783f04", "#7f6000", "#274e13", "#0c343d", "#073763", "#20124d", "#4c1130"]
+        ],
+
+        hide: function (c) {
+          var c = tag.getColor().toString();
+          if (tag.lastSelectedColor != c) {
+            tag.lastSelectedColor = c;
+            //自带alpha 值，0~1,
+            var val = $$(tag.refs.color).spectrum("get").toRgb();
+            tag.opts.on_val_change(tag, val)
+          }
+        },
+      };
+      $$(tag.refs.color).spectrum(colorOptions);
+      tag.cIns = $$(tag.refs.color);
+    });
+  </script>
+</colorpickerhideAlpha>

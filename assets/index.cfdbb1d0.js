@@ -1,0 +1,1 @@
+import{_ as r,e as s,f as a,n as o}from"./index.3926de36.js";var c={"error-page":"_error-page_1e7tg_1"};const t={};function n(e,l){return s(),a("div",{class:o(e.$style["error-page"])},"404",2)}const _={$style:c};var f=r(t,[["render",n],["__cssModules",_]]);export{f as default};

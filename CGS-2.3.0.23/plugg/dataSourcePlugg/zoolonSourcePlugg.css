@@ -1,0 +1,92 @@
+.detail-panel {
+    position: absolute;
+    right: 150px;
+    top: 150px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.detail-panel .panel-head {
+    font-size: 16px;
+    line-height: 30px;
+    height: 30px;
+    border-bottom: 1px solid #aaa;
+}
+
+.detail-panel .panel-title {
+    margin-left: 20px;
+}
+
+.detail-panel .btn-close {
+    float: right;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.detail-panel .panel-body {
+    padding: 10px 0px;
+    overflow: hidden;
+}
+
+.detail-panel .detail-describe {
+    width: 500px;
+    float: left;
+    height: 500px;
+    border-right: 1px solid #aaa;
+    padding: 0px 10px;
+    overflow-y: auto;
+}
+
+.detail-panel .detail-describe .info-name {
+    font-size: 24px;
+    color: #444;
+    line-height: 40px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.detail-panel .detail-describe .info-head a {
+    color: #00f;
+}
+
+.detail-panel .detail-describe td.info-url {
+    line-height: 30px;
+    vertical-align: bottom;
+}
+
+.detail-panel .detail-describe td.info-url a {
+    color: #00f;
+}
+
+.detail-panel .detail-describe td.info-key {
+    line-height: 30px;
+    width: 180px;
+    padding-left: 10px;
+}
+
+.detail-panel .detail-describe table {
+    width: 100%;
+    padding: 10px;
+}
+
+.detail-describe tr {
+    height: 28px;
+    line-height: 28px;
+}
+
+.detail-panel .detail-describe tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+.detail-panel div.layer-info {
+    margin-top : 10px;
+}
+
+.detail-panel .detail-preview {
+    width: 500px;
+    height: 500px;
+    float: left;
+}
+
+
+

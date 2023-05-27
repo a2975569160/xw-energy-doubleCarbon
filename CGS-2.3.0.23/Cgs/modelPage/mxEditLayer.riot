@@ -1,0 +1,62 @@
+<!--图层-->
+<mxeditlayer>
+  <div class="CgsTool__title">
+      <input type="text" disabled ref="title" value="添加图层" class='mxeditlayerTitle'/>
+  </div>
+  <div ref="content" class="CgsTool__content" style="height:calc(100% - 2px)">
+      <div class="CgsSymbolTool__content">
+          <div ref="drawingAttributeDiv" class="mxEditLayer_warp">
+            <div class="tr">
+                <div class="td">名称： </div>
+                <div class="td">
+                  <input type="text" ref="name" value=""/>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class='cgsModelLayer-handle'>
+          <div ref="drawingAttribute" class="cgsModelLayer-handle-submit" onclick={handleSubmit}>
+              <span>确定</span>
+          </div>
+          <div class="cgsModelLayer-handle-close" onclick={handleClose}>
+            <span>关闭</span>
+        </div>
+      </div>
+  </div>
+  <script>
+      var tag = this;
+      tag.map = opts.map || {};
+      tag.map.editLayer = tag;
+      tag.isEdit = false
+      tag.handleSubmit = function() {
+        var name = tag.refs.name.value
+        if(name === '') {
+          return
+        }
+        if(tag.isEdit && tag.layer) {
+          let layers = tag.map.modelDrawTool.layers;//所有模型图层
+          layers.forEach(item=>{
+            if(item._id == tag.layer.id){
+              item.setAttr({name});
+              tag.map.layertree.createLayerTree();
+            }
+          })
+          tag.map.modelEditLayer.deactivate();
+        } else {
+          tag.map.modelDrawTool.createModelLayer(name)
+          tag.map.modelEditLayer.deactivate();
+        }
+      }
+      tag.handleClose = function() {
+        tag.refs.name.value = ""
+        tag.map.modelEditLayer.deactivate()
+      }
+      //编辑图层名
+      tag.editLayerName = function(layer){
+        tag.layer = layer;
+        tag.isEdit = true;
+        tag.refs.title.value = '编辑图层';
+        tag.refs.name.value = layer.text;
+      }
+  </script>
+</mxeditlayer>

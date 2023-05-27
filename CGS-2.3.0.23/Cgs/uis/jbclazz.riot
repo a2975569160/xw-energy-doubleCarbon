@@ -1,0 +1,62 @@
+<!--军标分类面板(树)-->
+<jbclazz>
+  <div ref="content" style="position: relative">
+      <div class="CgsSymbolTool__symbolTree">
+          <ul ref="tree"></ul>
+      </div>
+  </div>
+  <script>
+      var tag = this;
+      tag.map = opts.map || {};
+      tag.jbtable = opts.jbtable;
+      tag.on('mount', function () {
+          var _$$ = ((!window.$$.fn.draggable) || (window.$$.fn.draggable.length === 1)) ? (window.$) : (window.$$); //easy ui 的痛
+          var $$ = _$$;
+          tag.treeUl = $$(tag.refs.tree);
+
+          /* 选中事件 */
+          function onCheck() {
+            //获取所有选中的
+            var selected = tag.treeUl.tree('getChecked');
+            var jbs = [];
+            for (var i = 0; i < selected.length; i++) {
+                var obj = selected[i];
+                if (!obj.children) {
+                    jbs = jbs.concat(obj._jbs);
+                }
+            }
+            if(tag.jbtable){
+              tag.jbtable.trigger('jbsUpdate', jbs);
+            }
+          }
+
+          var tagTreeLoadInterval = setInterval(function () {
+              if (!tag.map.jmpApi) {
+                  return
+              }
+              tag.tree = tag.treeUl.tree({
+                  lines:true,
+                  data: tag.map.jmpApi.treeData,
+                  animate: true,
+                  checkbox: true,
+                  onCheck: function () {
+                      onCheck();
+                  },
+                  //选中一行时只check该行
+                  onSelect: function (node) {
+                      var roots = tag.treeUl.tree('getRoots');
+                      for (var i = 0; i < roots.length; i++) {
+                          tag.treeUl.tree('uncheck', roots[i].target);
+                      }
+                      tag.treeUl.tree('check', node.target);
+                  },
+
+                  onLoadSuccess: function () {
+                      onCheck();
+                  },
+              });
+              clearInterval(tagTreeLoadInterval)
+          }, 100)
+      });
+  </script>
+</jbclazz>

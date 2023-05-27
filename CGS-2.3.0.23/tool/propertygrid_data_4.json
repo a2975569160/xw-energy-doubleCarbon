@@ -1,0 +1,75 @@
+{
+    "total": 14,
+    "rows": [
+        { "name": "符号标识", "value": "", "editor": "text" },
+        { "name": "符号代码", "value": "", "editor": "text" },
+        {
+            "name": "只读性",
+            "value": "是",
+            "editor": {
+                "type": "checkbox",
+                "options": {
+                    "on": "是",
+                    "off": "否"
+                }
+            }
+        },
+        {
+            "name": "可见性",
+            "value": "是",
+            "editor": {
+                "type": "checkbox",
+                "options": {
+                    "on": "是",
+                    "off": "否"
+                }
+            }
+        },
+        {
+            "name": "可检测性",
+            "value": "是",
+            "editor": {
+                "type": "checkbox",
+                "options": {
+                    "on": "是",
+                    "off": "否"
+                }
+            }
+        },
+        {
+            "name": "可移动性",
+            "value": "是",
+            "editor": {
+                "type": "checkbox",
+                "options": {
+                    "on": "是",
+                    "off": "否"
+                }
+            }
+        },
+        {
+            "name": "可编辑性",
+            "value": "是",
+            "editor": {
+                "type": "checkbox",
+                "options": {
+                    "on": "是",
+                    "off": "否"
+                }
+            }
+        },
+        {
+            "name": "可偏移性",
+            "value": "是",
+            "editor": {
+                "type": "checkbox",
+                "options": {
+                    "on": "是",
+                    "off": "否"
+                }
+            }
+        },
+        { "name": "所在图层", "value": "", "editor": "text" },
+        { "name": "选中样式", "value": "", "editor": "text" }
+    ]
+}

@@ -1,0 +1,320 @@
+{
+  "treeNodes": {
+    "layerGroup": [
+      {
+        "name": "图层",
+        "id": "level1",
+        "pId": "null",
+        "open": true,
+        "type": "layerGroup"
+      },
+      {
+        "name": "基础图层",
+        "id": "level1_1",
+        "pId": "level1",
+        "open": true,
+        "type": "layerGroup"
+      },
+      {
+        "name": "局部高清图层",
+        "id": "level1_2",
+        "pId": "level1",
+        "open": true,
+        "type": "layerGroup"
+      },
+      {
+        "name": "军事相关图层",
+        "id": "level1_3",
+        "pId": "level1",
+        "open": true,
+        "type": "layerGroup"
+      }
+      ,
+      {
+        "name": "其他图层",
+        "id": "level1_4",
+        "pId": "level1",
+        "open": true,
+        "type": "layerGroup"
+      }
+    ],
+    "datasourceGroup": [
+      {
+        "name": "数据源",
+        "id": "level2",
+        "pId": "null",
+        "open": false,
+        "type": "datasourceGroup"
+      }
+    ]
+  },
+  "layerNodes": [
+   
+    {
+    
+    "url": "../SDK/assets/serverLessData/server1/{TileMatrix}/{TileCol}/{TileRow}.png", 
+    "layer": "quanqiu1-4", 
+    "text": "全球影像1", 
+    "visible": true,
+    "projection": "EPSG:102113", 
+    "level":5, 
+    "tileMatrixSetID":"OGC_Mercator", 
+    "tileMatrixLabels":[1, 2, 3, 4, 5], 
+    "isAddToLayerTree": true,
+    "pId": "level1_1",
+    "type": "wmts",
+    "proxy": false
+
+     }, 
+     {
+      "url": "http://172.16.240.121/mars3d-data/tile/googleImg/{TileMatrix}/{TileCol}/{TileRow}.jpg", 
+      "layer": "googleImg", 
+      "text": "全球影像2", 
+      "visible": true,
+      "projection": "EPSG:102113", 
+      "level":10, 
+      "tileMatrixSetID":"OGC_Mercator", 
+      "tileMatrixLabels":[0, 1, 2, 3, 4, 5, 6, 7, 8], 
+      "isAddToLayerTree": true,
+      "pId": "level1_1",
+      "type": "wmts",
+      "proxy": false
+
+     }
+    
+  ],
+  "modelNodes": {
+    "modelGroup": [
+      {
+        "name": "飞机",
+        "id": "level1",
+        "pId": "null",
+        "open": true
+      },
+      {
+        "name": "歼击机",
+        "id": "level1_1",
+        "pId": "level1",
+        "open": false
+      },
+      {
+        "name": "轰炸机",
+        "id": "level1_2",
+        "pId": "level1",
+        "open": true
+      },
+      {
+        "name": "运输机",
+        "id": "level1_3",
+        "pId": "level1",
+        "open": false
+      },
+      {
+        "name": "直升机",
+        "id": "level1_4",
+        "pId": "level1",
+        "open": true
+      },
+      {
+        "name": "直9系列",
+        "id": "level1_4_1",
+        "pId": "level1_4",
+        "open": false
+      },
+      {
+        "name": "直8系列",
+        "id": "level1_4_2",
+        "pId": "level1_4",
+        "open": false
+      },
+      {
+        "name": "强击机",
+        "id": "level1_5",
+        "pId": "level1",
+        "open": true
+      },
+      {
+        "name": "无人机",
+        "id": "level1_6",
+        "pId": "level1",
+        "open": false
+      },
+      {
+        "name": "雷达",
+        "id": "level2",
+        "pId": "null",
+        "open": true
+      }
+    ],
+    "modelList": [
+      {
+        "url": "assets/models/AirCraft/",
+        "model": "aircraft.gltf",
+        "icon": "icon.png",
+        "pId": "level1_1",
+        "name": "歼击机1"
+      },
+      {
+        "url": "assets/models/AirCraft/",
+        "model": "aircraft.gltf",
+        "icon": "icon.png",
+        "pId": "level1_1",
+        "name": "歼击机2"
+      },
+      {
+        "url": "assets/models/AirCraft/",
+        "model": "aircraft.gltf",
+        "icon": "icon.png",
+        "pId": "level1_1",
+        "name": "歼击机3"
+      },
+      {
+        "url": "assets/models/AirCraft/",
+        "model": "aircraft.gltf",
+        "icon": "icon.png",
+        "pId": "level1_1",
+        "name": "歼击机4"
+      },
+      {
+        "url": "assets/models/AirCraft/",
+        "model": "aircraft.gltf",
+        "icon": "icon.png",
+        "pId": "level1_1",
+        "name": "歼击机5"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_2",
+        "name": "轰炸机1"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_2",
+        "name": "轰炸机2"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_2",
+        "name": "轰炸机3"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_3",
+        "name": "运输机1"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_3",
+        "name": "运输机2"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_4_1",
+        "name": "直9系列1"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_4_1",
+        "name": "直9系列2"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_4_1",
+        "name": "直9系列3"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_4_2",
+        "name": "直8系列1"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_4_2",
+        "name": "直8系列2"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_4_2",
+        "name": "直8系列3"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_5",
+        "name": "强击机1"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_5",
+        "name": "强击机2"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_6",
+        "name": "无人机1"
+      },
+      {
+        "url": "assets/CesiumAir/",
+        "model": "Cesium_Air.glb",
+        "icon": "icon.png",
+        "pId": "level1_6",
+        "name": "无人机2"
+      },
+      {
+        "url": "assets/models/AirCraft/",
+        "model": "aircraft.gltf",
+        "icon": "icon.png",
+        "pId": "level2",
+        "name": "雷达1"
+      },
+      {
+        "url": "assets/models/AirCraft/",
+        "model": "aircraft.gltf",
+        "icon": "icon.png",
+        "pId": "level2",
+        "name": "雷达2"
+      }
+    ]
+  },
+  "toolbarPlugg":{
+      "visible":true,
+  		"pluggOptions":{"open":true,"right":"110px","top":"22px"},
+  		"buttonOptions":[
+        {"iconUrl":"assets/image/plugg/toolbar/zoomIn.png","showText":"放大","id":"zoomIn","is3DOnly":false},
+        {"iconUrl":"assets/image/plugg/toolbar/zoomOut.png","showText":"缩小","id":"zoomOut","is3DOnly":false},
+        {"iconUrl":"assets/image/plugg/toolbar/viewHome.png","showText":"默认视角","id":"viewHome","is3DOnly":false},
+        {"iconUrl":"assets/image/plugg/toolbar/dimensionSwitch.png","showText":"二三维切换","id":"dimensionSwitch","is3DOnly":true},
+        {"iconUrl":"assets/image/plugg/toolbar/rotateLeft.png","showText":"左旋","id":"rotateLeft","is3DOnly":true},
+        {"iconUrl":"assets/image/plugg/toolbar/rotateRight.png","showText":"右旋","id":"rotateRight","is3DOnly":true}
+      ]
+  }
+}
+
+

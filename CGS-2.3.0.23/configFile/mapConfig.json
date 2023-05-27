@@ -1,0 +1,32 @@
+{
+  "//注释1": "所用可配置属性在此处",
+  "//注释2": "地图相关",
+  "//注释3": "底部菜单栏",
+  "toolbar": {
+    "tools": [
+      {"name":"基本图元绘制", "is3DOnly":false},
+      {"name":"图层", "is3DOnly":false},
+      {"name":"地名搜索", "is3DOnly":false},
+      {"name":"截图工具", "is3DOnly":false},
+      {"name":"模型", "is3DOnly":false},
+      {"name":"测量", "is3DOnly":false},
+      {"name":"二三维切换", "is3DOnly":true},
+      {"name":"默认视角", "is3DOnly":false},
+      {"name":"放大", "is3DOnly":false},
+      {"name":"缩小", "is3DOnly":false},
+      {"name":"光照", "is3DOnly":true},
+      {"name":"大气层", "is3DOnly":true},
+      {"name":"归心", "is3DOnly":true},
+      {"name":"局部放大", "is3DOnly":false},
+      {"name":"左旋", "is3DOnly":true},
+      {"name":"右旋", "is3DOnly":true},
+      {"name":"定位", "is3DOnly":false},
+      {"name":"鹰眼图", "is3DOnly":false},
+      {"name":"视点信息", "is3DOnly":false},
+      {"name":"绘制图元", "is3DOnly":false}
+    ]
+  },
+  "dmssUrl":"http://172.16.240.127:3000/api/poiinfo/addressQuery/",
+  "lonlatUrl":"http://28.204.88.99:32010/earthview/services/v/rest/elasticSearchService/10000/circleQueryResult/",
+  "modelDrawUrl": "http://28.204.88.31:12130/webgis/modelconfig/downLoad?filename=modelDrawConfig.json"
+}

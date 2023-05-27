@@ -1,0 +1,454 @@
+.layerBox
+{
+	width: 100%;
+	height: calc(100% - 15px);
+	background-color: antiquewhite;
+	position: absolute;
+	/* background-image: url(../../assets/image/newLayerTree/strip_background.png); */
+	background-color: #0b152f;
+	overflow: auto;
+}
+/*xxx 修改图层样式*/
+.layerBox_new
+{
+	background-color: transparent;
+}
+#CgsLayerTool_container_id
+{
+	position:relative;
+	width:100%;
+	height:calc(100% - 48px);
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+.CgsLayerTool_container_new#CgsLayerTool_container_id
+{
+	margin-top: 30px;
+}
+
+/* 行高度 */
+#CgsLayerTool_container_id tr {
+	height: 32px;
+}
+
+/*xxx 图标样式修改*/
+/* 每行字体默认颜色 */
+#CgsLayerTool_container_id .standartTreeRow {
+	/* font-size: 14px; */
+	font-size: 13px;
+	/* color: #a5bfe5; */
+	border: 1px solid transparent;
+	position: relative;
+	/* right: 14px; */
+	right: 17px;
+}
+#CgsLayerTool_container_id .dhxTextCell .standartTreeRow:hover {
+	/* color: #e9bb57; */
+	background-color: #12306899;
+	box-shadow: 0px 0px 10px 0px #265eb9 inset;
+	border: 1px solid #265ebf;
+	padding: 5px;
+}
+
+#CgsLayerTool_container_id .dhxtree_material .selectedTreeRowFull .dhxTextCell {
+	background-image: none;
+}
+
+#CgsLayerTool_container_id .selectedTreeRow {
+	color: #e9bb57;
+}
+#CgsLayerTool_container_id .dhxtree_material .selectedTreeRowFull .dhxTextCell .selectedTreeRow {
+	color: #e9bb57;
+	background-color: #12306899;
+	box-shadow: 0px 0px 10px 0px #265eb9 inset;
+	border: 1px solid #265ebf;
+	background-image: none;
+	padding: 5px;
+	position: relative;
+	right: 14px;
+}
+
+#CgsLayerTool_container_id .dhx_bg_img_fix {
+	cursor: pointer;
+	margin-right: 7px;
+}
+#CgsLayerTool_container_id .dhx_bg_img_fix:hover {
+	cursor: pointer;
+}
+
+/**
+ * buttonContainer
+ */
+ #CgsLayerTool_container_id .lec_buttonContainer
+{
+	position: relative;
+	width:100%;
+	height: 30px;
+	margin-top: 7px;
+}
+#CgsLayerTool_container_id .lec_buttonContainer .lec_bc_addLayer
+{
+	position: absolute;
+	float: left;
+	width:20px;
+	height:20px;
+	margin-left: calc(100% - 145px);
+	background-image: url(../../assets/image/tool/add_normal.png);
+	background-repeat:no-repeat ;
+	background-size:100% 100%;
+}
+#CgsLayerTool_container_id .lec_buttonContainer .lec_bc_addLayer:hover
+{
+	cursor: pointer;
+}
+
+
+#CgsLayerTool_container_id .lec_buttonContainer .lec_bc_editLayer
+{
+	position: absolute;
+	float: left;
+	width:20px;
+	height: 20px;
+	margin-left: calc(100% - 110px);
+	background-image: url(../../assets/image/tool/edit_normal.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+
+#CgsLayerTool_container_id #layerTreeHere {
+	background-image: url(../../assets/image/newLayerTree/strip_background.png);
+}
+/*xxx 图标样式修改*/
+#CgsLayerTool_container_id .layerTreeHere_new
+{
+	background-image: none !important;
+}
+#CgsLayerTool_container_id table {
+	margin-top: 3px;
+}
+
+.lec_buttonContainer .lec_bc_editLayer:hover
+{
+	cursor: pointer;
+}
+
+.lec_buttonContainer .lec_bc_addDom
+{
+	position: absolute;
+	float: left;
+	width:20px;
+	height: 20px;
+	margin-left: calc(100% - 74px);
+	background-image: url(../../assets/image/tool/adddom_normal.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+.lec_buttonContainer .lec_bc_addDom:hover
+{
+	cursor: pointer;
+}
+
+.lec_buttonContainer .lec_bc_removeDom
+{
+	position: absolute;
+	float: left;
+	width:20px;
+	height: 20px;
+	margin-left: calc(100% - 40px);
+	background-image: url(../../assets/image/tool/remove_normal.png);
+	background-repeat:no-repeat ;
+	background-size:100% 100%;
+}
+.lec_buttonContainer .lec_bc_removeDom:hover
+{
+	cursor: pointer;
+}
+
+
+.lec_buttonContainer .lec_bc_addLayerMode
+{
+	position: relative;
+	margin-left: calc(100% - 165px);
+	margin-top: -73px;
+	float: left;
+	width: 100px;
+	color:white;
+	font-size:12px;
+	/*border:1px solid rgba(31,64,96,1.0);
+	box-sizing: border-box;
+	background-color: rgba(13,25,42,0.7);*/
+	/* background-image:url(../../assets/image/plugg/layerPlugg/addlayermode_bg.png); */
+	background-repeat:no-repeat ;
+	background-size:100% 100%;
+	
+}
+
+.lec_buttonContainer .lec_bc_chooseLayerTypeList{
+	position:absolute;
+	left:100px;
+	top: 0px;
+	width:60px;
+	height:80px;
+	border:1px solid rgba(105,122,141,0.9);
+	box-sizing: border-box;
+}
+.lec_buttonContainer .lec_bc_chooseLayerTypeList .lec_bc_cltl_item{
+	position:relative;
+	float:left;
+	width:60px;
+	height:20px;
+	line-height:20px;
+	color:white;
+}
+.lec_buttonContainer .lec_bc_chooseLayerTypeList .lec_bc_cltl_item:hover{
+	cursor: pointer;
+	background-image: url(../../assets/image/tool/marktool/lineselect.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.lec_buttonContainer .lec_bc_addLayerMode .lec_bc_alm_item
+{
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	/* margin-left:-1px; */
+	/*white-space:pre;*/
+	text-indent:13px;
+}
+.lec_buttonContainer .lec_bc_addLayerMode .lec_bc_alm_item:hover
+{
+	cursor: pointer;
+	/* background-image: url(../../assets/image/tool/selectedBg.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%; */
+}
+
+
+.lec_buttonContainer .bottomBar
+{
+	position: absolute;
+	width:350px;
+	height: 50px;
+	margin-top: 50px;
+	background-color:rgba(52,75,103,0.37);
+}
+
+/**
+ * layerInputContainer
+ */
+
+
+.lec_layerInputContainerBg
+{
+	position:absolute;
+	float: left;
+	width:100%;
+	height: 100%;
+	top:0px;
+	/*background-color: rgba(0,255,0,0.2);*/
+}
+
+.lec_layerInputContainer
+{
+	position:absolute;
+	float: left;
+	margin-left: 25%;
+	top:25%;
+	width:50%;
+	height:50%;
+	background-color: rgba(52,75,103,0.37);
+	border-radius:3px;
+	border:1px solid gray;
+	
+}
+.lec_layerInputContainer .lec_lic_titleContainer
+{
+	width:100%;
+	height:50px;	
+	line-height: 50px;
+	padding-left:50px ;
+	color: white;
+}
+
+.lec_layerInputContainer .lec_lic_titleContainer .lec_lic_tc_icon
+{
+	position: absolute;
+	float: left;
+	width:40px;
+	height:40px;
+	background-image: url(layer.png);
+	background-repeat:no-repeat ;
+	background-size:100% ;	
+	margin-top: -45px;
+	margin-left: -40px;
+}
+.lec_layerInputContainer .lec_lic_contentContainer
+{
+	position: relative;
+	float: left;
+	width:100%;
+	height:calc(100% - 100px);
+	border:1px solid gray;
+	border-left: hidden;
+	border-right: hidden;	
+}
+
+.lec_layerInputContainer .lec_lic_contentContainer .lec_lic_cc_name
+{
+	position: relative;
+	float: left;
+	width:50px;
+	height:30px;
+	line-height: 30px;
+	color: white;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.lec_layerInputContainer .lec_lic_contentContainer .lec_lic_cc_nameFrame
+{
+	position: relative;
+	float: left;
+	width: 150px;
+	height:30px;
+	line-height: 30px;
+	box-sizing: border-box;
+	border-radius: 3px;
+	margin-top: 10px;
+}
+.lec_layerInputContainer .lec_lic_contentContainer .lec_lic_cc_inputTips
+{
+	position: relative;
+	float: left;
+	width: 200px;
+	height:30px;
+	line-height: 30px;
+	color: white;
+	margin-top: 50px;
+    margin-left: -200px;
+}
+.lec_layerInputContainer .lec_lic_contentContainer .lec_lic_cc_inputBox
+{
+	position: relative;
+	float: left;
+	width: calc(100% - 40px);
+	height:calc(100% - 110px);
+	line-height: 30px;
+	background-color: white;
+	margin-top: 10px;
+    margin-left: 20px;
+}
+.lec_layerInputContainer .lec_lic_submit
+{
+	position: relative;
+	float: left;
+	width: 60px;
+	height: 30px;
+	line-height: 30px;
+	text-align:center;
+	margin-top: 10px;
+	background-color: white;
+    left: calc(100% - 70px);
+    color: rgba(13,25,42,0.9);
+}
+.lec_layerInputContainer .lec_lic_submit:hover
+{
+	cursor: pointer;
+	background-color:whitesmoke;
+}
+
+/* layer弹出框下侧透明度控制样式 */
+
+#cgs-layers-popup {
+	position: absolute;
+	left: 100px;
+	bottom: 260px;
+	height: 124px;
+	width: 290px;
+	display: none;
+	z-index:2;
+	/* background-image: url(../../assets/image/layerTree/image/opacity-bac.png);
+	background-size: 100% 100%; */
+	font-size: 14px;
+
+}
+
+#cgs-layers-popup .layers-popup-title {
+	height: 40px;
+	padding-left: 20px;
+	line-height: 40px;
+	color: #cce5f9;
+	position: relative;
+	display: flex;
+	align-items: center;
+	background-image: -webkit-linear-gradient( -90deg, rgba(95,111,131,0.54902) 0%, rgba(43,56,68,0) 100%);
+}
+
+#cgs-layers-popup .layers-popup-title .close-btn {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 10px;
+	top: 12px;
+	cursor: pointer;
+	background-image: url(../../assets/image/tool/closenormal.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#cgs-layers-popup .layers-popup-body {
+	height: 75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 4px 0px 4px;
+	/* border-top: 1px solid #2f4058; */
+}
+
+#cgs-layers-popup .layers-popup-body .slider-number {
+	color: white;
+	font-size: 14px;
+	width: 40px;
+	padding-bottom: 2px;
+}
+
+#cgs-layers-popup .layers-popup-body .opacity-title-name {
+	display: inline-block;
+	color: #cce5f9;
+	font-size: 14px;
+	padding-left: 10px;
+	padding-bottom: 2px;
+}
+
+#cgs-opacity-slider {
+	display: inline-block;
+	margin: 0px 20px 0px 20px;
+	width: 140px;
+	height: 20px;
+	position: relative;
+	border-radius: 2px;
+}
+
+#cgs-opacity-slider .slider-bar {
+	border-radius: 2px;
+	width: 10px;
+	height: 20px;
+	position: absolute;
+	top: -1px;
+	left: 110px;
+	cursor: pointer;
+	background-image: url(../../assets/image/layerTree/image/slider-btn.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#cgs-opacity-slider .slider-mask {
+	width: 140px;
+	height: 20px;
+	background-image: url(../../assets/image/layerTree/image/slider-bac.png);
+	background-repeat: no-repeat;
+	background-position: center;
+
+}

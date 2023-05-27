@@ -1,0 +1,551 @@
+<!-- 样式 -->
+<jbdrawingAttribute>
+  <div ref="content" class="CgsTool__content toolPanel">
+    <div class="symbolEdit">
+      <div class="splitRoot">
+        <div class="splitItem">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>显示属性</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title" style="width: 85px;background-color: transparent">标号名称</div>
+                <div class="td"><input type="text" disabled ref="nodeName" class="full" /> </div>
+              </div>
+              <virtual if={jbatts.type===0}>
+                <div class="tr">
+                  <div class="td title">标号宽度</div>
+                  <div class="td" data-is="cgs_validator_input" ref="width" on_val_change={ onValChange } type="number">
+                  </div>
+                </div>
+                <div class="tr">
+                  <div class="td title">标号高度</div>
+                  <div class="td" data-is="cgs_validator_input" ref="height" on_val_change={ onValChange }
+                    type="number"></div>
+                </div>
+                <div class="tr">
+                  <div class="td title">标号角度</div>
+                  <div class="td" data-is="cgs_validator_input" ref="angle" on_val_change={ onValChange } type="number">
+                  </div>
+                </div>
+              </virtual>
+
+              <div class="tr">
+                <div class="td title">标号颜色</div>
+                <div class="td">
+                  <colorpicker ref="color" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpicker>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">标号线宽</div>
+                <div class="td" data-is="cgs_validator_input" ref="lineWidth" on_val_change={ onValChange }
+                  type="number"></div>
+              </div>
+              <div class="tr">
+                <div class="td title">标号线型</div>
+                <div class="td">
+                  <select ref="lineType" onchange={onSelectValChange} dtype="number" class="full">
+                    <option value="1">虚线</option>
+                    <option value="2">实线</option>
+                  </select>
+                </div>
+              </div>
+
+              <virtual if={jbatts.type===0}>
+                <div class="tr">
+                  <div class="td title">镜像</div>
+                  <div class="td">
+                    <select ref="mirror" onchange={onSelectValChange} dtype="number" class="full">
+                      <option value="0">无</option>
+                      <option value="1">水平镜像</option>
+                      <option value="2">垂直镜像</option>
+                      <option value="3">中心镜像</option>
+                    </select>
+                  </div>
+                </div>
+              </virtual>
+              <div class="tr">
+                <div class="td title">显示模式</div>
+                <div class="td">
+                  <select ref="groundMode" onchange={onSelectValChange} dtype="number" class="full">
+                    <option value="0">屏幕显示</option>
+                    <option value="1">贴地显示</option>
+                  </select>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">离地高度</div>
+                <div class="td" data-is="cgs_validator_input" ref="groundOffset" on_val_change={ onValChange }
+                  type="number"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="splitItem onlyHasOutLineJbAttr">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>衬色设置</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title">是否衬色</div>
+                <div class="td">
+                  <input ref="foilLine" id="contrastcolor" name="contrastcolor" onchange={onSelectValChange}
+                    type="checkbox" dtype="check" />
+                  <label for="contrastcolor"></label>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">衬色颜色</div>
+                <div class="td">
+                  <colorpicker ref="outLineColor" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpicker>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">衬色线宽</div>
+                <div class="td" data-is="cgs_validator_input" ref="outLineWidth" on_val_change={ onValChange }
+                  type="number"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="splitItem onlyHasFillJbAttr">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>填充设置</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title">是否填充</div>
+                <div class="td">
+                  <input id="fillcheck" name="fillcheck" ref="fill" onchange={onSelectValChange} type="checkbox"
+                    dtype="check" />
+                  <label for="fillcheck"></label>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">填充颜色</div>
+                <div class="td">
+                  <colorpicker ref="fillColor" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpicker>
+                </div>
+              </div>
+              <div class="tr onlyFadeColorJbAttr" style="display: none">
+                <div class="td title">填充模式</div>
+                <div class="td">
+                  <select ref="fillStyle" onchange={onSelectValChange} dtype="number" class="full">
+                    <option value="0">纯色填充</option>
+                    <option value="1">渐变填充</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="splitItem onlyFadeColorJbAttrAndSelect">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>渐变设置</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <div class="tr">
+                <div class="td title">渐变方向</div>
+                <div class="td">
+                  <select ref="fadeMode" onchange={onSelectValChange} dtype="number" class="full">
+                    <option value="0">水平渐变</option>
+                    <option value="1">垂直渐变</option>
+                  </select>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">渐变起始颜色</div>
+                <div class="td">
+                  <colorpicker ref="fadeColor0" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpicker>
+                </div>
+              </div>
+              <div class="tr">
+                <div class="td title">渐变终止颜色</div>
+                <div class="td">
+                  <colorpicker ref="fadeColor1" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpicker>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="splitItem onlyInlineTextJbAttr">
+          <div class="splitBtn no-user-select">
+            <div class="mark"></div>
+            <span>内联文本</span>
+          </div>
+          <div class="splitContent">
+            <div class="divTable">
+              <virtual each={sca,index in jbatts.inlineText }>
+                <div class="tr">
+                  <div class="td title" style="width: 85px;">内联文本:{index}&nbsp;</div>
+                  <div class="td" data-is="cgs_validator_input" ref={'inlineText_'+index} on_val_change={ onValChange }
+                    type="text"></div>
+                </div>
+              </virtual>
+              <!-- <div class="tr">
+                                <div class="td">文本字体</div>
+                                <div class="td">
+                                    <select ref="fontName" onchange={ onSelectValChange } dtype="string" class="full">
+                                        <option value="黑体">黑体</option>
+                                        <option value="宋体">宋体</option>
+                                        <option value="华文楷体">华文楷体</option>
+                                        <option value="华文细黑">华文细黑</option>
+                                        <option value="幼圆">幼圆</option>
+                                    </select>
+                                </div>
+                            </div> -->
+              <div class="tr">
+                <div class="td title">文本颜色</div>
+                <div class="td">
+                  <colorpicker ref="textColor" on_val_change={ onValChange } default_colors={mConfigs &&
+                    mConfigs.symbol.default_colors}></colorpicker>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let tag = this
+    let map = this.opts.map
+    tag.jbatts = {
+      type: 0, //标号类型,0-点，1-线面
+      inlineText: [], //内联文本
+      showFade: false, //是否显示渐变色
+    };
+
+    tag.updateAttributes = node => {
+      let refs = tag.refs;
+      if (node) {
+        let attrs = map.jmpApi.getNodeAttrs(node);
+
+        tag.jbatts.inlineText = attrs.inlineText;
+        tag.jbatts.type = attrs.type;
+
+        let drawingAttr = node.drawingAttrib;
+        if (drawingAttr.filled) {
+          if (drawingAttr.fillType == 1) {
+            tag.jbatts.showFade = true;
+          }
+        }
+
+        //TODO 将控制控件显隐的逻辑改成<virtual></virtual>来控制
+        // 具有填充属性才显示相关控件
+        if (attrs.hasFill) {
+          showAttrEle('onlyHasFillJbAttr');
+        } else {
+          closeAttrEle('onlyHasFillJbAttr');
+        }
+
+        // 具有渐变色才显示相关控件
+        if (attrs.type === 1 && attrs.hasFill) { // 线面军标且填充
+          showAttrEle('onlyFadeColorJbAttr');
+        } else {
+          closeAttrEle('onlyFadeColorJbAttr');
+        }
+
+        // 具有渐变填充才显示相关控件,点军标不具有渐变属性
+        if (attrs.type === 1 && drawingAttr.fillType === 1) { // 线面军标且填充模式选择渐变填充
+          showAttrEle('onlyFadeColorJbAttrAndSelect');
+        } else {
+          closeAttrEle('onlyFadeColorJbAttrAndSelect');
+        }
+
+        // 具有内联文本才显示相关控件
+        if (attrs.inlineText.length > 0) {
+          showAttrEle('onlyInlineTextJbAttr');
+        } else {
+          closeAttrEle('onlyInlineTextJbAttr');
+        }
+
+        // 具有衬色属性才显示相关控件
+        if (attrs.hasOutline) {
+          showAttrEle('onlyHasOutLineJbAttr');
+        } else {
+          closeAttrEle('onlyHasOutLineJbAttr');
+        }
+
+        function showAttrEle(className) {
+          let eleCollection = document.getElementsByClassName(className);
+          let j = eleCollection.length;
+          for (let i = 0; i < j; i++) {
+            eleCollection[i].style.display = ''
+          }
+        }
+
+        function closeAttrEle(className) {
+          let eleCollection = document.getElementsByClassName(className);
+          let j = eleCollection.length;
+          for (let i = 0; i < j; i++) {
+            eleCollection[i].style.display = 'none'
+          }
+        }
+
+        try {
+          tag.update(); //更新渲染一次;
+        } catch (err) {}
+        // 名称
+        refs.nodeName && (refs.nodeName.value = node.symbolAttrib.GetName());
+        // 宽度
+        refs.width && refs.width.setContent(Number.parseInt(attrs.width.toFixed(0)), true);
+        // 高度
+        refs.height && refs.height.setContent(Number.parseInt(attrs.height).toFixed(0), true);
+        // 角度
+        refs.angle && refs.angle.setContent(Number.parseInt(attrs.angle).toFixed(0), true);
+        // 颜色
+        refs.color && refs.color.setColor(attrs.color.c16);
+        // 线宽
+        refs.lineWidth && refs.lineWidth.setContent(Number.parseInt(attrs.lineWidth).toFixed(0), true);
+        // 线型
+        refs.lineType && (refs.lineType.value = attrs.lineType);
+        // 镜像
+        refs.mirror && (refs.mirror.value = attrs.mirror);
+        // 显示模式
+        refs.groundMode && (refs.groundMode.value = attrs.groundMode);
+        // 离地高度
+        refs.groundOffset && refs.groundOffset.setContent(attrs.groundOffset, true);
+        // 是否衬色
+        refs.foilLine && (refs.foilLine.checked = attrs.foilLine);
+        // 衬色颜色
+        refs.outLineColor && refs.outLineColor.setColor(attrs.outLineColor.c16);
+        // 衬色线宽
+        refs.outLineWidth && refs.outLineWidth.setContent(Number.parseInt(attrs.outLineWidth).toFixed(0), true);
+        // 是否填充
+        refs.fill && (refs.fill.checked = attrs.fill);
+        // 填充色
+        refs.fillColor && refs.fillColor.setColor(attrs.fillColor.c16);
+        // 填充模式
+        refs.fillStyle && (refs.fillStyle.value = attrs.fillStyle);
+        // 渐变方向
+        refs.fadeMode && (refs.fadeMode.value = attrs.fadeMode);
+        // 渐变起始颜色
+        refs.fadeColor0 && refs.fadeColor0.setColor(attrs.fadeColor0.c16);
+        // 渐变终止颜色
+        refs.fadeColor1 && refs.fadeColor1.setColor(attrs.fadeColor1.c16);
+        // 内联文本
+        for (let i = 0; i < attrs.inlineText.length; i++) {
+          refs['inlineText_' + i] && refs['inlineText_' + i].setContent(attrs.inlineText[i], true);
+        }
+        // 内联文本字体
+        // refs.fontName && refs.fontName.setContent(attrs.fontName, true);
+        // 内联文本颜色
+        refs.textColor && refs.textColor.setColor(attrs.textColor.c16);
+      } else {
+        tag.jbatts.inlineText = [];
+        tag.jbatts.type = 0;
+        tag.jbatts.showFade = false;
+        try {
+          tag.update(); //更新渲染一次;
+        } catch (err) {}
+        // 名称
+        refs.nodeName && (refs.nodeName.value = "");
+        // 宽度
+        refs.width && refs.width.setContent();
+        // 高度
+        refs.height && refs.height.setContent();
+        // 角度
+        refs.angle && refs.angle.setContent();
+        // 颜色
+        refs.color && refs.color.setColor('white');
+        // 线宽
+        refs.lineWidth && refs.lineWidth.setContent();
+        // 线型
+        refs.lineType && (refs.lineType.value = 2);
+        // 镜像
+        refs.mirror && (refs.mirror.value = 0);
+        // 显示模式
+        refs.groundMode && (refs.groundMode.value = 0);
+        // 离地高度
+        refs.groundOffset && refs.groundOffset.setContent();
+        // 是否衬色
+        refs.foilLine && (refs.foilLine.checked = false);
+        // 衬色颜色
+        refs.outLineColor && refs.outLineColor.setColor('white');
+        // 衬色线宽
+        refs.outLineWidth && refs.outLineWidth.setContent();
+        // 是否填充
+        refs.fill && (refs.fill.checked = false);
+        // 填充色
+        refs.fillColor && refs.fillColor.setColor('white');
+        // 填充模式
+        refs.fillStyle && (refs.fillStyle.value = 0);
+        // 渐变方向
+        refs.fadeMode && (refs.fadeMode.value = 0);
+        // 渐变起始颜色
+        refs.fadeColor0 && refs.fadeColor0.setColor('white');
+        // 渐变终止颜色
+        refs.fadeColor1 && refs.fadeColor1.setColor('white');
+        // 内联文本字体
+        // refs.fontName && refs.fontName.setContent();
+        // 内联文本颜色
+        refs.textColor && refs.textColor.setColor();
+      }
+    }
+
+    tag.onValChange = (target, val) => {
+      let node = map.plotting.editingNode;
+      if (!node) {
+        return;
+      }
+
+      let ref = target.opts.ref;
+      let type = target.opts.type;
+      let attrs = {
+        [ref]: val
+      };
+      let changeP = [];
+
+      tag.setSymbolAttrs(attrs);
+      let size = map.getSymbolByUid(node.id).getSize();
+
+      switch (type) {
+        case "width":
+          size[0] = val;
+          changeP = [{
+            type: "size",
+            val: size
+          }];
+          break;
+        case "height":
+          size[1] = val;
+          changeP = [{
+            type: "size",
+            val: size
+          }];
+        default:
+          changeP = [{
+            type: ref,
+            val: val
+          }];
+          break;
+      }
+      CgsSubPub.publish(CgsEvent.eSymbolValChange, [changeP, node.name]);
+    }
+
+    tag.onSelectValChange = e => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      let drawingAttr = node.drawingAttrib;
+      let ref = e.target;
+      let refName = $$(ref).attr('ref');
+      let dtype = $$(ref).attr('dtype');
+      let val = $$(ref).val();
+      if (dtype === 'number') {
+        val = Number(val);
+      } else if (dtype === 'check') {
+        val = ref.checked;
+      }
+      let attrs = {
+        [refName]: val
+      };
+
+      tag.setSymbolAttrs(attrs);
+      let changeP = [{
+        type: ref,
+        val: val
+      }];
+      CgsSubPub.publish(CgsEvent.eSymbolValChange, [changeP, node.name]);
+
+      if (drawingAttr.filled) {
+        if (drawingAttr.fillType == 1 && node.symbolType == 1) { //渐变
+          // tag.jbatts.showFade = true;
+          let fadeColorEle = document.getElementsByClassName('onlyFadeColorJbAttrAndSelect')[0];
+          fadeColorEle.style.display = 'block'
+        } else { //纯色填充
+          // tag.jbatts.showFade = false;
+          let fadeColorEle = document.getElementsByClassName('onlyFadeColorJbAttrAndSelect')[0];
+          fadeColorEle.style.display = 'none';
+        }
+      } else {
+        // tag.jbatts.showFade = false;
+        let fadeColorEle = document.getElementsByClassName('onlyFadeColorJbAttrAndSelect')[0];
+        fadeColorEle.style.display = 'none';
+      }
+      try {
+        tag.update(); //更新渲染一次;
+      } catch (err) {}
+    }
+
+    tag.colorChange = e => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      let _color = e.currentTarget.__ref.getColor();
+      let refName = e.currentTarget.__ref.opts.ref;
+      let color = {}
+      color.r = _color._r;
+      color.g = _color._g;
+      color.b = _color._b;
+      color.a = _color._a;
+      let attrs = {
+        [refName]: color
+      };
+      tag.setSymbolAttrs(attrs);
+      let changeP = [{
+        type: refName,
+        val: color
+      }];
+      CgsSubPub.publish(CgsEvent.eSymbolValChange, [changeP, node.name]);
+    };
+
+    tag.setSymbolAttrs = attrs => {
+      let node = map.plotting.editingNode;
+
+      if (!node) {
+        return;
+      }
+
+      map.jmpApi.setNodeAttrs(node, attrs);
+    }
+
+    tag.updateSize = node => {
+      let refs = tag.refs;
+      if (node) {
+        let attrs = map.jmpApi.getNodeAttrs(node, {
+          width: 0,
+          height: 0,
+          angle: 0,
+        });
+        try {
+          tag.update(); //更新渲染一次;
+        } catch (err) {}
+        if (tag.jbatts.type === 0) {
+          // 宽度
+          refs.width && refs.width.setContent(attrs.width.toFixed(0), true);
+          // 高度
+          refs.height && refs.height.setContent(attrs.height.toFixed(0), true);
+          // 角度
+          refs.angle && refs.angle.setContent(attrs.angle.toFixed(0), true);
+        }
+      }
+    };
+  </script>
+</jbdrawingAttribute>
